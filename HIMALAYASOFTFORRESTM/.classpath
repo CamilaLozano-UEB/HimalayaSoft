@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-14"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/nicop/Documents/Librerias Java/MP3/basicplayer-3.0.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nicop/Documents/Librerias Java/MP3/jlayer-1.0.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nicop/Documents/Librerias Java/MP3/mp3spi-1.9.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nicop/Documents/Librerias Java/MP3/slf4j-api-2.0.0-alpha1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nicop/Documents/Librerias Java/MP3/slf4j-nop-2.0.0-alpha1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nicop/Documents/Librerias Java/MP3/tritonus-share-0.3.7.4.jar"/>
+	<classpathentry kind="lib" path="D:/Universidad/Java/Librerias/basicplayer-3.0.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/Universidad/Java/Librerias/jlayer-1.0.1.4.jar"/>
+	<classpathentry kind="lib" path="D:/Universidad/Java/Librerias/mp3spi-1.9.5.4.jar"/>
+	<classpathentry kind="lib" path="D:/Universidad/Java/Librerias/slf4j-api-2.0.0-alpha1.jar"/>
+	<classpathentry kind="lib" path="D:/Universidad/Java/Librerias/slf4j-nop-2.0.0-alpha1.jar"/>
+	<classpathentry kind="lib" path="D:/Universidad/Java/Librerias/tritonus-share-0.3.7.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
