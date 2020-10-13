@@ -88,7 +88,7 @@ public class PanelAgregarCancion extends JPanel {
 	 * @param datos
 	 */
 	public void crearTabla(String[][] datos) {
-		String[] dias = { "Canciï¿½n", "Autor", " Genero" };
+		String[] dias = { "Canción", "Autor", " Genero" };
 		tablaCanciones = new JTable(datos, dias);
 		scroll = new JScrollPane(tablaCanciones);
 	}
