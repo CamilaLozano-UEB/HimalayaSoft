@@ -25,10 +25,6 @@ public class PanelParrilla extends JPanel {
 		setBackground(Color.white);
 		setBorder(new TitledBorder("Parrilla Musical"));
 		setLayout(new BorderLayout());
-		// asignarValores();
-		// crearTabla(String[][] datos);
-		// agregarComponentes();
-
 	}
 
 	/**
@@ -58,6 +54,7 @@ public class PanelParrilla extends JPanel {
 		comboNombreCancion.addItem("NombreCanciones");
 
 	}
+
 
 	/**
 	 * 
