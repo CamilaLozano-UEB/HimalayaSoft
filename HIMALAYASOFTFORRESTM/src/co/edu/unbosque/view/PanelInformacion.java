@@ -6,11 +6,11 @@ public class PanelInformacion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private PanelAgregarCancion panelAgregarCancion;
-	private PanelInformacionEmisora panelAjustarEmisora;
+	private PanelInformacionEmisora panelInformacionEmisora;
 
 	public PanelInformacion() {
 		panelAgregarCancion = new PanelAgregarCancion();
-		panelAjustarEmisora = new PanelInformacionEmisora();
+		panelInformacionEmisora = new PanelInformacionEmisora();
 
 	}
 
@@ -23,11 +23,11 @@ public class PanelInformacion extends JPanel {
 	}
 
 	public PanelInformacionEmisora getPanelAjustarEmisora() {
-		return panelAjustarEmisora;
+		return panelInformacionEmisora;
 	}
 
 	public void setPanelAjustarEmisora(PanelInformacionEmisora panelAjustarEmisora) {
-		this.panelAjustarEmisora = panelAjustarEmisora;
+		this.panelInformacionEmisora = panelAjustarEmisora;
 	}
 
 }
