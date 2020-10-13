@@ -59,6 +59,7 @@ public class PanelParrilla extends JPanel {
 
 	}
 
+
 	/**
 	 * 
 	 * @author Juana Valentina Torres Parrado Se agrega cada componente del panel y
