@@ -1,13 +1,14 @@
 package co.edu.unbosque.view;
 
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class PanelAgregarCancion extends JPanel {
+public class PanelAgregarCanciones extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	public PanelAgregarCancion() {
+	public PanelAgregarCanciones() {
 
 	}
+	
 
 }
