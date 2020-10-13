@@ -32,7 +32,7 @@ public class PanelAgregarCancion extends JPanel {
 	}
 
 	/**
-	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n
+	 * @author Nicolás Peña Mogollón
 	 * 
 	 *         Recibe como entrada los valores que corresponden a cada componente
 	 *         (lo que dice)
@@ -58,9 +58,9 @@ public class PanelAgregarCancion extends JPanel {
 	}
 
 	/**
-	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n
+	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Aï¿½ade los componentes al panel que corresponde, para luego aï¿½adirlos
+	 *         Añade los componentes al panel que corresponde, para luego añadirlos
 	 *         al principal
 	 */
 	public void agregarComponentes() {
@@ -81,7 +81,7 @@ public class PanelAgregarCancion extends JPanel {
 	}
 
 	/**
-	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n
+	 * @author Nicolás Peña Mogollón
 	 * 
 	 *         Recibe los datos de la tabla en forma de arreglo bidimensional para
 	 *         agregarlos a la tabla
