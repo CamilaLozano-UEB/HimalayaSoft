@@ -17,7 +17,7 @@ public class PanelParrilla extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JButton botonAgregar;
 	private JTable tablaParrilla;
-	private JComboBox comboNombreCancion;
+	private JComboBox<String> comboNombreCancion;
 	private JScrollPane sp;
 
 	public PanelParrilla() {
@@ -54,7 +54,7 @@ public class PanelParrilla extends JPanel {
 	public void asignarValores() {
 
 		botonAgregar = new JButton("Agregar");
-		comboNombreCancion = new JComboBox();
+		comboNombreCancion = new JComboBox<String>();
 		comboNombreCancion.addItem("NombreCanciones");
 
 	}
@@ -87,11 +87,11 @@ public class PanelParrilla extends JPanel {
 		this.tablaParrilla = tablaParrilla;
 	}
 
-	public JComboBox getComboNombreCancion() {
+	public JComboBox<String> getComboNombreCancion() {
 		return comboNombreCancion;
 	}
 
-	public void setComboNombreCancion(JComboBox comboNombreCancion) {
+	public void setComboNombreCancion(JComboBox<String> comboNombreCancion) {
 		this.comboNombreCancion = comboNombreCancion;
 	}
 
