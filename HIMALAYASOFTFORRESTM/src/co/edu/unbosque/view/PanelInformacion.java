@@ -5,20 +5,20 @@ import javax.swing.JPanel;
 public class PanelInformacion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private PanelAgregarCanciones panelAgregarCancion;
+	private PanelAgregarCancion panelAgregarCancion;
 	private PanelInformacionEmisora panelAjustarEmisora;
 
 	public PanelInformacion() {
-		panelAgregarCancion = new PanelAgregarCanciones();
+		panelAgregarCancion = new PanelAgregarCancion();
 		panelAjustarEmisora = new PanelInformacionEmisora();
 
 	}
 
-	public PanelAgregarCanciones getPanelAgregarCancion() {
+	public PanelAgregarCancion getPanelAgregarCancion() {
 		return panelAgregarCancion;
 	}
 
-	public void setPanelAgregarCancion(PanelAgregarCanciones panelAgregarCancion) {
+	public void setPanelAgregarCancion(PanelAgregarCancion panelAgregarCancion) {
 		this.panelAgregarCancion = panelAgregarCancion;
 	}
 
