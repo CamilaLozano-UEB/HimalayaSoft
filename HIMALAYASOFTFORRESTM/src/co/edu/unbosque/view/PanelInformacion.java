@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class PanelInformacion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private final String RUTA_ICONO = "";
+	private final String RUTA_ICONO = "/Imagenes/Himalaya.jpg";
 	private JPanel panelContEmisora;
 	private JLabel etiquetaImagen;
 	private PanelAgregarCancion panelAgregarCancion;
