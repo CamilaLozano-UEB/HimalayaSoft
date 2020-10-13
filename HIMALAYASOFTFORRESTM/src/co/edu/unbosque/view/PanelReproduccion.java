@@ -94,7 +94,6 @@ public class PanelReproduccion extends JPanel {
 		return serialVersionUID;
 	}
 	 
-	
 	  
 }
 
