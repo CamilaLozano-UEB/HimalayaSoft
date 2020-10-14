@@ -25,6 +25,7 @@ public class PanelEmisora extends JPanel {
 
 		etiquetaImagen = new JLabel();
 		// etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
+		this.agregarComponentes();
 
 	}
 

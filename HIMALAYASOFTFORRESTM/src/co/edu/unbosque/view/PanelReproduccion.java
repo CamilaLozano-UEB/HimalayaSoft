@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.Color;
+import java.awt.GridLayout;
 import java.awt.Image;
 
 import javax.swing.Icon;
@@ -18,8 +19,10 @@ public class PanelReproduccion extends JPanel {
 	private Icon icon_sound;
 
 	public PanelReproduccion() {
-		setLayout(null);
+		setLayout(new GridLayout(1,2));
 		setVisible(true);
+		this.asignarValores();
+		this.agregarComponentes();
 
 	}
 
@@ -35,16 +38,11 @@ public class PanelReproduccion extends JPanel {
 		botonSonido_2.setBorder(null);
 		botonSonido_2.setOpaque(true);
 		botonSonido_2.setBackground(new Color(162, 118, 234));
-		botonSonido_2.setActionCommand("stop");
-		botonSonido_2.setBounds(750, 700, 50, 50);
 
 		botonSonido = new JButton();
 		botonSonido.setBorder(null);
 		botonSonido.setOpaque(true);
 		botonSonido.setBackground(new Color(162, 118, 234));
-		botonSonido.setActionCommand("play");
-		botonSonido.setBounds(750, 700, 50, 50);
-
 	}
 
 	/**
