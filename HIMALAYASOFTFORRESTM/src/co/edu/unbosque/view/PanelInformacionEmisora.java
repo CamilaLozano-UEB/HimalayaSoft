@@ -12,9 +12,7 @@ public class PanelInformacionEmisora extends JPanel {
 	private JLabel etiquetaModoTransmision;
 	private JLabel etiquetaTipoMusica;
 
-	private JRadioButton radioTransmision1;
-	private JRadioButton radioTransmision2;
-	private JRadioButton radioTransmision3;
+	private JComboBox listaModos;
 	
 	private JTextField textoNombreEmisora;
 	private JTextField textoTipoMusica;
@@ -37,9 +35,10 @@ public class PanelInformacionEmisora extends JPanel {
 		etiquetaModoTransmision = new JLabel(titulos[1]);
 		etiquetaTipoMusica = new JLabel(titulos[2]);
 		
-		radioTransmision1 =  new JRadioButton(titulos[3],true);
-		radioTransmision2 =  new JRadioButton(titulos[4],false);
-		radioTransmision3 =  new JRadioButton(titulos[5],false);
+		listaModos = new JComboBox();
+		listaModos.addItem(titulos[3]);
+		listaModos.addItem(titulos[4]);
+		listaModos.addItem(titulos[5]);
 
 		textoNombreEmisora = new JTextField();
 		textoTipoMusica = new JTextField();
@@ -56,22 +55,13 @@ public class PanelInformacionEmisora extends JPanel {
 		add(etiquetaTipoMusica);
 		add(botonGuardar);
 		add(textoNombreEmisora);
-		JPanel radios= new JPanel();	
-		radios.setLayout(new GridLayout(0,1));
-		ButtonGroup bg=new ButtonGroup();
-		bg.add(radioTransmision1);
-		bg.add(radioTransmision2);
-		bg.add(radioTransmision3);
-		radios.add(radioTransmision1);
-		radios.add(radioTransmision2);
-		radios.add(radioTransmision3);
-		add(radios);
+		add(listaModos);
 		add(textoTipoMusica);
 		add(botonCancelar);
 		
 	}
 	
-
+	
 	public JLabel getEtiquetaNombreEmisora() {
 		return etiquetaNombreEmisora;
 	}
@@ -96,29 +86,12 @@ public class PanelInformacionEmisora extends JPanel {
 		this.etiquetaTipoMusica = etiquetaTipoMusica;
 	}
 
-
-	public JRadioButton getModoTransmision1() {
-		return radioTransmision1;
+	public JComboBox getListaModos() {
+		return listaModos;
 	}
 
-	public void setModoTransmision1(JRadioButton modoTransmision1) {
-		this.radioTransmision1 = modoTransmision1;
-	}
-
-	public JRadioButton getModoTransmision2() {
-		return radioTransmision2;
-	}
-
-	public void setModoTransmision2(JRadioButton modoTransmision2) {
-		this.radioTransmision2 = modoTransmision2;
-	}
-
-	public JRadioButton getModoTransmision3() {
-		return radioTransmision3;
-	}
-
-	public void setModoTransmision3(JRadioButton modoTransmision3) {
-		this.radioTransmision3 = modoTransmision3;
+	public void setListaModos(JComboBox listaModos) {
+		this.listaModos = listaModos;
 	}
 
 	public JTextField getTextoNombreEmisora() {
@@ -157,8 +130,6 @@ public class PanelInformacionEmisora extends JPanel {
 		return serialVersionUID;
 	}
 
-	
-	
 	public static void main(String[] args) {
 
 		PanelInformacionEmisora panel = new PanelInformacionEmisora();
