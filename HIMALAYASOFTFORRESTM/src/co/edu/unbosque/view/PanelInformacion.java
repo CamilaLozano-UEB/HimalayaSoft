@@ -17,14 +17,14 @@ public class PanelInformacion extends JPanel {
 	private PanelInformacionEmisora panelInformacionEmisora;
 
 	public PanelInformacion() {
-		this.setLayout(new GridLayout(2,1));
-		panelContEmisora= new JPanel();
+		this.setLayout(new GridLayout(2, 1));
+		panelContEmisora = new JPanel();
 		panelContEmisora.setLayout(new BorderLayout());
 		panelAgregarCancion = new PanelAgregarCancion();
 		panelInformacionEmisora = new PanelInformacionEmisora();
-		etiquetaImagen= new JLabel();
-		//etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
-		panelContEmisora.add(etiquetaImagen,BorderLayout.WEST);
+		etiquetaImagen = new JLabel();
+		// etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
+		panelContEmisora.add(etiquetaImagen, BorderLayout.WEST);
 		panelContEmisora.add(panelInformacionEmisora, BorderLayout.CENTER);
 		this.add(panelContEmisora);
 		this.add(panelAgregarCancion);
@@ -46,6 +46,7 @@ public class PanelInformacion extends JPanel {
 	public void setPanelAjustarEmisora(PanelInformacionEmisora panelAjustarEmisora) {
 		this.panelInformacionEmisora = panelAjustarEmisora;
 	}
+
 	public static void main(String[] args) {
 
 		PanelInformacion panel = new PanelInformacion();

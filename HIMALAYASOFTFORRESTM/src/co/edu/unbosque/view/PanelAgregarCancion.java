@@ -69,6 +69,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 		campoTextoArchivo.setEditable(false);
 		campoTextoArchivo.setBackground(new Color(194, 210, 214));
+		
 		// El DropTarget se asocia con un componente cuando ese componente desea aceptar
 		// un drop durante las operaciones de drag and drop, en este caso es el
 		// JTextArea campoTextoArchivo, al cual se le debe asignar un listener
