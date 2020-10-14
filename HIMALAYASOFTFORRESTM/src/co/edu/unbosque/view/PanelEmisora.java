@@ -22,11 +22,18 @@ public class PanelEmisora extends JPanel {
 		panelDatosEmisora = new PanelDatosEmisora();
 		panelParrilla = new PanelParrilla();
 		panelReproduccion = new PanelReproduccion();
-		
-		etiquetaImagen= new JLabel();
+
+		etiquetaImagen = new JLabel();
 		// etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
 
-		
+	}
+
+	public void agregarComponentes() {
+		add(etiquetaImagen, BorderLayout.PAGE_START);
+		add(panelParrilla, BorderLayout.CENTER);
+		add(panelDatosEmisora, BorderLayout.WEST);
+		add(panelReproduccion, BorderLayout.PAGE_END);
+		add(panelCancion, BorderLayout.EAST);
 	}
 
 	public PanelCancion getPanelCancion() {

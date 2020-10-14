@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
 
 import co.edu.unbosque.controller.Controller;
 
@@ -9,11 +10,15 @@ public class View extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private PanelInformacion panelInformacion;
 	private PanelEmisora panelEmisora;
+	private JTabbedPane pestañas;
 
 	public View(Controller control) {
 		panelInformacion = new PanelInformacion();
 		panelEmisora = new PanelEmisora();
-
+		pestañas = new JTabbedPane();
+		pestañas.add(panelEmisora, "Inicio");
+		pestañas.add(panelInformacion, "Gestion de información");
+		getContentPane().add(pestañas);
 	}
 
 	public PanelEmisora getPanelEmisora() {
