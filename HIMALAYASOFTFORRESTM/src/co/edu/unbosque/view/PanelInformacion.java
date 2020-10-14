@@ -2,8 +2,6 @@ package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -31,6 +29,22 @@ public class PanelInformacion extends JPanel {
 
 	}
 
+	public JPanel getPanelContEmisora() {
+		return panelContEmisora;
+	}
+
+	public void setPanelContEmisora(JPanel panelContEmisora) {
+		this.panelContEmisora = panelContEmisora;
+	}
+
+	public JLabel getEtiquetaImagen() {
+		return etiquetaImagen;
+	}
+
+	public void setEtiquetaImagen(JLabel etiquetaImagen) {
+		this.etiquetaImagen = etiquetaImagen;
+	}
+
 	public PanelAgregarCancion getPanelAgregarCancion() {
 		return panelAgregarCancion;
 	}
@@ -39,20 +53,20 @@ public class PanelInformacion extends JPanel {
 		this.panelAgregarCancion = panelAgregarCancion;
 	}
 
-	public PanelInformacionEmisora getPanelAjustarEmisora() {
+	public PanelInformacionEmisora getPanelInformacionEmisora() {
 		return panelInformacionEmisora;
 	}
 
-	public void setPanelAjustarEmisora(PanelInformacionEmisora panelAjustarEmisora) {
-		this.panelInformacionEmisora = panelAjustarEmisora;
+	public void setPanelInformacionEmisora(PanelInformacionEmisora panelInformacionEmisora) {
+		this.panelInformacionEmisora = panelInformacionEmisora;
 	}
 
-	public static void main(String[] args) {
-
-		PanelInformacion panel = new PanelInformacion();
-
-		JFrame frame = new JFrame();
-		frame.add(panel);
-		frame.setVisible(true);
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
+
+	public String getRUTA_ICONO() {
+		return RUTA_ICONO;
+	}
+
 }

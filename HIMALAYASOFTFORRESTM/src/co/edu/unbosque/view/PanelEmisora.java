@@ -1,21 +1,32 @@
 package co.edu.unbosque.view;
 
+import java.awt.BorderLayout;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelEmisora extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private final String RUTA_ICONO = "./Imagenes/";
 	private PanelCancion panelCancion;
 	private PanelDatosEmisora panelDatosEmisora;
 	private PanelParrilla panelParrilla;
 	private PanelReproduccion panelReproduccion;
+	private JLabel etiquetaImagen;
 
 	public PanelEmisora() {
+		setLayout(new BorderLayout());
 
 		panelCancion = new PanelCancion();
 		panelDatosEmisora = new PanelDatosEmisora();
 		panelParrilla = new PanelParrilla();
 		panelReproduccion = new PanelReproduccion();
+		
+		etiquetaImagen= new JLabel();
+		// etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
+
+		
 	}
 
 	public PanelCancion getPanelCancion() {
