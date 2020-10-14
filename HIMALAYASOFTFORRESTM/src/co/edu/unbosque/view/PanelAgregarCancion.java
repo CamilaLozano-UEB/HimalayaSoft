@@ -202,6 +202,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 					 *         añadirlos a una lista
 					 */
 
+					@SuppressWarnings("rawtypes")
 					java.util.List list = (java.util.List) tr.getTransferData(flavors[i]);
 
 					/**
