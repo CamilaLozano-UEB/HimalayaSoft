@@ -6,7 +6,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class PanelReproduccion extends JPanel {
@@ -56,16 +56,15 @@ public class PanelReproduccion extends JPanel {
 	 * 
 	 */
 	public void agregarComponentes() {
-		img_sound = new ImageIcon(getClass().getResource("/Imagenes/SinSonido.png"));
+    	img_sound = new ImageIcon("./Imagenes/SinSonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonSonido_2.setIcon(icon_sound);
 		add(botonSonido_2);
 
-		img_sound = new ImageIcon(getClass().getResource("/Imagenes/Sonido.png"));
+		img_sound = new ImageIcon("./Imagenes/Sonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonSonido.setIcon(icon_sound);
 		add(botonSonido);
-
 	}
 
 	public JButton getBotonSonido() {
