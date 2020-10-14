@@ -63,7 +63,7 @@ public class Emisora {
 	 * @param nombreArtista
 	 * @param nombreArchivoMusica
 	 */
-	
+
 	public boolean agregarPistaMusical(String nombreCancion, String nombreArtista, String generoMusical,
 			String nombreArchivoMusica) {
 
@@ -122,6 +122,118 @@ public class Emisora {
 	public boolean escribirArchivoParillaDelDia() {
 		return false;
 
+	}
+
+	public Archivo getArchivo() {
+		return archivo;
+	}
+
+	public void setArchivo(Archivo archivo) {
+		this.archivo = archivo;
+	}
+
+	public CaracteristicaEmisora getCaracteristicasEmisora() {
+		return caracteristicasEmisora;
+	}
+
+	public void setCaracteristicasEmisora(CaracteristicaEmisora caracteristicasEmisora) {
+		this.caracteristicasEmisora = caracteristicasEmisora;
+	}
+
+	public ArrayList<PistaMusical> getPistasMusicales() {
+		return pistasMusicales;
+	}
+
+	public void setPistasMusicales(ArrayList<PistaMusical> pistasMusicales) {
+		this.pistasMusicales = pistasMusicales;
+	}
+
+	public ParrillaMusical getParillaDelDia() {
+		return parillaDelDia;
+	}
+
+	public void setParillaDelDia(ParrillaMusical parillaDelDia) {
+		this.parillaDelDia = parillaDelDia;
+	}
+
+	public String getNombreEmisora() {
+		return nombreEmisora;
+	}
+
+	public void setNombreEmisora(String nombreEmisora) {
+		this.nombreEmisora = nombreEmisora;
+	}
+
+	public String getModoTransmision() {
+		return modoTransmision;
+	}
+
+	public void setModoTransmision(String modoTransmision) {
+		this.modoTransmision = modoTransmision;
+	}
+
+	public String getTipoDeMusica() {
+		return tipoDeMusica;
+	}
+
+	public void setTipoDeMusica(String tipoDeMusica) {
+		this.tipoDeMusica = tipoDeMusica;
+	}
+
+	public String getTitulosPanelDatosEmisora() {
+		return titulosPanelDatosEmisora;
+	}
+
+	public void setTitulosPanelDatosEmisora(String titulosPanelDatosEmisora) {
+		this.titulosPanelDatosEmisora = titulosPanelDatosEmisora;
+	}
+
+	public String getTitulosPanelParrilla() {
+		return titulosPanelParrilla;
+	}
+
+	public void setTitulosPanelParrilla(String titulosPanelParrilla) {
+		this.titulosPanelParrilla = titulosPanelParrilla;
+	}
+
+	public String getTitulosPanelReproduccion() {
+		return titulosPanelReproduccion;
+	}
+
+	public void setTitulosPanelReproduccion(String titulosPanelReproduccion) {
+		this.titulosPanelReproduccion = titulosPanelReproduccion;
+	}
+
+	public String getTitulosPanelCancion() {
+		return titulosPanelCancion;
+	}
+
+	public void setTitulosPanelCancion(String titulosPanelCancion) {
+		this.titulosPanelCancion = titulosPanelCancion;
+	}
+
+	public String getTitulosPanelAgregarCancion() {
+		return titulosPanelAgregarCancion;
+	}
+
+	public void setTitulosPanelAgregarCancion(String titulosPanelAgregarCancion) {
+		this.titulosPanelAgregarCancion = titulosPanelAgregarCancion;
+	}
+
+	public String getTitulosPanelAjustarEmisora() {
+		return titulosPanelAjustarEmisora;
+	}
+
+	public void setTitulosPanelAjustarEmisora(String titulosPanelAjustarEmisora) {
+		this.titulosPanelAjustarEmisora = titulosPanelAjustarEmisora;
+	}
+
+	public String getTitulosView() {
+		return titulosView;
+	}
+
+	public void setTitulosView(String titulosView) {
+		this.titulosView = titulosView;
 	}
 
 }

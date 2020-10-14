@@ -114,6 +114,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 * @param datos
 	 */
 	public void crearTabla(String[][] datos) {
+		
 		String[] dias = { "Canción", "Autor", " Genero" };
 		tablaCanciones = new JTable(datos, dias);
 		scroll = new JScrollPane(tablaCanciones);
@@ -231,7 +232,9 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 				}
 			}
 			dtde.rejectDrop();
+			
 		} catch (Exception e) {
+			
 			JOptionPane.showMessageDialog(null, "Error al insetar imagen!!!", "Warning", JOptionPane.WARNING_MESSAGE);
 			dtde.rejectDrop();
 		}
