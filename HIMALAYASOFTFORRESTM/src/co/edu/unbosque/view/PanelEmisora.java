@@ -69,4 +69,8 @@ public class PanelEmisora extends JPanel {
 		this.panelReproduccion = panelReproduccion;
 	}
 
+	public String getRUTA_ICONO() {
+		return RUTA_ICONO;
+	}
+
 }
