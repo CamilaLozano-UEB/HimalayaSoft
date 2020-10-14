@@ -51,7 +51,6 @@ public class PanelInformacionEmisora extends JPanel {
 
 		add(etiquetaNombreEmisora);
 		add(etiquetaModoTransmision);
-		;
 		add(etiquetaTipoMusica);
 		add(botonGuardar);
 		add(textoNombreEmisora);
