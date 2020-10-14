@@ -2,13 +2,15 @@ package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
 
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class PanelEmisora extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private final String RUTA_ICONO = "./Imagenes/";
+	private final String RUTA_ICONO = "./Imagenes/HimalayaPanelEmi.png";
 	private PanelCancion panelCancion;
 	private PanelDatosEmisora panelDatosEmisora;
 	private PanelParrilla panelParrilla;
@@ -24,7 +26,7 @@ public class PanelEmisora extends JPanel {
 		panelReproduccion = new PanelReproduccion();
 
 		etiquetaImagen = new JLabel();
-		// etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
+		etiquetaImagen.setIcon(new ImageIcon(RUTA_ICONO));
 		this.agregarComponentes();
 
 	}
@@ -72,5 +74,5 @@ public class PanelEmisora extends JPanel {
 	public String getRUTA_ICONO() {
 		return RUTA_ICONO;
 	}
-
+	
 }

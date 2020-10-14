@@ -2,6 +2,8 @@ package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -21,7 +23,7 @@ public class PanelInformacion extends JPanel {
 		panelAgregarCancion = new PanelAgregarCancion();
 		panelInformacionEmisora = new PanelInformacionEmisora();
 		etiquetaImagen = new JLabel();
-		// etiquetaImagen.setIcon(new ImageIcon(getClass().getResource(RUTA_ICONO)));
+		etiquetaImagen.setIcon(new ImageIcon(RUTA_ICONO));
 		panelContEmisora.add(etiquetaImagen, BorderLayout.WEST);
 		panelContEmisora.add(panelInformacionEmisora, BorderLayout.CENTER);
 		this.add(panelContEmisora);
@@ -68,5 +70,5 @@ public class PanelInformacion extends JPanel {
 	public String getRUTA_ICONO() {
 		return RUTA_ICONO;
 	}
-
+	
 }
