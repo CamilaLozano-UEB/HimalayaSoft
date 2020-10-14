@@ -12,7 +12,7 @@ public class PanelInformacionEmisora extends JPanel {
 	private JLabel etiquetaModoTransmision;
 	private JLabel etiquetaTipoMusica;
 
-	private JComboBox listaModos;
+	private JComboBox<String> listaModos;
 	
 	private JTextField textoNombreEmisora;
 	private JTextField textoTipoMusica;
@@ -35,7 +35,7 @@ public class PanelInformacionEmisora extends JPanel {
 		etiquetaModoTransmision = new JLabel(titulos[1]);
 		etiquetaTipoMusica = new JLabel(titulos[2]);
 		
-		listaModos = new JComboBox();
+		listaModos = new JComboBox<String>();
 		listaModos.addItem(titulos[3]);
 		listaModos.addItem(titulos[4]);
 		listaModos.addItem(titulos[5]);
@@ -86,11 +86,11 @@ public class PanelInformacionEmisora extends JPanel {
 		this.etiquetaTipoMusica = etiquetaTipoMusica;
 	}
 
-	public JComboBox getListaModos() {
+	public JComboBox<String> getListaModos() {
 		return listaModos;
 	}
 
-	public void setListaModos(JComboBox listaModos) {
+	public void setListaModos(JComboBox<String> listaModos) {
 		this.listaModos = listaModos;
 	}
 
