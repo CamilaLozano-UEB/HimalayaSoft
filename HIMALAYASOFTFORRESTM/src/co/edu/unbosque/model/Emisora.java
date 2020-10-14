@@ -32,11 +32,11 @@ public class Emisora {
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez
+	 * 
+	 *         Toma los valores de emisora, modoTransmision y tipoMusica
 	 * @param nombreEmisora
 	 * @param modoTransmision
-	 * @param tipoMusica     
-	 * 
-	 *  Toma los valores de
+	 * @param tipoMusica
 	 */
 	public void asignarInformacionEmisora(String nombreEmisora, String modoTransmision, String tipoMusica) {
 
@@ -55,14 +55,15 @@ public class Emisora {
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
+	 * 
+	 *         Crea un objeto de la clase pista musical para añadirlo al arreglo y
+	 *         lo escribe en el archivo.
 	 * @param generoMusical
 	 * @param nombreCancion
 	 * @param nombreArtista
-	 * @param nombreArchivoMusica 
-	 * 
-	 * Crea un objeto de la clase pista musical para
-	 *                            añadirlo al arreglo y lo escribe en el archivo.
+	 * @param nombreArchivoMusica
 	 */
+	
 	public boolean agregarPistaMusical(String nombreCancion, String nombreArtista, String generoMusical,
 			String nombreArchivoMusica) {
 
