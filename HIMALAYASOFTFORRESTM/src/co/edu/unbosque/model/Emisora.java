@@ -3,12 +3,12 @@ package co.edu.unbosque.model;
 import java.util.ArrayList;
 
 import co.edu.unbosque.model.persistence.Archivo;
-import co.edu.unbosque.model.persistence.CaracteristicasEmisora;
+import co.edu.unbosque.model.persistence.CaracteristicaEmisora;
 
 public class Emisora {
 
 	private Archivo archivo;
-	private CaracteristicasEmisora caracteristicasEmisora;
+	private CaracteristicaEmisora caracteristicasEmisora;
 	private ArrayList<PistaMusical> pistasMusicales;
 	private ParrillaMusical parillaDelDia;
 	private String nombreEmisora;
@@ -24,7 +24,7 @@ public class Emisora {
 
 	public Emisora() {
 		this.archivo = new Archivo();
-		this.caracteristicasEmisora = new CaracteristicasEmisora();
+		this.caracteristicasEmisora = new CaracteristicaEmisora();
 		this.pistasMusicales = new ArrayList<PistaMusical>();
 		this.parillaDelDia = new ParrillaMusical();
 

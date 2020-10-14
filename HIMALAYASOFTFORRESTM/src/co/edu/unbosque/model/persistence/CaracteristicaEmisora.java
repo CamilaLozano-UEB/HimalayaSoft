@@ -4,12 +4,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class CaracteristicasEmisora extends Persistence {
+public class CaracteristicaEmisora extends Persistence {
 
 	private final String RUTA_CARACTERISTICAS = "./Data/Caracteristicas.properties";
 	private Properties prop;
 
-	public CaracteristicasEmisora() {
+	public CaracteristicaEmisora() {
 		// TODO Auto-generated constructor stub
 		prop = new Properties();
 	}
