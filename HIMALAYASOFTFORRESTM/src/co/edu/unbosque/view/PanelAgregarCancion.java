@@ -43,7 +43,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón
+	 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 	 * 
 	 *         Recibe como entrada los valores que corresponden a cada componente
 	 *         (lo que dice)
@@ -71,7 +71,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		campoTextoArchivo.setBackground(new Color(194, 210, 214));
 
 		/**
-		 * @author Nicolás Peña Mogollón
+		 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 		 * 
 		 *         El DropTarget se asocia con un componente cuando ese componente desea
 		 *         aceptar un drop durante las operaciones de drag and drop, en este
@@ -84,9 +84,9 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón
+	 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 	 * 
-	 *         Añade los componentes al panel que corresponde, para luego añadirlos
+	 *         AÃ±ade los componentes al panel que corresponde, para luego aï¿½adirlos
 	 *         al principal
 	 */
 	public void agregarComponentes() {
@@ -107,7 +107,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón
+	 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 	 * 
 	 *         Recibe los datos de la tabla en forma de arreglo bidimensional para
 	 *         agregarlos a la tabla
@@ -115,17 +115,17 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 */
 	public void crearTabla(String[][] datos) {
 		
-		String[] dias = { "Canción", "Autor", " Genero" };
+		String[] dias = { "Canciï¿½n", "Autor", " Genero" };
 		tablaCanciones = new JTable(datos, dias);
 		scroll = new JScrollPane(tablaCanciones);
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón
+	 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 	 * 
-	 *         Métodos por defecto de la interfaz, no se usan ya que no es necesario
-	 *         saber cuándo el puntero está arrastrando el elemento, cuándo sale de
-	 *         la parte operativa, cuándo está sobre esta o cuándo se hacen
+	 *         MÃ©todos por defecto de la interfaz, no se usan ya que no es necesario
+	 *         saber cuando el puntero estï¿½ arrastrando el elemento, cuÃ¡ndo sale de
+	 *         la parte operativa, cuÃ¡ndo estÃ¡ sobre esta o cuï¿½ndo se hacen
 	 *         modificaciones
 	 * @param dtde
 	 */
@@ -143,10 +143,10 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón
+	 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 	 *
-	 *         Método de DropTargetListener, que usa DropTargetDropEvent para
-	 *         generar el evento al terminar la operación de arrastre
+	 *         MÃ©todo de DropTargetListener, que usa DropTargetDropEvent para
+	 *         generar el evento al terminar la operaciï¿½n de arrastre
 	 * @param dtde
 	 */
 
@@ -154,19 +154,19 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		try {
 
 			/**
-			 * @author Nicolás Peña Mogollón
+			 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 			 *
-			 *         El método getTransferable de la clase DropTargetDropEvent retorna un
+			 *         El mÃ©todo getTransferable de la clase DropTargetDropEvent retorna un
 			 *         objeto ransferable asociado con el Drop. Cuando el usuario interviene
 			 *         con el drop. Este se almacena en tr. Un objeto de la clase
 			 *         Transferable para que se puedan proporcionar los datos en la
-			 *         operación de transferencia.
+			 *         operaciÃ³n de transferencia.
 			 */
 
 			Transferable tr = dtde.getTransferable();
 
 			/**
-			 * @author Nicolás Peña Mogollón
+			 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 			 *
 			 *         Devuelve una matriz de objetos DataFlavor (Clase que encapsula un
 			 *         tipo de contenido (datos), normalmente MIME) que indica los tipos en
@@ -177,7 +177,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 			for (int i = 0; i < flavors.length; i++) {
 
 				/**
-				 * @author Nicolás Peña Mogollón
+				 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 				 *
 				 *         Se verifica si el tipo de datos representa una lista de objetos de
 				 *         archivo
@@ -186,7 +186,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 				if (flavors[i].isFlavorJavaFileListType()) {
 
 					/**
-					 * @author Nicolás Peña Mogollón
+					 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 					 *
 					 *         Se acepta el Drop y DnDConstants.ACTION_COPY_OR_MOVE determina que se
 					 *         copian los datos
@@ -195,33 +195,33 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 					dtde.acceptDrop(DnDConstants.ACTION_COPY_OR_MOVE);
 
 					/**
-					 * @author Nicolás Peña Mogollón
+					 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 					 *
-					 *         El método getTransferData retorna un objeto que representa los datos
-					 *         a transferir que toma de flavors en la posición i, para luego
-					 *         añadirlos a una lista
+					 *         El mÃ©todo getTransferData retorna un objeto que representa los datos
+					 *         a transferir que toma de flavors en la posiciÃ³n i, para luego
+					 *         aÃ±adirlos a una lista
 					 */
 
 					@SuppressWarnings("rawtypes")
 					java.util.List list = (java.util.List) tr.getTransferData(flavors[i]);
 
 					/**
-					 * @author Nicolás Peña Mogollón
+					 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 					 *
-					 *         Se añade la ruta o el nombre del archivo al área de texto
+					 *         Se aÃ±ade la ruta o el nombre del archivo al ï¿½rea de texto
 					 */
 					for (int j = 0; j < list.size(); j++) {
 
 						/**
-						 * @author Nicolás Peña Mogollón
+						 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 						 *
-						 *         El método apend añade nueva información a el JTextArea
+						 *         El mÃ©todo apend aï¿½ade nueva informaciï¿½n a el JTextArea
 						 */
 						campoTextoArchivo.append(list.get(j) + "\n");
 					}
 
 					/**
-					 * @author Nicolás Peña Mogollón
+					 * @author NicolÃ¡s PeÃ±a MogollÃ³n
 					 *
 					 *         Se da por terminado el drop
 					 */

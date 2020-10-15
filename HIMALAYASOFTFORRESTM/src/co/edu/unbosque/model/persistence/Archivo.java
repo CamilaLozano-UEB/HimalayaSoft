@@ -13,7 +13,7 @@ public class Archivo extends Persistence {
 	private final String RUTA_PARRILLA = "./Data/Parrilla.txt";
 
 	/**
-	 * @author Nicol�s Pe�a Mogoll�n - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Toma los datos de la canci�n ingresada y lo escribe en el archivo
@@ -35,7 +35,7 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicol�s Pe�a Mogoll�n - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Recibe los datos de la parrilla de reproducci�n en forma de arreglo
@@ -61,7 +61,7 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicol�s Pe�a Mogoll�n - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Lee el archivo de las canciones y retorna un String con la
@@ -92,7 +92,7 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicol�s Pe�a Mogoll�n - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Lee el archivo de la parrilla de reproducci�n y retorna un arreglo de
@@ -123,10 +123,10 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicol�s Pe�a Mogoll�n - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Cuenta el n�mero de l�neas que tiene el archivo retornando ese valor.
+	 *         Cuenta el número de líneas que tiene el archivo retornando ese valor.
 	 * @return
 	 */
 	public int contarLineas(String dato) {

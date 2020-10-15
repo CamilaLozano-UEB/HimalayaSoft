@@ -25,7 +25,7 @@ public class PanelCancion extends JPanel {
 	}
 
 	/**
-	 * @author María Camila Lozano
+	 * @author MarÃ­a Camila Lozano
 	 * 
 	 *         Recibe los valores de entrada de cada componente
 	 * @param etiquetas
@@ -46,7 +46,7 @@ public class PanelCancion extends JPanel {
 	}
 
 	/**
-	 * @author María Camila Lozano
+	 * @author MarÃ­a Camila Lozano
 	 * 
 	 *         Asigna los valores para las etiquetas que mostraran los valores de
 	 *         resultados
@@ -62,7 +62,7 @@ public class PanelCancion extends JPanel {
 	}
 
 	/**
-	 * @author María Camila Lozano
+	 * @author MarÃ­a Camila Lozano
 	 * 
 	 *         Agrega cada componente al panel
 	 * @param etiquetas

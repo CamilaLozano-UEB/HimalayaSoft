@@ -3,7 +3,6 @@ package co.edu.unbosque.view;
 import java.awt.BorderLayout;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -74,5 +73,5 @@ public class PanelEmisora extends JPanel {
 	public String getRUTA_ICONO() {
 		return RUTA_ICONO;
 	}
-	
+
 }

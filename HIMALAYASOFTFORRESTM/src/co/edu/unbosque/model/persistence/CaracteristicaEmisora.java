@@ -16,8 +16,8 @@ public class CaracteristicaEmisora extends Persistence {
 	}
 
 	/**
-	 * @author Nicol�s Pe�a Mogoll�n - Mar�a Camila Lozano Gutierrez - Juana
-	 *         Valentina Torres Parrado
+	 * @author Nicolás Peña Mogollón - María Camila Lozano - Juana Valentina Torres
+	 *         Parrado
 	 * 
 	 *         Recibe los datos de la emisora y los guarda en el archivo de
 	 *         propiedades.
@@ -38,28 +38,27 @@ public class CaracteristicaEmisora extends Persistence {
 		return true;
 	}
 
-	
 	/**
 	 * @author Carlos Ballen
-	 * @param String dato a leer     
 	 * 
-	 *  Lee el valor pedido de dato del archivo properties.
+	 *         Lee el valor pedido de dato del archivo properties.
+	 * @param String dato a leer
+	 * 
 	 */
 	@Override
 	public String leer(String dato) {
 		// TODO Auto-generated method stub
 		// Se definen en la construcci�n de la vista
-		String linea="";
-		
+		String linea = "";
+
 		try {
 			prop.load(new FileInputStream(RUTA_CARACTERISTICAS));
-			linea=prop.getProperty(dato);
-		}
-		catch(IOException e) {
+			linea = prop.getProperty(dato);
+		} catch (IOException e) {
 			return null;
 		}
 		return linea;
-	
+
 	}
 
 }
