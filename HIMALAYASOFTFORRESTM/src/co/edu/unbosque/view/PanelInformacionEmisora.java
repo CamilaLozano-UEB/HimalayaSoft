@@ -7,61 +7,59 @@ import javax.swing.border.*;
 public class PanelInformacionEmisora extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	private JLabel etiquetaNombreEmisora;
 	private JLabel etiquetaModoTransmision;
 	private JLabel etiquetaTipoMusica;
 
-	private JComboBox<String> listaModos;
-	
+	private JComboBox<String> comboModoTransmision;
+
 	private JTextField textoNombreEmisora;
 	private JTextField textoTipoMusica;
-	
+
 	private JButton botonGuardar;
 	private JButton botonCancelar;
 
-
 	public PanelInformacionEmisora() {
 
-		GridLayout grid=new GridLayout(2,4);
+		GridLayout grid = new GridLayout(2, 4);
 		setLayout(grid);
-		setBorder( new TitledBorder( "Informacion Emisora"));
-		
+		setBorder(new TitledBorder("Informacion Emisora"));
+
 	}
-	
+
 	public void asignarValores(String[] titulos) {
 
 		etiquetaNombreEmisora = new JLabel(titulos[0]);
 		etiquetaModoTransmision = new JLabel(titulos[1]);
 		etiquetaTipoMusica = new JLabel(titulos[2]);
-		
-		listaModos = new JComboBox<String>();
-		listaModos.addItem(titulos[3]);
-		listaModos.addItem(titulos[4]);
-		listaModos.addItem(titulos[5]);
+
+		comboModoTransmision = new JComboBox<String>();
+		comboModoTransmision.addItem(titulos[3]);
+		comboModoTransmision.addItem(titulos[4]);
+		comboModoTransmision.addItem(titulos[5]);
 
 		textoNombreEmisora = new JTextField();
 		textoTipoMusica = new JTextField();
 
 		botonGuardar = new JButton(titulos[6]);
 		botonCancelar = new JButton(titulos[7]);
-		
+
 	}
-	
+
 	public void agregarComponentes() {
-		
+
 		add(etiquetaNombreEmisora);
-		add(etiquetaModoTransmision);;
+		add(etiquetaModoTransmision);
 		add(etiquetaTipoMusica);
 		add(botonGuardar);
 		add(textoNombreEmisora);
-		add(listaModos);
+		add(comboModoTransmision);
 		add(textoTipoMusica);
 		add(botonCancelar);
-		
+
 	}
-	
-	
+
 	public JLabel getEtiquetaNombreEmisora() {
 		return etiquetaNombreEmisora;
 	}
@@ -86,12 +84,12 @@ public class PanelInformacionEmisora extends JPanel {
 		this.etiquetaTipoMusica = etiquetaTipoMusica;
 	}
 
-	public JComboBox<String> getListaModos() {
-		return listaModos;
+	public JComboBox<String> getComboModoTransmision() {
+		return comboModoTransmision;
 	}
 
-	public void setListaModos(JComboBox<String> listaModos) {
-		this.listaModos = listaModos;
+	public void setComboModoTransmision(JComboBox<String> comboModoTransmision) {
+		this.comboModoTransmision = comboModoTransmision;
 	}
 
 	public JTextField getTextoNombreEmisora() {
@@ -129,27 +127,5 @@ public class PanelInformacionEmisora extends JPanel {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	public static void main(String[] args) {
-
-		PanelInformacionEmisora panel = new PanelInformacionEmisora();
-
-		String[] titulos = new String[8];
-		titulos[0]="Nombre de Emisora";
-		titulos[1]="Modo de Transmision";
-		titulos[2]="Tipo de Musica";
-		titulos[3]="FM";
-		titulos[4]="AM";
-		titulos[5]="Streaming";
-		titulos[6]="Guardar";
-		titulos[7]="Cancelar";
-		
-		panel.asignarValores(titulos);
-		panel.agregarComponentes();
-		JFrame frame = new JFrame();
-		frame.add(panel);
-		frame.setVisible(true);
-	}
-
 
 }
