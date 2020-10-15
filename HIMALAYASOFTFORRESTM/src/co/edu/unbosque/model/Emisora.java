@@ -31,7 +31,7 @@ public class Emisora {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez
 	 * @param nombreEmisora
 	 * @param modoTransmision
 	 * @param tipoMusica     
@@ -44,16 +44,24 @@ public class Emisora {
 		this.modoTransmision = modoTransmision;
 		this.tipoDeMusica = tipoMusica;
 	}
-
+	
+	
+	/**
+	 * @author Carlos Ballen
+	 * @param null     
+	 * 
+	 *  Lee los valores del archivo properties y los asigna a las variables.
+	 */
 	public void gestionarCaracteristicas() {
 
-		// Falta definir estructura
-		this.caracteristicasEmisora.leer();
-
+		this.nombreEmisora=this.caracteristicasEmisora.leer("NombreEmisora");
+		this.modoTransmision=this.caracteristicasEmisora.leer("ModoTransmision");
+		this.tipoDeMusica=this.caracteristicasEmisora.leer("TipoMusica");
 	}
 
+	
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * @param generoMusical
 	 * @param nombreCancion
@@ -61,7 +69,7 @@ public class Emisora {
 	 * @param nombreArchivoMusica 
 	 * 
 	 * Crea un objeto de la clase pista musical para
-	 *                            añadirlo al arreglo y lo escribe en el archivo.
+	 *                            aï¿½adirlo al arreglo y lo escribe en el archivo.
 	 */
 	public boolean agregarPistaMusical(String nombreCancion, String nombreArtista, String generoMusical,
 			String nombreArchivoMusica) {
@@ -81,7 +89,7 @@ public class Emisora {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Toma los valores de los atributos actuales y los actualiza en el
@@ -99,10 +107,10 @@ public class Emisora {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Toma los datos de la canción ingresada y los agrega al archivo
+	 *         Toma los datos de la canciï¿½n ingresada y los agrega al archivo
 	 * @param nombreEmisora
 	 * @param modoTransmision
 	 * @param tipoMusica

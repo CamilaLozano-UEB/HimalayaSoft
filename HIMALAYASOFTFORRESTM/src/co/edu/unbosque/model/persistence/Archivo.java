@@ -13,10 +13,10 @@ public class Archivo extends Persistence {
 	private final String RUTA_PARRILLA = "./Data/Parrilla.txt";
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Toma los datos de la canción ingresada y lo escribe en el archivo
+	 *         Toma los datos de la canciï¿½n ingresada y lo escribe en el archivo
 	 */
 	@Override
 	public boolean escribir(String dato) {
@@ -35,10 +35,10 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Recibe los datos de la parrilla de reproducción en forma de arreglo
+	 *         Recibe los datos de la parrilla de reproducciï¿½n en forma de arreglo
 	 *         para luego organizarla y guardarla en el archivo
 	 * @param datos
 	 * @return
@@ -61,18 +61,18 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Lee el archivo de las canciones y retorna un String con la
-	 *         información separada por caracteres específicos
+	 *         informaciï¿½n separada por caracteres especï¿½ficos
 	 */
 	@Override
-	public String leer() {
+	public String leer(String dato) {
 		// TODO Auto-generated method stub
 		String linea = "";
 		String data = "";
-		File f = new File(this.RUTA_CANCIONES);
+		File f = new File(dato);
 
 		try {
 			FileReader fr = new FileReader(f);
@@ -92,25 +92,25 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Lee el archivo de la parrilla de reproducción y retorna un arreglo de
+	 *         Lee el archivo de la parrilla de reproducciï¿½n y retorna un arreglo de
 	 *         tipo String con los valores de cada pista musical que tiene
 	 * @return
 	 */
-	public String[] leerArchivoParrilla() {
+	public String[] leerArchivo(String dato) {
 
-		String[] data = new String[this.contarLineas()];
+		String[] data = new String[this.contarLineas(dato)];
 		String linea = "";
 		int i = 0;
-		File f = new File(this.RUTA_PARRILLA);
+		File f = new File(dato);
 		try {
 			FileReader fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
 
 			linea = br.readLine();
-			while (linea != null && i < this.contarLineas()) {
+			while (linea != null && i < this.contarLineas(dato)) {
 				data[i] = linea;
 				linea = br.readLine();
 			}
@@ -123,17 +123,17 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Cuenta el número de líneas que tiene el archivo retornando ese valor.
+	 *         Cuenta el nï¿½mero de lï¿½neas que tiene el archivo retornando ese valor.
 	 * @return
 	 */
-	public int contarLineas() {
+	public int contarLineas(String dato) {
 		String linea = "";
 		int cont = 0;
 
-		File f = new File(this.RUTA_PARRILLA);
+		File f = new File(dato);
 		try {
 			FileReader fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);

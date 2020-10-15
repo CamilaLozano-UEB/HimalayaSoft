@@ -1,5 +1,6 @@
 package co.edu.unbosque.model.persistence;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -15,7 +16,7 @@ public class CaracteristicaEmisora extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolï¿½s Peï¿½a Mogollï¿½n - Marï¿½a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Recibe los datos de la emisora y los guarda en el archivo de
@@ -37,11 +38,28 @@ public class CaracteristicaEmisora extends Persistence {
 		return true;
 	}
 
+	
+	/**
+	 * @author Carlos Ballen
+	 * @param String dato a leer     
+	 * 
+	 *  Lee el valor pedido de dato del archivo properties.
+	 */
 	@Override
-	public String leer() {
+	public String leer(String dato) {
 		// TODO Auto-generated method stub
-		// Se definen en la construcción de la vista
-		return null;
+		// Se definen en la construcciï¿½n de la vista
+		String linea="";
+		
+		try {
+			prop.load(new FileInputStream(RUTA_CARACTERISTICAS));
+			linea=prop.getProperty(dato);
+		}
+		catch(IOException e) {
+			return null;
+		}
+		return linea;
+	
 	}
 
 }
