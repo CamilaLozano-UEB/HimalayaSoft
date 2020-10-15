@@ -18,11 +18,11 @@ public class PanelReproduccion extends JPanel {
 	private Icon icon_sound;
 
 	public PanelReproduccion() {
+		
 		setLayout(new GridLayout(1,2));
 		setVisible(true);
 		this.asignarValores();
 		this.agregarComponentes();
-
 	}
 
 	/**
@@ -32,6 +32,7 @@ public class PanelReproduccion extends JPanel {
 	 *         Se asigna los valores correspondientes a cada componente
 	 * 
 	 */
+	
 	public void asignarValores() {
 		botonSonido_2 = new JButton();
 		botonSonido_2.setBorder(null);
@@ -52,6 +53,7 @@ public class PanelReproduccion extends JPanel {
 	 *         correspondientes de los botones
 	 * 
 	 */
+	
 	public void agregarComponentes() {
     	img_sound = new ImageIcon("./Imagenes/SinSonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));

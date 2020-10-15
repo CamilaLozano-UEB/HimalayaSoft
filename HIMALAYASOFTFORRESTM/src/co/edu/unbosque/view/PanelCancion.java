@@ -145,8 +145,4 @@ public class PanelCancion extends JPanel {
 		this.etiquetaImagenPortada = etiquetaImagenPortada;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 }

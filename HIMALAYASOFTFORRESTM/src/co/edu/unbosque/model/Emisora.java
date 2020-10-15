@@ -49,7 +49,6 @@ public class Emisora {
 	 * @author Carlos Ballen
 	 * 
 	 *         Lee los valores del archivo properties y los asigna a las variables.
-	 * @param null
 	 * 
 	 */
 	public void gestionarCaracteristicas() {
