@@ -19,6 +19,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
 
 public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
@@ -37,8 +38,10 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JButton botonCancelar;
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
+	private String[] titulosTabla;
 
 	public PanelAgregarCancion() {
+		this.titulosTabla= new String[3];
 		this.setLayout(new GridLayout(1, 2));
 	}
 
@@ -51,22 +54,25 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 */
 	public void asignarValores(String[] titulos) {
 
+		setBorder(new TitledBorder(titulos[0]));
 		panelRegistro = new JPanel();
 		panelRegistro.setLayout(new GridLayout(5, 2));
 
-		etiquetaNombreCancion = new JLabel(titulos[0]);
-		etiquetaNombreAutor = new JLabel(titulos[1]);
-		etiquetaGeneroMusica = new JLabel(titulos[2]);
-		etiquetaArchivo = new JLabel(titulos[3]);
+		etiquetaNombreCancion = new JLabel(titulos[1]);
+		etiquetaNombreAutor = new JLabel(titulos[2]);
+		etiquetaGeneroMusica = new JLabel(titulos[3]);
+		etiquetaArchivo = new JLabel(titulos[4]);
 
 		campoTextoNombreCancion = new JTextField();
 		campoTextoNombreAutor = new JTextField();
 		campoTextoGeneroMusica = new JTextField();
 		campoTextoArchivo = new JTextArea();
 
-		botonAgregar = new JButton(titulos[4]);
-		botonCancelar = new JButton(titulos[5]);
-
+		botonAgregar = new JButton(titulos[5]);
+		botonCancelar = new JButton(titulos[6]);
+		titulosTabla[0] = titulos[7];
+		titulosTabla[1] = titulos[8];
+		titulosTabla[2] = titulos[9];
 		campoTextoArchivo.setEditable(false);
 		campoTextoArchivo.setBackground(new Color(194, 210, 214));
 
@@ -86,7 +92,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Añade los componentes al panel que corresponde, para luego a�adirlos
+	 *         Añade los componentes al panel que corresponde, para luego añadirlos
 	 *         al principal
 	 */
 	public void agregarComponentes() {
@@ -101,7 +107,6 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		panelRegistro.add(campoTextoArchivo);
 		panelRegistro.add(botonAgregar);
 		panelRegistro.add(botonCancelar);
-		this.add(scroll);
 		this.add(panelRegistro);
 
 	}
@@ -114,10 +119,11 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 * @param datos
 	 */
 	public void crearTabla(String[][] datos) {
-		
-		String[] dias = { "Canci�n", "Autor", " Genero" };
-		tablaCanciones = new JTable(datos, dias);
+
+		String[] titulos = { titulosTabla[0], titulosTabla[1], titulosTabla[2] };
+		tablaCanciones = new JTable(datos, titulos);
 		scroll = new JScrollPane(tablaCanciones);
+		this.add(scroll);
 	}
 
 	/**
@@ -233,9 +239,9 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 				}
 			}
 			dtde.rejectDrop();
-			
+
 		} catch (Exception e) {
-			
+
 			JOptionPane.showMessageDialog(null, "Error al insetar imagen!!!", "Warning", JOptionPane.WARNING_MESSAGE);
 			dtde.rejectDrop();
 		}

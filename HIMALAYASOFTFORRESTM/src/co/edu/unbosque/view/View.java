@@ -16,9 +16,17 @@ public class View extends JFrame {
 		panelInformacion = new PanelInformacion();
 		panelEmisora = new PanelEmisora();
 		pestañas = new JTabbedPane();
-		pestañas.add(panelEmisora, "Inicio");
-		pestañas.add(panelInformacion, "Gestion de informaci�n");
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setSize(500, 500);
+		this.setLocationRelativeTo(null);
+		this.setVisible(true);
+	}
+
+	public void agregarComponentes(String[] titulos) {
+		pestañas.add(panelEmisora, titulos[0]);
+		pestañas.add(panelInformacion, titulos[1]);
 		getContentPane().add(pestañas);
+
 	}
 
 	public PanelEmisora getPanelEmisora() {

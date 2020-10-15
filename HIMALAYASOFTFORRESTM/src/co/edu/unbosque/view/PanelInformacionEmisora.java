@@ -22,40 +22,42 @@ public class PanelInformacionEmisora extends JPanel {
 
 	public PanelInformacionEmisora() {
 
-		GridLayout grid = new GridLayout(2, 4);
-		setLayout(grid);
-		setBorder(new TitledBorder("Informacion Emisora"));
-
+		setLayout(new GridLayout(6, 2));
 	}
 
 	public void asignarValores(String[] titulos) {
 
-		etiquetaNombreEmisora = new JLabel(titulos[0]);
-		etiquetaModoTransmision = new JLabel(titulos[1]);
-		etiquetaTipoMusica = new JLabel(titulos[2]);
+		setBorder(new TitledBorder(titulos[0]));
+
+		etiquetaNombreEmisora = new JLabel(titulos[1]);
+		etiquetaModoTransmision = new JLabel(titulos[2]);
+		etiquetaTipoMusica = new JLabel(titulos[3]);
 
 		comboModoTransmision = new JComboBox<String>();
-		comboModoTransmision.addItem(titulos[3]);
 		comboModoTransmision.addItem(titulos[4]);
 		comboModoTransmision.addItem(titulos[5]);
+		comboModoTransmision.addItem(titulos[6]);
 
 		textoNombreEmisora = new JTextField();
 		textoTipoMusica = new JTextField();
 
-		botonGuardar = new JButton(titulos[6]);
-		botonCancelar = new JButton(titulos[7]);
+		botonGuardar = new JButton(titulos[7]);
+		botonCancelar = new JButton(titulos[8]);
 
 	}
 
 	public void agregarComponentes() {
 
 		add(etiquetaNombreEmisora);
-		add(etiquetaModoTransmision);
-		add(etiquetaTipoMusica);
-		add(botonGuardar);
 		add(textoNombreEmisora);
+
+		add(etiquetaModoTransmision);
 		add(comboModoTransmision);
+
+		add(etiquetaTipoMusica);
 		add(textoTipoMusica);
+
+		add(botonGuardar);
 		add(botonCancelar);
 
 	}

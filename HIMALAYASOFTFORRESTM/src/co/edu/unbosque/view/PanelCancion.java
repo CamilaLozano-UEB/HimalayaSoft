@@ -19,7 +19,6 @@ public class PanelCancion extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public PanelCancion() {
-		setBorder(new TitledBorder("Cancion Reproducion"));
 		setLayout(new GridLayout(2, 1));
 
 	}
@@ -31,13 +30,14 @@ public class PanelCancion extends JPanel {
 	 * @param etiquetas
 	 */
 
-	public void asignarValoresReproduccion(String[] etiquetas) {
+	public void asignarValores(String[] etiquetas) {
 
+		setBorder(new TitledBorder(etiquetas[0]));
 		panelCancionInfo = new JPanel();
 		panelCancionInfo.setLayout(new GridLayout(3, 2));
-		etiquetaNombreCancion = new JLabel(etiquetas[0]);
-		etiquetaautor = new JLabel(etiquetas[1]);
-		etiquetageneroMusical = new JLabel(etiquetas[2]);
+		etiquetaNombreCancion = new JLabel(etiquetas[1]);
+		etiquetaautor = new JLabel(etiquetas[2]);
+		etiquetageneroMusical = new JLabel(etiquetas[3]);
 		etiquetaCancionSelect = new JLabel();
 		etiquetaAutorSelect = new JLabel();
 		etiquetaGeneroMusicalSelect = new JLabel();

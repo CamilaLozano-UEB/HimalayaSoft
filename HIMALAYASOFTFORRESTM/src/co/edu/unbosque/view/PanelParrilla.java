@@ -2,6 +2,8 @@ package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -17,26 +19,31 @@ public class PanelParrilla extends JPanel {
 	private JTable tablaParrilla;
 	private JComboBox<String> comboNombreCancion;
 	private JScrollPane sp;
+	private String[] titulosTabla;
+	private JPanel contenedor;
 
 	public PanelParrilla() {
 
 		setBackground(Color.white);
-		setBorder(new TitledBorder("Parrilla Musical"));
 		setLayout(new BorderLayout());
+		this.titulosTabla = new String[3];
 	}
 
 	/**
 	 * 
-	 * @author Juana Valentina Torres Parrado Se obtiene un String bidimencional
+	 * @author Juana Valentina Torres Parrado Se obtiene un String bidimensional
 	 *         para generar la tabla de la parrilla
 	 * @param datos
 	 * 
 	 */
 	public void crearTabla(String[][] datos) {
-		String[] dias = { "Cancion", "Autor", "Genero" };
-		tablaParrilla = new JTable(datos, dias);
-		sp = new JScrollPane(tablaParrilla);
 
+		String[] titulos = { titulosTabla[0], titulosTabla[1], titulosTabla[2] };
+		tablaParrilla = new JTable(datos, titulos);
+		sp = new JScrollPane(tablaParrilla);
+		add(sp, BorderLayout.SOUTH);
+		repaint();
+		validate();
 	}
 
 	/**
@@ -45,14 +52,17 @@ public class PanelParrilla extends JPanel {
 	 *         a cada componente
 	 * 
 	 */
-	public void asignarValores() {
-
-		botonAgregar = new JButton("Agregar");
+	public void asignarValores(String[] titulos) {
+		contenedor = new JPanel();
+		contenedor.setLayout(new GridLayout(1, 2));
+		setBorder(new TitledBorder(titulos[0]));
+		botonAgregar = new JButton(titulos[1]);
 		comboNombreCancion = new JComboBox<String>();
-		comboNombreCancion.addItem("NombreCanciones");
-
+		comboNombreCancion.addItem(titulos[2]);
+		titulosTabla[0] = titulos[3];
+		titulosTabla[1] = titulos[4];
+		titulosTabla[2] = titulos[5];
 	}
-
 
 	/**
 	 * 
@@ -61,9 +71,10 @@ public class PanelParrilla extends JPanel {
 	 * 
 	 */
 	public void agregarComponentes() {
-		add(sp, BorderLayout.SOUTH);
-		add(comboNombreCancion, BorderLayout.CENTER);
-		add(botonAgregar, BorderLayout.EAST);
+		contenedor.add(comboNombreCancion);
+		contenedor.add(botonAgregar);
+
+		add(contenedor, BorderLayout.PAGE_START);
 	}
 
 	public JButton getBotonAgregar() {

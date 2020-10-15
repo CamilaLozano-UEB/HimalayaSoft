@@ -14,13 +14,12 @@ public class Emisora {
 	private String nombreEmisora;
 	private String modoTransmision;
 	private String tipoDeMusica;
-	private String titulosPanelDatosEmisora;
-	private String titulosPanelParrilla;
-	private String titulosPanelReproduccion;
-	private String titulosPanelCancion;
-	private String titulosPanelAgregarCancion;
-	private String titulosPanelAjustarEmisora;
-	private String titulosView;
+	private String[] titulosPanelDatosEmisora;
+	private String[] titulosPanelParrilla;
+	private String[] titulosPanelCancion;
+	private String[] titulosPanelAgregarCancion;
+	private String[] titulosPanelInformacionEmisora;
+	private String[] titulosView;
 
 	public Emisora() {
 		this.archivo = new Archivo();
@@ -53,9 +52,17 @@ public class Emisora {
 	 */
 	public void gestionarCaracteristicas() {
 
-		this.nombreEmisora = this.caracteristicasEmisora.leer("NombreEmisora");
-		this.modoTransmision = this.caracteristicasEmisora.leer("ModoTransmision");
-		this.tipoDeMusica = this.caracteristicasEmisora.leer("TipoMusica");
+		this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora");
+		this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision");
+		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica");
+		this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
+		this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
+		this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
+		this.titulosPanelAgregarCancion = this.caracteristicasEmisora.leer("titulosPanelAgregarCancion").split("~");
+		this.titulosPanelInformacionEmisora = this.caracteristicasEmisora.leer("titulosPanelInformacionEmisora")
+				.split("~");
+		this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
+
 	}
 
 	/**
@@ -186,59 +193,51 @@ public class Emisora {
 		this.tipoDeMusica = tipoDeMusica;
 	}
 
-	public String getTitulosPanelDatosEmisora() {
+	public String[] getTitulosPanelDatosEmisora() {
 		return titulosPanelDatosEmisora;
 	}
 
-	public void setTitulosPanelDatosEmisora(String titulosPanelDatosEmisora) {
+	public void setTitulosPanelDatosEmisora(String[] titulosPanelDatosEmisora) {
 		this.titulosPanelDatosEmisora = titulosPanelDatosEmisora;
 	}
 
-	public String getTitulosPanelParrilla() {
+	public String[] getTitulosPanelParrilla() {
 		return titulosPanelParrilla;
 	}
 
-	public void setTitulosPanelParrilla(String titulosPanelParrilla) {
+	public void setTitulosPanelParrilla(String[] titulosPanelParrilla) {
 		this.titulosPanelParrilla = titulosPanelParrilla;
 	}
 
-	public String getTitulosPanelReproduccion() {
-		return titulosPanelReproduccion;
-	}
-
-	public void setTitulosPanelReproduccion(String titulosPanelReproduccion) {
-		this.titulosPanelReproduccion = titulosPanelReproduccion;
-	}
-
-	public String getTitulosPanelCancion() {
+	public String[] getTitulosPanelCancion() {
 		return titulosPanelCancion;
 	}
 
-	public void setTitulosPanelCancion(String titulosPanelCancion) {
+	public void setTitulosPanelCancion(String[] titulosPanelCancion) {
 		this.titulosPanelCancion = titulosPanelCancion;
 	}
 
-	public String getTitulosPanelAgregarCancion() {
+	public String[] getTitulosPanelAgregarCancion() {
 		return titulosPanelAgregarCancion;
 	}
 
-	public void setTitulosPanelAgregarCancion(String titulosPanelAgregarCancion) {
+	public void setTitulosPanelAgregarCancion(String[] titulosPanelAgregarCancion) {
 		this.titulosPanelAgregarCancion = titulosPanelAgregarCancion;
 	}
 
-	public String getTitulosPanelAjustarEmisora() {
-		return titulosPanelAjustarEmisora;
+	public String[] getTitulosPanelInformacionEmisora() {
+		return titulosPanelInformacionEmisora;
 	}
 
-	public void setTitulosPanelAjustarEmisora(String titulosPanelAjustarEmisora) {
-		this.titulosPanelAjustarEmisora = titulosPanelAjustarEmisora;
+	public void setTitulosPanelInformacionEmisora(String[] titulosPanelInformacionEmisora) {
+		this.titulosPanelInformacionEmisora = titulosPanelInformacionEmisora;
 	}
 
-	public String getTitulosView() {
+	public String[] getTitulosView() {
 		return titulosView;
 	}
 
-	public void setTitulosView(String titulosView) {
+	public void setTitulosView(String[] titulosView) {
 		this.titulosView = titulosView;
 	}
 

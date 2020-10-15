@@ -10,15 +10,39 @@ public class Controller implements ActionListener {
 
 	private View vista;
 	private Emisora emisora;
-	
+
 	public Controller() {
-		vista=new View(this);
-		emisora= new Emisora();
+		vista = new View(this);
+		emisora = new Emisora();
+		inicializarEmisora();
+		inicializarComponentesVista();
+
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
 	}
 
+	public void inicializarEmisora() {
+		this.emisora.gestionarCaracteristicas();
+	}
+
+	public void inicializarComponentesVista() {
+		this.vista.agregarComponentes(this.emisora.getTitulosView());
+		this.vista.getPanelEmisora().getPanelCancion().asignarValores(this.emisora.getTitulosPanelCancion());
+		this.vista.getPanelEmisora().getPanelCancion().agregarComponentes();
+		this.vista.getPanelEmisora().getPanelDatosEmisora().asignarValores(this.emisora.getTitulosPanelDatosEmisora());
+		this.vista.getPanelEmisora().getPanelDatosEmisora().agregarComponentes();
+		this.vista.getPanelEmisora().getPanelParrilla().asignarValores(this.emisora.getTitulosPanelParrilla());
+		this.vista.getPanelEmisora().getPanelParrilla().agregarComponentes();
+		this.vista.getPanelInformacion().getPanelAgregarCancion()
+				.asignarValores(this.emisora.getTitulosPanelAgregarCancion());
+		this.vista.getPanelInformacion().getPanelAgregarCancion().agregarComponentes();
+		this.vista.getPanelInformacion().getPanelInformacionEmisora()
+				.asignarValores(this.emisora.getTitulosPanelInformacionEmisora());
+		this.vista.getPanelInformacion().getPanelInformacionEmisora().agregarComponentes();
+
+	}
 }

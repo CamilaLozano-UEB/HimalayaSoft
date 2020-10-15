@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class CaracteristicaEmisora extends Persistence {
 
-	private final String RUTA_CARACTERISTICAS = "./Data/Caracteristicas.properties";
+	private final String RUTA_CARACTERISTICAS = "./Data/Configuracion.properties";
 	private Properties prop;
 
 	public CaracteristicaEmisora() {

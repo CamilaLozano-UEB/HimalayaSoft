@@ -5,7 +5,7 @@ public class AplMain {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		new Controller();
+		Controller control=new Controller();
 	}
 
 }
