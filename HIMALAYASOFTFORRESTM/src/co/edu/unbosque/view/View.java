@@ -17,7 +17,7 @@ public class View extends JFrame {
 		panelEmisora = new PanelEmisora();
 		pestanas = new JTabbedPane();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		this.setSize(500, 500);
+		this.setSize(1000, 700);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 	}
