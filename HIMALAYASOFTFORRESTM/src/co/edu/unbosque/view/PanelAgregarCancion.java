@@ -43,6 +43,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	public PanelAgregarCancion() {
 		this.titulosTabla= new String[3];
 		this.setLayout(new GridLayout(1, 2));
+		
 	}
 
 	/**
@@ -57,6 +58,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		setBorder(new TitledBorder(titulos[0]));
 		panelRegistro = new JPanel();
 		panelRegistro.setLayout(new GridLayout(5, 2));
+		panelRegistro.setBackground(new Color(144, 215, 247));
 
 		etiquetaNombreCancion = new JLabel(titulos[1]);
 		etiquetaNombreAutor = new JLabel(titulos[2]);

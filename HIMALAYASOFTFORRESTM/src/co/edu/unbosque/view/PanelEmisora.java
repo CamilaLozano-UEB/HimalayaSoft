@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -18,14 +19,16 @@ public class PanelEmisora extends JPanel {
 
 	public PanelEmisora() {
 		setLayout(new BorderLayout());
-
-		panelCancion = new PanelCancion();
+        setBackground(Color.white);
+		
+        panelCancion = new PanelCancion();
 		panelDatosEmisora = new PanelDatosEmisora();
 		panelParrilla = new PanelParrilla();
 		panelReproduccion = new PanelReproduccion();
 
 		etiquetaImagen = new JLabel();
 		etiquetaImagen.setIcon(new ImageIcon(RUTA_ICONO));
+		
 		this.agregarComponentes();
 
 	}

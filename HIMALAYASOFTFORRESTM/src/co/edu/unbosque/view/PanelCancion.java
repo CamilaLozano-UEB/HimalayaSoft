@@ -1,6 +1,8 @@
 package co.edu.unbosque.view;
 
 import java.awt.GridLayout;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
@@ -41,7 +43,10 @@ public class PanelCancion extends JPanel {
 		etiquetaCancionSelect = new JLabel();
 		etiquetaAutorSelect = new JLabel();
 		etiquetaGeneroMusicalSelect = new JLabel();
-		etiquetaImagenPortada = new JLabel("cualquier cosa");
+		
+		Icon Gif_1 = new ImageIcon("./Imagenes/Musica.gif");
+        etiquetaImagenPortada = new JLabel(Gif_1);
+        
 
 	}
 
@@ -145,4 +150,5 @@ public class PanelCancion extends JPanel {
 		this.etiquetaImagenPortada = etiquetaImagenPortada;
 	}
 
+	
 }

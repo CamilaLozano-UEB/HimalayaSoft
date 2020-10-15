@@ -22,6 +22,7 @@ public class PanelInformacionEmisora extends JPanel {
 
 	public PanelInformacionEmisora() {
 
+		
 		setLayout(new GridLayout(6, 2));
 	}
 

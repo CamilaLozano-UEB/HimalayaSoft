@@ -10,12 +10,12 @@ public class View extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private PanelInformacion panelInformacion;
 	private PanelEmisora panelEmisora;
-	private JTabbedPane pestañas;
+	private JTabbedPane pestanas;
 
 	public View(Controller control) {
 		panelInformacion = new PanelInformacion();
 		panelEmisora = new PanelEmisora();
-		pestañas = new JTabbedPane();
+		pestanas = new JTabbedPane();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(500, 500);
 		this.setLocationRelativeTo(null);
@@ -23,9 +23,9 @@ public class View extends JFrame {
 	}
 
 	public void agregarComponentes(String[] titulos) {
-		pestañas.add(panelEmisora, titulos[0]);
-		pestañas.add(panelInformacion, titulos[1]);
-		getContentPane().add(pestañas);
+		pestanas.add(panelEmisora, titulos[0]);
+		pestanas.add(panelInformacion, titulos[1]);
+		getContentPane().add(pestanas);
 
 	}
 
