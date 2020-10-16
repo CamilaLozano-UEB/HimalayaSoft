@@ -1,6 +1,7 @@
 package co.edu.unbosque.view;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 
 import co.edu.unbosque.controller.Controller;
@@ -40,6 +41,13 @@ public class View extends JFrame {
 		this.panelEmisora.getPanelReproduccion().getBotonPlay().addActionListener(control);
 		this.panelEmisora.getPanelReproduccion().getBotonPausa().addActionListener(control);
 
+	}
+
+	public void mostrarMensajeError(String mensaje) {
+		JOptionPane.showMessageDialog(null, mensaje, "Warning", JOptionPane.WARNING_MESSAGE);
+	}
+	public void mostrarMensajeAviso(String mensaje) {
+		JOptionPane.showMessageDialog(null, mensaje, "Information", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	public PanelEmisora getPanelEmisora() {

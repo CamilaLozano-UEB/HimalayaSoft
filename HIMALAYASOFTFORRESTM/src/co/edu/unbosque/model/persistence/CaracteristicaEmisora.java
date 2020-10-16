@@ -8,14 +8,16 @@ import java.util.Properties;
 public class CaracteristicaEmisora extends Persistence {
 
 	private final String directorio = "./Data/";
-	private final String gui_ES= "GUI_ES.properties";
-	private final String gui_EN= "GUI_EN.properties";
+	private final String gui_ES = "GUI_ES.properties";
+	private final String gui_EN = "GUI_EN.properties";
 	private final String archivoConfiguracion = "Configuraciones.properties";
 	private Properties prop;
+	private Properties propGUI;
 
 	public CaracteristicaEmisora() {
 		// TODO Auto-generated constructor stub
 		prop = new Properties();
+		propGUI = new Properties();
 	}
 
 	/**
@@ -55,7 +57,7 @@ public class CaracteristicaEmisora extends Persistence {
 		// TODO Auto-generated method stub
 		String linea = "";
 		String leng = "";
-		
+
 		try {
 			prop.load(new FileInputStream(directorio+archivoConfiguracion));
 			leng=prop.getProperty("idioma");
@@ -76,11 +78,10 @@ public class CaracteristicaEmisora extends Persistence {
 		return linea;
 	}
 
-
 	public String leer(String dato, String ruta) {
 
 		String linea = "";
-	
+
 		try {
 			prop.load(new FileInputStream(directorio+ruta));
 			linea=prop.getProperty(dato);
@@ -90,4 +91,37 @@ public class CaracteristicaEmisora extends Persistence {
 		}
 		return linea;
 	}
+
+	public Properties getProp() {
+		return prop;
+	}
+
+	public void setProp(Properties prop) {
+		this.prop = prop;
+	}
+
+	public Properties getPropGUI() {
+		return propGUI;
+	}
+
+	public void setPropGUI(Properties propGUI) {
+		this.propGUI = propGUI;
+	}
+
+	public String getDirectortio() {
+		return directortio;
+	}
+
+	public String getGui_ES() {
+		return gui_ES;
+	}
+
+	public String getGui_EN() {
+		return gui_EN;
+	}
+
+	public String getArchivoConfiguracion() {
+		return archivoConfiguracion;
+	}
+
 }

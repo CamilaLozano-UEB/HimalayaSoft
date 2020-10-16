@@ -23,14 +23,46 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 
-		if (event.getActionCommand()
-				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getBotonGuardar())) {
-			if (!this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoNombreEmisora().getText()
-					.equals("")&&!this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision().getSelectedItem().equals("")) {
-				
-			}
+		if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelInformacionEmisora().getGUARDAR())) {
+			this.gestionarDatosEmisora();
+			this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
+					this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
+			this.emisora.escribirArchivoEmisora();
+		} else if (event.getActionCommand()
+				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
+			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		}
 
+	}
+
+	public void gestionarDatosEmisora() {
+		if (!this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoNombreEmisora().getText()
+				.equals("")
+				&& !this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision()
+						.getSelectedItem().equals("Seleccione")
+				&& !this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision()
+						.getSelectedItem().equals("Please Select")
+				&& !this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoTipoMusica().getText()
+						.equals("")) {
+			String nombreEmisora = this.vista.getPanelInformacion().getPanelInformacionEmisora()
+					.getCampoTextoNombreEmisora().getText();
+			String modoTransmision = (String) this.vista.getPanelInformacion().getPanelInformacionEmisora()
+					.getComboModoTransmision().getSelectedItem();
+			String tipoMusica = this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoTipoMusica()
+					.getText();
+			String idioma = "";
+			if (this.vista.getPanelInformacion().getPanelInformacionEmisora().getRadio_EN().isSelected()) {
+				idioma = "EN";
+			} else {
+				idioma = "ES";
+			}
+			this.emisora.asignarInformacionEmisora(nombreEmisora, modoTransmision, tipoMusica, idioma);
+			vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
+			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
+		} else {
+			vista.mostrarMensajeError("Es necesario llenar los campos");
+			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
+		}
 	}
 
 	public void inicializarComponentesVista() {
@@ -48,5 +80,7 @@ public class Controller implements ActionListener {
 				.asignarValores(this.emisora.getTitulosPanelInformacionEmisora());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().agregarComponentes();
 		this.vista.actionListener(this);
+		this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
+				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 	}
 }
