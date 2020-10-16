@@ -1,4 +1,3 @@
-
 package co.edu.unbosque.view;
 
 import java.awt.Color;
@@ -39,6 +38,9 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
 	private String[] titulosTabla;
+	
+	public final String AGREGAR = "Agregar";
+	public final String CANCELAR = "Cancelar";
 
 	public PanelAgregarCancion() {
 		this.titulosTabla= new String[3];
@@ -71,7 +73,12 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		campoTextoArchivo = new JTextArea();
 
 		botonAgregar = new JButton(titulos[5]);
+		botonAgregar.setActionCommand(AGREGAR);
+
+		
 		botonCancelar = new JButton(titulos[6]);
+		botonCancelar.setActionCommand(CANCELAR);
+
 		titulosTabla[0] = titulos[7];
 		titulosTabla[1] = titulos[8];
 		titulosTabla[2] = titulos[9];

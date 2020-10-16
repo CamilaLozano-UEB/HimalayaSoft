@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 public class PanelReproduccion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private final String COMMAND_REPRODUCIR = "REPRODUCIR";
+	private final String COMMAND_PAUSAR = "PAUSAR";
 	private JButton botonPlay;
 	private JButton botonPausa;
 	private ImageIcon img_sound;
@@ -38,11 +40,14 @@ public class PanelReproduccion extends JPanel {
 		botonPausa.setBorder(null);
 		botonPausa.setOpaque(true);
 		botonPausa.setBackground(new Color(162, 118, 234));
+		botonPausa.setActionCommand(COMMAND_PAUSAR);
 
 		botonPlay = new JButton();
 		botonPlay.setBorder(null);
 		botonPlay.setOpaque(true);
 		botonPlay.setBackground(new Color(162, 118, 234));
+		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
+
 	}
 
 	/**
@@ -100,6 +105,14 @@ public class PanelReproduccion extends JPanel {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getCOMMAND_REPRODUCIR() {
+		return COMMAND_REPRODUCIR;
+	}
+
+	public String getCOMMAND_PAUSAR() {
+		return COMMAND_PAUSAR;
 	}
 
 }

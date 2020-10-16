@@ -25,7 +25,6 @@ public class Controller implements ActionListener {
 
 		if (this.emisora.getNombreEmisora() == null || this.emisora.getModoTransmision() == null
 				|| this.emisora.getTipoDeMusica() == null) {
-			
 
 		}
 
