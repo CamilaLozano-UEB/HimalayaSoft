@@ -3,6 +3,8 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import com.sun.tools.javac.Main;
+
 import co.edu.unbosque.model.Emisora;
 import co.edu.unbosque.model.ExtensionIncorrectaException;
 import co.edu.unbosque.view.View;
@@ -33,7 +35,7 @@ public class Controller implements ActionListener {
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
-			gestionarIngresoCancion();
+			this.gestionarDatosEmisora();
 		}
 	}
 
@@ -59,7 +61,8 @@ public class Controller implements ActionListener {
 				idioma = "ES";
 			}
 			this.emisora.asignarInformacionEmisora(nombreEmisora, modoTransmision, tipoMusica, idioma);
-			vista.mostrarMensajeAviso("Información guardada correctamente.\nPor favor reinicie el programa.");
+			vista.mostrarMensajeReinicio("Información guardada correctamente.\nPor favor vuelva a abrir el programa.");
+			
 		} else {
 			vista.mostrarMensajeError("¡Es necesario llenar los campos!");
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();

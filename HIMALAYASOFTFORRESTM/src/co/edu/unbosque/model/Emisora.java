@@ -54,21 +54,30 @@ public class Emisora {
 	 * 
 	 */
 	public void gestionarCaracteristicas() {
+		
+		try{
+			this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora",
+					this.caracteristicasEmisora.getArchivoConfiguracion());
+			this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision",
+					this.caracteristicasEmisora.getArchivoConfiguracion());
+			this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica",
+					this.caracteristicasEmisora.getArchivoConfiguracion());
+			this.idioma = this.caracteristicasEmisora.leer("idioma", this.caracteristicasEmisora.getArchivoConfiguracion());
+			this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
+			this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
+			this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
+			this.titulosPanelAgregarCancion = this.caracteristicasEmisora.leer("titulosPanelAgregarCancion").split("~");
+			this.titulosPanelInformacionEmisora = this.caracteristicasEmisora.leer("titulosPanelInformacionEmisora")
+					.split("~");
+			this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			escribirArchivoEmisora("");
+			gestionarCaracteristicas();
+		}
 
-		this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora",
-				this.caracteristicasEmisora.getArchivoConfiguracion());
-		this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision",
-				this.caracteristicasEmisora.getArchivoConfiguracion());
-		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica",
-				this.caracteristicasEmisora.getArchivoConfiguracion());
-		this.idioma = this.caracteristicasEmisora.leer("idioma", this.caracteristicasEmisora.getArchivoConfiguracion());
-		this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
-		this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
-		this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
-		this.titulosPanelAgregarCancion = this.caracteristicasEmisora.leer("titulosPanelAgregarCancion").split("~");
-		this.titulosPanelInformacionEmisora = this.caracteristicasEmisora.leer("titulosPanelInformacionEmisora")
-				.split("~");
-		this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
+
 
 	}
 
@@ -113,6 +122,23 @@ public class Emisora {
 
 		if (this.caracteristicasEmisora.escribir(
 				this.nombreEmisora + "~" + this.modoTransmision + "~" + this.tipoDeMusica + "~" + this.idioma))
+			return true;
+		else
+			return false;
+
+	}
+	
+	
+	
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 * @param String s para inicializar archivo Configuracion.
+	 * 
+	 */
+	public boolean escribirArchivoEmisora(String s) {
+
+		if (this.caracteristicasEmisora.escribir(s+ "~" +s+ "~" +s+ "~"+"ES"))
 			return true;
 		else
 			return false;

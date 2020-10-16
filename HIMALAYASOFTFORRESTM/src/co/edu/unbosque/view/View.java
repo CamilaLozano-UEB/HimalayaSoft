@@ -49,6 +49,11 @@ public class View extends JFrame {
 	public void mostrarMensajeAviso(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Information", JOptionPane.INFORMATION_MESSAGE);
 	}
+	
+	public void mostrarMensajeReinicio(String mensaje) {
+		JOptionPane.showMessageDialog(null, mensaje, "Information", JOptionPane.INFORMATION_MESSAGE);
+		this.dispose();
+	}
 
 	public PanelEmisora getPanelEmisora() {
 		return panelEmisora;

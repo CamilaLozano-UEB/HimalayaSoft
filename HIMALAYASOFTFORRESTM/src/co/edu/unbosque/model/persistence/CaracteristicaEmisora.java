@@ -60,12 +60,7 @@ public class CaracteristicaEmisora extends Persistence {
 
 		try {
 			prop.load(new FileInputStream(directorio+archivoConfiguracion));
-			if(prop.getProperty("idioma")==null) {
-				leng="ES";
-			}
-			else {
-				leng=prop.getProperty("idioma");
-			}
+			leng=prop.getProperty("idioma");
 			
 			if(leng.equals("EN")) {
 				propGUI.load(new FileInputStream(directorio+gui_EN));
