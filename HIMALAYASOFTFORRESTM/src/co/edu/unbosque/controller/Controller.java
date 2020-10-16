@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import co.edu.unbosque.model.Emisora;
 import co.edu.unbosque.model.ExtensionIncorrectaException;
 import co.edu.unbosque.view.View;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 public class Controller implements ActionListener {
 
@@ -44,10 +45,17 @@ public class Controller implements ActionListener {
 				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
 						.getSelectedItem();
 				emisora.gestionarParrilla(cancion);
-				
-				String [] tabla= emisora.llenarParrilla(cancion);
-				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1],tabla[2]);;
 
+				String[] tabla = emisora.llenarParrilla(cancion);
+				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1], tabla[2]);
+
+			}
+		}else if(event.getActionCommand().equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())){
+			try {
+				this.emisora.getParillaDelDia().reproducirParrilla();
+			} catch (BasicPlayerException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		}
 	}
@@ -141,14 +149,17 @@ public class Controller implements ActionListener {
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().cargarCampos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica(), this.emisora.getIdioma());
-		this.vista.getPanelInformacion().getPanelAgregarCancion().crearTabla(this.emisora.asignarDatosTabla());
+		this.vista.getPanelInformacion().getPanelAgregarCancion()
+				.crearTabla(this.emisora.asignarDatosTablaAgregarCancion());
 		this.vista.getPanelEmisora().getPanelParrilla()
 				.agregarCancionesComboBox(this.emisora.generarListaDeCancionesDisponibles());
+		this.vista.getPanelEmisora().getPanelParrilla().crearTabla(this.emisora.asignarDatosTablaParrilla());
 	}
 
 	public void iniciarEmisora() {
 		this.emisora.gestionarCaracteristicas();
 		this.emisora.cargarAtributosArchivoPistas();
+		this.emisora.cargarInformacionArchivoParrilla();
 	}
 
 }
