@@ -4,7 +4,7 @@ public class PistaMusical {
 
 	private String nombreCancion;
 	private String generoMusical;
-	private String nombreArtista;
+	private String nombreAutor;
 	private String nombreArchivoMusica;
 
 	public PistaMusical() {
@@ -27,12 +27,12 @@ public class PistaMusical {
 		this.generoMusical = generoMusical;
 	}
 
-	public String getNombreArtista() {
-		return nombreArtista;
+	public String getNombreAutor() {
+		return nombreAutor;
 	}
 
-	public void setNombreArtista(String nombreArtista) {
-		this.nombreArtista = nombreArtista;
+	public void setNombreAutor(String nombreAutor) {
+		this.nombreAutor = nombreAutor;
 	}
 
 	public String getNombreArchivoMusica() {
