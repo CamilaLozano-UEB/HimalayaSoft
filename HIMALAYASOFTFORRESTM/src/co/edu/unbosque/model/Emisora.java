@@ -97,7 +97,7 @@ public class Emisora {
 		PistaMusical obj = new PistaMusical();
 		obj.setGeneroMusical(generoMusical);
 		obj.setNombreCancion(nombreCancion);
-		obj.setNombreArtista(nombreArtista);
+		obj.setNombreAutor(nombreArtista);
 		obj.setNombreArchivoMusica(nombreArchivoMusica);
 
 		this.pistasMusicales.add(obj);
@@ -139,6 +139,40 @@ public class Emisora {
 		else
 			return false;
 
+	}
+
+	public void cargarAtributosArchivoPistas() {
+
+		String[] pistas = this.archivo.leer(this.archivo.getRUTA_CANCIONES()).split("\n");
+		for (int i = 0; i < pistas.length; i++) {
+			String[] atributo = pistas[i].split("~");
+			PistaMusical obj = new PistaMusical();
+			obj.setNombreCancion(atributo[0]);
+			obj.setNombreAutor(atributo[1]);
+			obj.setGeneroMusical(atributo[2]);
+			obj.setNombreArchivoMusica(atributo[3]);
+			this.pistasMusicales.add(obj);
+		}
+	}
+
+	/**
+	 * @author Nicolás Peña Mogollón - Carlos Ballen
+	 * 
+	 *         Toma los datos de los arreglos para cargar la información a un String
+	 *         bidimensional que tendrá los datos a mostrar en vista
+	 * 
+	 * @return
+	 */
+	public String[][] asignarDatosTabla() {
+
+		String[][] tabla = new String[this.pistasMusicales.size()][3];
+
+		for (int i = 0; i < this.pistasMusicales.size(); i++) {
+			tabla[i][0] = this.pistasMusicales.get(i).getNombreCancion();
+			tabla[i][1] = this.pistasMusicales.get(i).getNombreAutor();
+			tabla[i][2] = this.pistasMusicales.get(i).getGeneroMusical();
+		}
+		return tabla;
 	}
 
 	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {

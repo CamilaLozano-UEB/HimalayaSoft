@@ -15,7 +15,7 @@ public class Controller implements ActionListener {
 	public Controller() {
 		vista = new View();
 		emisora = new Emisora();
-		emisora.gestionarCaracteristicas();
+		iniciarEmisora();
 		inicializarComponentesVista();
 
 	}
@@ -122,5 +122,11 @@ public class Controller implements ActionListener {
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().cargarCampos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica(), this.emisora.getIdioma());
+		this.vista.getPanelInformacion().getPanelAgregarCancion().crearTabla(this.emisora.asignarDatosTabla());
+	}
+
+	public void iniciarEmisora() {
+		this.emisora.gestionarCaracteristicas();
+		this.emisora.cargarAtributosArchivoPistas();
 	}
 }
