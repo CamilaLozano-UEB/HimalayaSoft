@@ -41,9 +41,9 @@ public class Controller implements ActionListener {
 		if (!this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoNombreEmisora().getText()
 				.equals("")
 				&& !this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision()
-						.getSelectedItem().equals("Seleccione")
+						.getSelectedItem().equals("Seleccione...")
 				&& !this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision()
-						.getSelectedItem().equals("Please Select")
+						.getSelectedItem().equals("Select...")
 				&& !this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoTipoMusica().getText()
 						.equals("")) {
 			String nombreEmisora = this.vista.getPanelInformacion().getPanelInformacionEmisora()
@@ -59,9 +59,9 @@ public class Controller implements ActionListener {
 				idioma = "ES";
 			}
 			this.emisora.asignarInformacionEmisora(nombreEmisora, modoTransmision, tipoMusica, idioma);
-			vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
+			vista.mostrarMensajeAviso("Información guardada correctamente.\nPor favor reinicie el programa.");
 		} else {
-			vista.mostrarMensajeError("Es necesario llenar los campos");
+			vista.mostrarMensajeError("¡Es necesario llenar los campos!");
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		}
 	}
