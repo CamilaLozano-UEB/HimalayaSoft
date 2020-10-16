@@ -12,6 +12,8 @@ import javax.swing.JPanel;
 public class PanelReproduccion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private final String COMMAND_REPRODUCIR = "REPRODUCIR";
+	private final String COMMAND_PAUSAR = "PAUSAR";
 	private JButton botonPlay;
 	private JButton botonPausa;
 	private ImageIcon img_sound;
@@ -58,11 +60,13 @@ public class PanelReproduccion extends JPanel {
 		img_sound = new ImageIcon("./Imagenes/SinSonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPausa.setIcon(icon_sound);
+		botonPausa.setActionCommand(COMMAND_PAUSAR);
 		add(botonPausa);
 
 		img_sound = new ImageIcon("./Imagenes/Sonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPlay.setIcon(icon_sound);
+		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
 		add(botonPlay);
 	}
 
@@ -100,6 +104,14 @@ public class PanelReproduccion extends JPanel {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getCOMMAND_REPRODUCIR() {
+		return COMMAND_REPRODUCIR;
+	}
+
+	public String getCOMMAND_PAUSAR() {
+		return COMMAND_PAUSAR;
 	}
 
 }
