@@ -43,7 +43,10 @@ public class Controller implements ActionListener {
 							.equals("Select Song")) {
 				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
 						.getSelectedItem();
-				this.emisora.gestionarParrilla(cancion);
+				emisora.gestionarParrilla(cancion);
+				
+				String [] tabla= emisora.llenarParrilla(cancion);
+				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1],tabla[2]);;
 
 			}
 		}

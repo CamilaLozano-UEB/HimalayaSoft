@@ -62,6 +62,29 @@ public class Emisora {
 				this.archivo.escribir(datosPista);
 			}
 		}
+	}/** 
+	
+	*@author Juana Valentina Torres Parrado
+	*
+	*
+	*@param nombreCancion 
+	*ingresa el nombre de la cancion y busca el autor y su genero para guardarlos en un arreglo 
+	*
+	*/
+	public String[] llenarParrilla(String nombreCancion) {
+		String[] datosPista = new String[3];
+
+		for (PistaMusical pistaMusical : pistasMusicales) {
+
+			if (pistaMusical.getNombreCancion().equals(nombreCancion)) {
+				this.parillaDelDia.agregarPistaMusical(pistaMusical);
+				datosPista[0] = pistaMusical.getNombreCancion();
+				datosPista[1] = pistaMusical.getNombreAutor();
+				datosPista[2] = pistaMusical.getGeneroMusical();
+				
+			}
+		}
+		return datosPista;
 	}
 
 	/**

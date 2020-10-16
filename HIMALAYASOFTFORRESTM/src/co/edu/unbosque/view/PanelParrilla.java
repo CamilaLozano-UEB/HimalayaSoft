@@ -20,7 +20,6 @@ public class PanelParrilla extends JPanel {
 	private JTable tablaParrilla;
 	private JComboBox<String> comboNombreCancion;
 	private JScrollPane sp;
-	private String[] titulosTabla;
 	private JPanel contenedor;
 	private DefaultTableModel modeloTablaParrilla;
 
@@ -28,7 +27,7 @@ public class PanelParrilla extends JPanel {
 
 		setBackground(Color.white);
 		setLayout(new BorderLayout());
-		this.titulosTabla = new String[3];
+		
 	}
 
 	/**
@@ -67,10 +66,6 @@ public class PanelParrilla extends JPanel {
 		botonAgregar.setActionCommand(COMMAND_AGREGAR_PARRILLA);
 		comboNombreCancion = new JComboBox<String>();
 		comboNombreCancion.addItem(titulos[2]);
-
-		titulosTabla[0] = titulos[3];
-		titulosTabla[1] = titulos[4];
-		titulosTabla[2] = titulos[5];
 		
 		modeloTablaParrilla = new DefaultTableModel();
 		tablaParrilla = new JTable(modeloTablaParrilla);
@@ -109,13 +104,6 @@ public class PanelParrilla extends JPanel {
 		COMMAND_AGREGAR_PARRILLA = cOMMAND_AGREGAR_PARRILLA;
 	}
 
-	public String[] getTitulosTabla() {
-		return titulosTabla;
-	}
-
-	public void setTitulosTabla(String[] titulosTabla) {
-		this.titulosTabla = titulosTabla;
-	}
 
 	public JPanel getContenedor() {
 		return contenedor;
