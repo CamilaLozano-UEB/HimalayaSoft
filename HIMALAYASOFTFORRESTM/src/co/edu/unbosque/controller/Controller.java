@@ -14,9 +14,9 @@ public class Controller implements ActionListener {
 	private Emisora emisora;
 
 	public Controller() {
-		vista = new View(this);
+		vista = new View();
 		emisora = new Emisora();
-		inicializarEmisora();
+		emisora.gestionarCaracteristicas();
 		inicializarComponentesVista();
 
 	}
@@ -28,13 +28,9 @@ public class Controller implements ActionListener {
 		if (this.emisora.getNombreEmisora() == null || this.emisora.getModoTransmision() == null
 				|| this.emisora.getTipoDeMusica() == null) {
 			
-			
+
 		}
 
-	}
-
-	public void inicializarEmisora() {
-		this.emisora.gestionarCaracteristicas();
 	}
 
 	public void inicializarComponentesVista() {
@@ -51,6 +47,6 @@ public class Controller implements ActionListener {
 		this.vista.getPanelInformacion().getPanelInformacionEmisora()
 				.asignarValores(this.emisora.getTitulosPanelInformacionEmisora());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().agregarComponentes();
-
+		this.vista.actionListener(this);
 	}
 }

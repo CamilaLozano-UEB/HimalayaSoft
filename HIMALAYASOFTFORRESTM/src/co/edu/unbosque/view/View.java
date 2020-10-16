@@ -14,16 +14,16 @@ public class View extends JFrame {
 	private PanelEmisora panelEmisora;
 	private JTabbedPane pestanas;
 
-	public View(Controller control) {
+	public View() {
 		panelInformacion = new PanelInformacion();
 		panelEmisora = new PanelEmisora();
 		pestanas = new JTabbedPane();
-		this.actionListener(control);
 		pestanas = new JTabbedPane();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(1000, 700);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
+
 	}
 
 	public void agregarComponentes(String[] titulos) {
@@ -33,8 +33,7 @@ public class View extends JFrame {
 
 	}
 
-	public void actionListener(ActionListener control) {
-
+	public void actionListener(Controller control) {
 		this.panelInformacion.getPanelAgregarCancion().getBotonAgregar().addActionListener(control);
 		this.panelInformacion.getPanelAgregarCancion().getBotonCancelar().addActionListener(control);
 		this.panelInformacion.getPanelInformacionEmisora().getBotonCancelar().addActionListener(control);
