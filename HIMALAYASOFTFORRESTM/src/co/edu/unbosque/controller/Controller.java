@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import co.edu.unbosque.model.Emisora;
+import co.edu.unbosque.model.ExtensionIncorrectaException;
 import co.edu.unbosque.view.View;
 
 public class Controller implements ActionListener {
@@ -32,17 +33,7 @@ public class Controller implements ActionListener {
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
-
-			if (!this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoNombreCancion().getText()
-					.equals("")
-					&& !this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoNombreAutor().getText()
-							.equals("")
-					&& !this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoGeneroMusica().getText()
-							.equals("")
-					&& !this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoArchivo().getText()
-							.equals("")) {
-				
-			}
+			gestionarIngresoCancion();
 		}
 	}
 
@@ -75,6 +66,41 @@ public class Controller implements ActionListener {
 		}
 	}
 
+	public void gestionarIngresoCancion() {
+		if (!this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoNombreCancion().getText().equals("")
+				&& !this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoNombreAutor().getText()
+						.equals("")
+				&& !this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoGeneroMusica().getText()
+						.equals("")
+				&& !this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoArchivo().getText()
+						.equals("")) {
+			String nombreCancion = this.vista.getPanelInformacion().getPanelAgregarCancion()
+					.getCampoTextoNombreCancion().getText();
+			String nombreArtista = this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoNombreAutor()
+					.getText();
+			String genero = this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoGeneroMusica()
+					.getText();
+			String rutaArchivo = this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoArchivo()
+					.getText();
+			try {
+				this.emisora.verificarExtensionArchivo(rutaArchivo);
+			} catch (ExtensionIncorrectaException e) {
+				// TODO Auto-generated catch block
+				vista.mostrarMensajeError(e.getMessage());
+			}
+			if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, rutaArchivo)) {
+				vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
+				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
+			} else {
+				vista.mostrarMensajeError("Error al guardar canción");
+			}
+
+		} else {
+			vista.mostrarMensajeError("Es necesario llenar los campos");
+		}
+
+	}
+
 	public void inicializarComponentesVista() {
 		this.vista.agregarComponentes(this.emisora.getTitulosView());
 		this.vista.getPanelEmisora().getPanelCancion().asignarValores(this.emisora.getTitulosPanelCancion());
@@ -93,6 +119,6 @@ public class Controller implements ActionListener {
 		this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().cargarCampos(this.emisora.getNombreEmisora(),
-				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
+				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica(), this.emisora.getIdioma());
 	}
 }

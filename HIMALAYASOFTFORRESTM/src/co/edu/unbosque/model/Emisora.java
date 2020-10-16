@@ -46,8 +46,6 @@ public class Emisora {
 		this.tipoDeMusica = tipoMusica;
 		this.idioma = idioma;
 	}
-	
-	
 
 	/**
 	 * @author Carlos Ballen
@@ -63,6 +61,7 @@ public class Emisora {
 				this.caracteristicasEmisora.getArchivoConfiguracion());
 		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica",
 				this.caracteristicasEmisora.getArchivoConfiguracion());
+		this.idioma = this.caracteristicasEmisora.leer("idioma", this.caracteristicasEmisora.getArchivoConfiguracion());
 		this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
 		this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
 		this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
@@ -72,7 +71,6 @@ public class Emisora {
 		this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
 
 	}
-	
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
@@ -120,14 +118,14 @@ public class Emisora {
 			return false;
 
 	}
-	
+
 	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {
-		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf("."),rutaArchivo.length());
-		
-		if(mimeType.equals("mp3")) {
+		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf("."), rutaArchivo.length());
+
+		if (!mimeType.equals("mp3")) {
 			throw new ExtensionIncorrectaException("");
 		}
-		
+
 	}
 
 	/**
@@ -257,6 +255,14 @@ public class Emisora {
 
 	public void setTitulosView(String[] titulosView) {
 		this.titulosView = titulosView;
+	}
+
+	public String getIdioma() {
+		return idioma;
+	}
+
+	public void setIdioma(String idioma) {
+		this.idioma = idioma;
 	}
 
 }

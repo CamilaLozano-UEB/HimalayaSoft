@@ -134,6 +134,13 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.add(scroll);
 	}
 
+	public void borrarCampos() {
+		this.campoTextoNombreCancion.setText("");
+		this.campoTextoNombreAutor.setText("");
+		this.campoTextoGeneroMusica.setText("");
+		this.campoTextoArchivo.setText("");
+	}
+
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
