@@ -46,6 +46,8 @@ public class Controller implements ActionListener {
 				this.emisora.gestionarParrilla(cancion);
 
 			}
+		} else if (event.getActionCommand().equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_AGREGAR_PARRILLA())) {
+			
 		}
 	}
 
@@ -117,6 +119,10 @@ public class Controller implements ActionListener {
 			this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 		}
 
+	}
+	
+	public void agregarCancionesParrilla() {
+		
 	}
 
 	public void inicializarComponentesVista() {
