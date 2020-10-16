@@ -47,7 +47,6 @@ public class PanelReproduccion extends JPanel {
 		botonPlay.setOpaque(true);
 		botonPlay.setBackground(new Color(162, 118, 234));
 		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
-
 	}
 
 	/**
