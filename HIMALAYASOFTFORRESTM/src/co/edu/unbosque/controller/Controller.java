@@ -60,7 +60,7 @@ public class Controller implements ActionListener {
 			}
 			this.emisora.asignarInformacionEmisora(nombreEmisora, modoTransmision, tipoMusica, idioma);
 			vista.mostrarMensajeReinicio("Información guardada correctamente.\nPor favor vuelva a abrir el programa.");
-			
+
 		} else {
 			vista.mostrarMensajeError("¡Es necesario llenar los campos!");
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
@@ -89,7 +89,8 @@ public class Controller implements ActionListener {
 				// TODO Auto-generated catch block
 				vista.mostrarMensajeError(e.getMessage());
 			}
-			if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, rutaArchivo)) {
+			if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, rutaArchivo)
+					&& this.emisora.getArchivo().copiarCancion(rutaArchivo, nombreCancion)) {
 				vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
 				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 			} else {
