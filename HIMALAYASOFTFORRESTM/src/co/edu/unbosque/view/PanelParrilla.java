@@ -34,6 +34,7 @@ public class PanelParrilla extends JPanel {
 	 * 
 	 * @author Juana Valentina Torres Parrado Se obtiene un String bidimensional
 	 *         para generar la tabla de la parrilla
+	 * 
 	 * @param datos
 	 * 
 	 */
