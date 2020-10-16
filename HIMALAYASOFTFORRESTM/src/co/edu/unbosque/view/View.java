@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 
@@ -16,6 +18,7 @@ public class View extends JFrame {
 		panelInformacion = new PanelInformacion();
 		panelEmisora = new PanelEmisora();
 		pestanas = new JTabbedPane();
+		this.actionListener(control);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(1000, 700);
 		this.setLocationRelativeTo(null);
@@ -26,6 +29,18 @@ public class View extends JFrame {
 		pestanas.add(panelEmisora, titulos[0]);
 		pestanas.add(panelInformacion, titulos[1]);
 		getContentPane().add(pestanas);
+
+	}
+
+	public void actionListener(ActionListener control) {
+
+		this.panelInformacion.getPanelAgregarCancion().getBotonAgregar().addActionListener(control);
+		this.panelInformacion.getPanelAgregarCancion().getBotonCancelar().addActionListener(control);
+		this.panelInformacion.getPanelInformacionEmisora().getBotonCancelar().addActionListener(control);
+		this.panelInformacion.getPanelInformacionEmisora().getBotonGuardar().addActionListener(control);
+		this.panelEmisora.getPanelParrilla().getBotonAgregar().addActionListener(control);
+		this.panelEmisora.getPanelReproduccion().getBotonPlay().addActionListener(control);
+		this.panelEmisora.getPanelReproduccion().getBotonPausa().addActionListener(control);
 
 	}
 

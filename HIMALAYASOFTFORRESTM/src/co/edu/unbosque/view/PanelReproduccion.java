@@ -12,14 +12,14 @@ import javax.swing.JPanel;
 public class PanelReproduccion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JButton botonSonido;
-	private JButton botonSonido_2;
+	private JButton botonPlay;
+	private JButton botonPausa;
 	private ImageIcon img_sound;
 	private Icon icon_sound;
 
 	public PanelReproduccion() {
-		
-		setLayout(new GridLayout(1,2));
+
+		setLayout(new GridLayout(1, 2));
 		setVisible(true);
 		this.asignarValores();
 		this.agregarComponentes();
@@ -32,17 +32,17 @@ public class PanelReproduccion extends JPanel {
 	 *         Se asigna los valores correspondientes a cada componente
 	 * 
 	 */
-	
-	public void asignarValores() {
-		botonSonido_2 = new JButton();
-		botonSonido_2.setBorder(null);
-		botonSonido_2.setOpaque(true);
-		botonSonido_2.setBackground(new Color(162, 118, 234));
 
-		botonSonido = new JButton();
-		botonSonido.setBorder(null);
-		botonSonido.setOpaque(true);
-		botonSonido.setBackground(new Color(162, 118, 234));
+	public void asignarValores() {
+		botonPausa = new JButton();
+		botonPausa.setBorder(null);
+		botonPausa.setOpaque(true);
+		botonPausa.setBackground(new Color(162, 118, 234));
+
+		botonPlay = new JButton();
+		botonPlay.setBorder(null);
+		botonPlay.setOpaque(true);
+		botonPlay.setBackground(new Color(162, 118, 234));
 	}
 
 	/**
@@ -53,33 +53,33 @@ public class PanelReproduccion extends JPanel {
 	 *         correspondientes de los botones
 	 * 
 	 */
-	
+
 	public void agregarComponentes() {
-    	img_sound = new ImageIcon("./Imagenes/SinSonido.png");
+		img_sound = new ImageIcon("./Imagenes/SinSonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
-		botonSonido_2.setIcon(icon_sound);
-		add(botonSonido_2);
+		botonPausa.setIcon(icon_sound);
+		add(botonPausa);
 
 		img_sound = new ImageIcon("./Imagenes/Sonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
-		botonSonido.setIcon(icon_sound);
-		add(botonSonido);
+		botonPlay.setIcon(icon_sound);
+		add(botonPlay);
 	}
 
-	public JButton getBotonSonido() {
-		return botonSonido;
+	public JButton getBotonPlay() {
+		return botonPlay;
 	}
 
-	public void setBotonSonido(JButton botonSonido) {
-		this.botonSonido = botonSonido;
+	public void setBotonPlay(JButton botonPlay) {
+		this.botonPlay = botonPlay;
 	}
 
-	public JButton getBotonSonido_2() {
-		return botonSonido_2;
+	public JButton getBotonPausa() {
+		return botonPausa;
 	}
 
-	public void setBotonSonido_2(JButton botonSonido_2) {
-		this.botonSonido_2 = botonSonido_2;
+	public void setBotonPausa(JButton botonPausa) {
+		this.botonPausa = botonPausa;
 	}
 
 	public ImageIcon getImg_sound() {

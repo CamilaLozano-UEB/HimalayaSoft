@@ -3,6 +3,8 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import co.edu.unbosque.model.Emisora;
 import co.edu.unbosque.view.View;
 
@@ -22,6 +24,12 @@ public class Controller implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+
+		if (this.emisora.getNombreEmisora() == null || this.emisora.getModoTransmision() == null
+				|| this.emisora.getTipoDeMusica() == null) {
+			
+			
+		}
 
 	}
 

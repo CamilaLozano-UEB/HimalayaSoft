@@ -13,10 +13,10 @@ public class Archivo extends Persistence {
 	private final String RUTA_PARRILLA = "./Data/Parrilla.txt";
 
 	/**
-	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Toma los datos de la canci�n ingresada y lo escribe en el archivo
+	 *         Toma los datos de la canción ingresada y lo escribe en el archivo
 	 */
 	@Override
 	public boolean escribir(String dato) {
@@ -35,10 +35,10 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Recibe los datos de la parrilla de reproducci�n en forma de arreglo
+	 *         Recibe los datos de la parrilla de reproducción en forma de arreglo
 	 *         para luego organizarla y guardarla en el archivo
 	 * @param datos
 	 * @return
@@ -61,11 +61,11 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
 	 *         Lee el archivo de las canciones y retorna un String con la
-	 *         informaci�n separada por caracteres espec�ficos
+	 *         información separada por caracteres específicos
 	 */
 	@Override
 	public String leer(String dato) {
