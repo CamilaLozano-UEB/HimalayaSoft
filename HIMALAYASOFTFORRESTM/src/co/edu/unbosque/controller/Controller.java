@@ -35,7 +35,7 @@ public class Controller implements ActionListener {
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
-			this.gestionarDatosEmisora();
+			this.gestionarIngresoCancion();
 		}
 	}
 

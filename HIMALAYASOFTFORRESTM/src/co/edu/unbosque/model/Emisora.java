@@ -54,15 +54,16 @@ public class Emisora {
 	 * 
 	 */
 	public void gestionarCaracteristicas() {
-		
-		try{
+
+		try {
 			this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora",
 					this.caracteristicasEmisora.getArchivoConfiguracion());
 			this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision",
 					this.caracteristicasEmisora.getArchivoConfiguracion());
 			this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica",
 					this.caracteristicasEmisora.getArchivoConfiguracion());
-			this.idioma = this.caracteristicasEmisora.leer("idioma", this.caracteristicasEmisora.getArchivoConfiguracion());
+			this.idioma = this.caracteristicasEmisora.leer("idioma",
+					this.caracteristicasEmisora.getArchivoConfiguracion());
 			this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
 			this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
 			this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
@@ -70,14 +71,11 @@ public class Emisora {
 			this.titulosPanelInformacionEmisora = this.caracteristicasEmisora.leer("titulosPanelInformacionEmisora")
 					.split("~");
 			this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			escribirArchivoEmisora("");
 			gestionarCaracteristicas();
 		}
-
-
 
 	}
 
@@ -127,9 +125,7 @@ public class Emisora {
 			return false;
 
 	}
-	
-	
-	
+
 	/**
 	 * @author Carlos Ballen
 	 * 
@@ -138,7 +134,7 @@ public class Emisora {
 	 */
 	public boolean escribirArchivoEmisora(String s) {
 
-		if (this.caracteristicasEmisora.escribir(s+ "~" +s+ "~" +s+ "~"+"ES"))
+		if (this.caracteristicasEmisora.escribir(s + "~" + s + "~" + s + "~" + "ES"))
 			return true;
 		else
 			return false;
@@ -146,8 +142,8 @@ public class Emisora {
 	}
 
 	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {
-		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf("."), rutaArchivo.length());
-
+		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf(".") + 1, rutaArchivo.length());
+		System.out.println(mimeType);
 		if (!mimeType.equals("mp3")) {
 			throw new ExtensionIncorrectaException("");
 		}
