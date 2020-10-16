@@ -52,9 +52,9 @@ public class Emisora {
 	 */
 	public void gestionarCaracteristicas() {
 
-		this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora");
-		this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision");
-		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica");
+		this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora","archivoConfiguracion");
+		this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision","archivoConfiguracion");
+		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica","archivoConfiguracion");
 		this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
 		this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
 		this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");

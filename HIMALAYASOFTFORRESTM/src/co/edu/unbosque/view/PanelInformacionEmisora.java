@@ -16,6 +16,11 @@ public class PanelInformacionEmisora extends JPanel {
 
 	private JTextField campoTextoNombreEmisora;
 	private JTextField campoTextoTipoMusica;
+	private JTextField textoNombreEmisora;
+	private JTextField textoTipoMusica;
+	
+	private JRadioButton radio_ES;
+	private JRadioButton radio_EN;
 
 	private JButton botonGuardar;
 	private JButton botonCancelar;
@@ -26,6 +31,7 @@ public class PanelInformacionEmisora extends JPanel {
 	public PanelInformacionEmisora() {
 
 		setLayout(new GridLayout(6, 2));
+		setLayout(new GridLayout(7, 2));
 	}
 
 	public void asignarValores(String[] titulos) {
@@ -44,6 +50,12 @@ public class PanelInformacionEmisora extends JPanel {
 		campoTextoNombreEmisora = new JTextField();
 		campoTextoTipoMusica = new JTextField();
 
+		textoNombreEmisora = new JTextField();
+		textoTipoMusica = new JTextField();
+	
+		radio_ES = new JRadioButton("Español",true);
+		radio_EN = new JRadioButton("English",false);
+		
 		botonGuardar = new JButton(titulos[7]);
 		botonGuardar.setActionCommand(GUARDAR);
 
@@ -62,6 +74,13 @@ public class PanelInformacionEmisora extends JPanel {
 
 		add(etiquetaTipoMusica);
 		add(campoTextoTipoMusica);
+		add(textoTipoMusica);
+		
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(radio_ES);
+		bg.add(radio_EN);
+		add(radio_ES);
+		add(radio_EN);
 
 		add(botonGuardar);
 		add(botonCancelar);
@@ -122,6 +141,22 @@ public class PanelInformacionEmisora extends JPanel {
 
 	public void setBotonGuardar(JButton botonGuardar) {
 		this.botonGuardar = botonGuardar;
+	}
+	
+	public JRadioButton getRadio_ES() {
+		return radio_ES;
+	}
+
+	public void setRadio_ES(JRadioButton radio_ES) {
+		this.radio_ES = radio_ES;
+	}
+
+	public JRadioButton getRadio_EN() {
+		return radio_EN;
+	}
+
+	public void setRadio_EN(JRadioButton radio_EN) {
+		this.radio_EN = radio_EN;
 	}
 
 	public JButton getBotonCancelar() {

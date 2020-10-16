@@ -7,7 +7,10 @@ import java.util.Properties;
 
 public class CaracteristicaEmisora extends Persistence {
 
-	private final String RUTA_CARACTERISTICAS = "./Data/Configuracion.properties";
+	private final String directortio = "./Data/";
+	private final String gui_ES= "GUI_ES.properties";
+	private final String gui_EN= "GUI_EN.properties";
+	private final String archivoConfiguracion = "Configuraciones.properties";
 	private Properties prop;
 
 	public CaracteristicaEmisora() {
@@ -31,7 +34,8 @@ public class CaracteristicaEmisora extends Persistence {
 			prop.setProperty("nombreEmisora", listaDatos[0]);
 			prop.setProperty("modoTransmision", listaDatos[1]);
 			prop.setProperty("tipoMusica", listaDatos[2]);
-			prop.store(new FileOutputStream(RUTA_CARACTERISTICAS), null);
+			prop.setProperty("idioma",listaDatos[3]);
+			prop.store(new FileOutputStream(directortio+archivoConfiguracion), null);
 		} catch (IOException ex) {
 			return false;
 		}
@@ -45,20 +49,45 @@ public class CaracteristicaEmisora extends Persistence {
 	 * @param String dato a leer
 	 * 
 	 */
+
 	@Override
 	public String leer(String dato) {
 		// TODO Auto-generated method stub
-		// Se definen en la construcci�n de la vista
 		String linea = "";
-
+		String leng = "";
+		
 		try {
-			prop.load(new FileInputStream(RUTA_CARACTERISTICAS));
-			linea = prop.getProperty(dato);
-		} catch (IOException e) {
+			prop.load(new FileInputStream(directortio+archivoConfiguracion));
+			leng=prop.getProperty("idioma");
+			
+			if(leng.equals("EN")) {
+				prop.load(new FileInputStream(directortio+gui_EN));
+				linea = prop.getProperty(dato);
+			}
+			else {
+				prop.load(new FileInputStream(directortio+gui_ES));
+				linea = prop.getProperty(dato);
+			}
+			
+		} 
+		catch (IOException e) {
 			return null;
 		}
 		return linea;
-
 	}
 
+
+	public String leer(String dato, String ruta) {
+
+		String linea = "";
+	
+		try {
+			prop.load(new FileInputStream(directortio+ruta));
+			linea=prop.getProperty(dato);
+		} 
+		catch (IOException e) {
+			return null;
+		}
+		return linea;
+	}
 }
