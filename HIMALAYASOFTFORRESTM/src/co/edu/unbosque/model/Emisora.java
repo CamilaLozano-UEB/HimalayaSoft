@@ -47,6 +47,24 @@ public class Emisora {
 		this.idioma = idioma;
 	}
 
+	public void gestionarParrilla(String nombreCancion) {
+
+		String[] datosPista = new String[4];
+
+		for (PistaMusical pistaMusical : pistasMusicales) {
+
+			if (pistaMusical.getNombreCancion().equals(nombreCancion)) {
+				this.parillaDelDia.agregarPistaMusical(pistaMusical);
+
+				datosPista[0] = pistaMusical.getNombreCancion();
+				datosPista[1] = pistaMusical.getNombreAutor();
+				datosPista[2] = pistaMusical.getGeneroMusical();
+				datosPista[3] = pistaMusical.getNombreArchivoMusica();
+				this.archivo.escribir(datosPista);
+			}
+		}
+	}
+
 	/**
 	 * @author Carlos Ballen
 	 * 
@@ -158,6 +176,27 @@ public class Emisora {
 				i = pistas.length;
 			}
 		}
+	}
+
+	public void cargarInformacionArchivoParrilla() {
+
+		ArrayList<PistaMusical> pistas = new ArrayList<PistaMusical>();
+		String[] pistasArchivo = this.archivo.leer(this.archivo.getRUTA_PARRILLA()).split("\n");
+
+		for (int i = 0; i < pistasArchivo.length; i++) {
+			String[] atributo = pistasArchivo[i].split("~");
+			if (atributo.length >= 4) {
+				PistaMusical obj = new PistaMusical();
+				obj.setNombreCancion(atributo[0]);
+				obj.setNombreAutor(atributo[1]);
+				obj.setGeneroMusical(atributo[2]);
+				obj.setNombreArchivoMusica(atributo[3]);
+				pistas.add(obj);
+			} else {
+				i = pistasArchivo.length;
+			}
+		}
+		this.parillaDelDia.cargarParrilla(pistas);
 	}
 
 	/**

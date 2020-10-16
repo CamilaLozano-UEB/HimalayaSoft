@@ -13,6 +13,10 @@ public class ParrillaMusical {
 
 	}
 
+	public void cargarParrilla(ArrayList<PistaMusical> pistas) {
+		this.pistasMusicales = pistas;
+	}
+
 	public void agregarPistaMusical(PistaMusical pistaMusical) {
 
 		this.pistasMusicales.add(pistaMusical);
