@@ -20,12 +20,16 @@ public class Controller implements ActionListener {
 	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 
-		if (this.emisora.getNombreEmisora() == null || this.emisora.getModoTransmision() == null
-				|| this.emisora.getTipoDeMusica() == null) {
+		if (event.getActionCommand()
+				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getBotonGuardar())) {
+			if (!this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoNombreEmisora().getText()
+					.equals("")&&!this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision().getSelectedItem()
+					.equals("")) {
 
+			}
 		}
 
 	}

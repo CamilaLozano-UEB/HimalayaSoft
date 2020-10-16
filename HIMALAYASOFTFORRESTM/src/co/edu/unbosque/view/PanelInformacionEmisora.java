@@ -14,18 +14,17 @@ public class PanelInformacionEmisora extends JPanel {
 
 	private JComboBox<String> comboModoTransmision;
 
-	private JTextField textoNombreEmisora;
-	private JTextField textoTipoMusica;
+	private JTextField campoTextoNombreEmisora;
+	private JTextField campoTextoTipoMusica;
 
 	private JButton botonGuardar;
 	private JButton botonCancelar;
-	
+
 	public final String GUARDAR = "Guardar";
 	public final String CANCELAR = "Cancelar";
 
 	public PanelInformacionEmisora() {
 
-		
 		setLayout(new GridLayout(6, 2));
 	}
 
@@ -42,8 +41,8 @@ public class PanelInformacionEmisora extends JPanel {
 		comboModoTransmision.addItem(titulos[5]);
 		comboModoTransmision.addItem(titulos[6]);
 
-		textoNombreEmisora = new JTextField();
-		textoTipoMusica = new JTextField();
+		campoTextoNombreEmisora = new JTextField();
+		campoTextoTipoMusica = new JTextField();
 
 		botonGuardar = new JButton(titulos[7]);
 		botonGuardar.setActionCommand(GUARDAR);
@@ -51,19 +50,18 @@ public class PanelInformacionEmisora extends JPanel {
 		botonCancelar = new JButton(titulos[8]);
 		botonCancelar.setActionCommand(CANCELAR);
 
-
 	}
 
 	public void agregarComponentes() {
 
 		add(etiquetaNombreEmisora);
-		add(textoNombreEmisora);
+		add(campoTextoNombreEmisora);
 
 		add(etiquetaModoTransmision);
 		add(comboModoTransmision);
 
 		add(etiquetaTipoMusica);
-		add(textoTipoMusica);
+		add(campoTextoTipoMusica);
 
 		add(botonGuardar);
 		add(botonCancelar);
@@ -102,20 +100,20 @@ public class PanelInformacionEmisora extends JPanel {
 		this.comboModoTransmision = comboModoTransmision;
 	}
 
-	public JTextField getTextoNombreEmisora() {
-		return textoNombreEmisora;
+	public JTextField getCampoTextoNombreEmisora() {
+		return campoTextoNombreEmisora;
 	}
 
-	public void setTextoNombreEmisora(JTextField textoNombreEmisora) {
-		this.textoNombreEmisora = textoNombreEmisora;
+	public void setCampoTextoNombreEmisora(JTextField campoTextoNombreEmisora) {
+		this.campoTextoNombreEmisora = campoTextoNombreEmisora;
 	}
 
-	public JTextField getTextoTipoMusica() {
-		return textoTipoMusica;
+	public JTextField getCampoTextoTipoMusica() {
+		return campoTextoTipoMusica;
 	}
 
-	public void setTextoTipoMusica(JTextField textoTipoMusica) {
-		this.textoTipoMusica = textoTipoMusica;
+	public void setCampoTextoTipoMusica(JTextField campoTextoTipoMusica) {
+		this.campoTextoTipoMusica = campoTextoTipoMusica;
 	}
 
 	public JButton getBotonGuardar() {
@@ -136,6 +134,14 @@ public class PanelInformacionEmisora extends JPanel {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getGUARDAR() {
+		return GUARDAR;
+	}
+
+	public String getCANCELAR() {
+		return CANCELAR;
 	}
 
 }
