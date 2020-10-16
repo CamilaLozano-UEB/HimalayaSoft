@@ -19,6 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
@@ -38,6 +39,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
 	private String[] titulosTabla;
+	private DefaultTableModel modelo;
 
 	private final String AGREGAR = "Agregar";
 	private final String CANCELAR = "Cancelar";
@@ -83,6 +85,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		titulosTabla[2] = titulos[9];
 		campoTextoArchivo.setEditable(false);
 		campoTextoArchivo.setBackground(new Color(194, 210, 214));
+		modelo= new DefaultTableModel();
+		tablaCanciones = new JTable(modelo);
 
 		/**
 		 * @author Nicolás Peña Mogollón
@@ -128,8 +132,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 */
 	public void crearTabla(String[][] datos) {
 		String[] titulos = { titulosTabla[0], titulosTabla[1], titulosTabla[2] };
-		tablaCanciones = new JTable(datos, titulos);
-		tablaCanciones.setAutoCreateColumnsFromModel(true);
+
 		scroll = new JScrollPane(tablaCanciones);
 		this.add(scroll);
 	}
