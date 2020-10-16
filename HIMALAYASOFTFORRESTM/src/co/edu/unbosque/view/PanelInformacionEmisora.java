@@ -22,6 +22,9 @@ public class PanelInformacionEmisora extends JPanel {
 
 	private JButton botonGuardar;
 	private JButton botonCancelar;
+	
+	public final String GUARDAR = "Guardar";
+	public final String CANCELAR = "Cancelar";
 
 	public PanelInformacionEmisora() {
 	
@@ -48,7 +51,11 @@ public class PanelInformacionEmisora extends JPanel {
 		radio_EN = new JRadioButton("English",false);
 		
 		botonGuardar = new JButton(titulos[7]);
+		botonGuardar.setActionCommand(GUARDAR);
+
 		botonCancelar = new JButton(titulos[8]);
+		botonCancelar.setActionCommand(CANCELAR);
+
 
 	}
 

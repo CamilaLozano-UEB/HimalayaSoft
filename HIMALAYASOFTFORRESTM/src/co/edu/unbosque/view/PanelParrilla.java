@@ -16,6 +16,7 @@ public class PanelParrilla extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JButton botonAgregar;
+	private String COMMAND_AGREGAR_PARRILLA= "AgregarParrilla";
 	private JTable tablaParrilla;
 	private JComboBox<String> comboNombreCancion;
 	private JScrollPane sp;
@@ -33,6 +34,7 @@ public class PanelParrilla extends JPanel {
 	 * 
 	 * @author Juana Valentina Torres Parrado Se obtiene un String bidimensional
 	 *         para generar la tabla de la parrilla
+	 * 
 	 * @param datos
 	 * 
 	 */
@@ -48,17 +50,21 @@ public class PanelParrilla extends JPanel {
 
 	/**
 	 * 
-	 * @author Juana Valentina Torres Parrado Se asigna los valores correspondientes
-	 *         a cada componente
+	 * @author Juana Valentina Torres Parrado 
 	 * 
+	 * Se asigna los valores correspondientes
+	 *         a cada componente apartir de un arreglo.
+	 *  @param titulos
 	 */
 	public void asignarValores(String[] titulos) {
 		contenedor = new JPanel();
 		contenedor.setLayout(new GridLayout(1, 2));
 		setBorder(new TitledBorder(titulos[0]));
 		botonAgregar = new JButton(titulos[1]);
+		botonAgregar.setActionCommand(COMMAND_AGREGAR_PARRILLA);
 		comboNombreCancion = new JComboBox<String>();
 		comboNombreCancion.addItem(titulos[2]);
+		
 		titulosTabla[0] = titulos[3];
 		titulosTabla[1] = titulos[4];
 		titulosTabla[2] = titulos[5];
@@ -66,15 +72,41 @@ public class PanelParrilla extends JPanel {
 
 	/**
 	 * 
-	 * @author Juana Valentina Torres Parrado Se agrega cada componente del panel y
-	 *         se orienta en sur, centro y este.
+	 * @author Juana Valentina Torres Parrado 
 	 * 
+	 * Se agrega cada componente del panel y lo ubica desde BorderLayout
+	 *
 	 */
 	public void agregarComponentes() {
 		contenedor.add(comboNombreCancion);
 		contenedor.add(botonAgregar);
 
 		add(contenedor, BorderLayout.PAGE_START);
+	}
+	
+
+	public String getCOMMAND_AGREGAR_PARRILLA() {
+		return COMMAND_AGREGAR_PARRILLA;
+	}
+
+	public void setCOMMAND_AGREGAR_PARRILLA(String cOMMAND_AGREGAR_PARRILLA) {
+		COMMAND_AGREGAR_PARRILLA = cOMMAND_AGREGAR_PARRILLA;
+	}
+
+	public String[] getTitulosTabla() {
+		return titulosTabla;
+	}
+
+	public void setTitulosTabla(String[] titulosTabla) {
+		this.titulosTabla = titulosTabla;
+	}
+
+	public JPanel getContenedor() {
+		return contenedor;
+	}
+
+	public void setContenedor(JPanel contenedor) {
+		this.contenedor = contenedor;
 	}
 
 	public JButton getBotonAgregar() {
