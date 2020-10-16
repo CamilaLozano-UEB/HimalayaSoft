@@ -10,7 +10,7 @@ public class CaracteristicaEmisora extends Persistence {
 	private final String directortio = "./Data/";
 	private final String gui_ES= "GUI_ES.properties";
 	private final String gui_EN= "GUI_EN.properties";
-	private final String archivoConfiguracion = "Configuracion.properties";
+	private final String archivoConfiguracion = "Configuraciones.properties";
 	private Properties prop;
 
 	public CaracteristicaEmisora() {
