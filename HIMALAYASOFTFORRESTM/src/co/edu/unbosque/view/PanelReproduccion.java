@@ -40,11 +40,14 @@ public class PanelReproduccion extends JPanel {
 		botonPausa.setBorder(null);
 		botonPausa.setOpaque(true);
 		botonPausa.setBackground(new Color(162, 118, 234));
+		botonPausa.setActionCommand(COMMAND_PAUSAR);
 
 		botonPlay = new JButton();
 		botonPlay.setBorder(null);
 		botonPlay.setOpaque(true);
 		botonPlay.setBackground(new Color(162, 118, 234));
+		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
+
 	}
 
 	/**
@@ -60,13 +63,11 @@ public class PanelReproduccion extends JPanel {
 		img_sound = new ImageIcon("./Imagenes/SinSonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPausa.setIcon(icon_sound);
-		botonPausa.setActionCommand(COMMAND_PAUSAR);
 		add(botonPausa);
 
 		img_sound = new ImageIcon("./Imagenes/Sonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPlay.setIcon(icon_sound);
-		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
 		add(botonPlay);
 	}
 
