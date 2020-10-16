@@ -144,7 +144,7 @@ public class Emisora {
 	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {
 		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf(".") + 1, rutaArchivo.length());
 		System.out.println(mimeType);
-		if (!mimeType.equals("mp3")) {
+		if (!mimeType.contains("mp3")) {
 			throw new ExtensionIncorrectaException("");
 		}
 
