@@ -88,10 +88,14 @@ public class PanelInformacionEmisora extends JPanel {
 		this.campoTextoNombreEmisora.setText(nombre);
 		this.comboModoTransmision.setSelectedItem(modo);
 		this.campoTextoTipoMusica.setText(tipo);
-		if (idioma.equals("EN"))
-			this.radio_EN.setSelected(true);
-		else
+		if (idioma==null) {
 			this.radio_ES.setSelected(true);
+		} else if (idioma.equals("EN")) {
+			this.radio_EN.setSelected(true);
+		} else if (idioma.equals("ES")){
+			this.radio_ES.setSelected(true);
+		}
+			
 	}
 
 	public void borrarCampos() {
