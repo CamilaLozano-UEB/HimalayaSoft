@@ -38,14 +38,12 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JButton botonCancelar;
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
-	private String[] titulosTabla;
-	private DefaultTableModel modelo;
+	private DefaultTableModel modeloTabla;
 
 	private final String AGREGAR = "Agregar";
 	private final String CANCELAR = "Cancelar";
 
 	public PanelAgregarCancion() {
-		this.titulosTabla = new String[3];
 		this.setLayout(new GridLayout(1, 2));
 
 	}
@@ -80,13 +78,15 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		botonCancelar = new JButton(titulos[6]);
 		botonCancelar.setActionCommand(CANCELAR);
 
-		titulosTabla[0] = titulos[7];
-		titulosTabla[1] = titulos[8];
-		titulosTabla[2] = titulos[9];
 		campoTextoArchivo.setEditable(false);
 		campoTextoArchivo.setBackground(new Color(194, 210, 214));
-		modelo= new DefaultTableModel();
-		tablaCanciones = new JTable(modelo);
+
+		modeloTabla = new DefaultTableModel();
+		tablaCanciones = new JTable(modeloTabla);
+		scroll = new JScrollPane(tablaCanciones);
+		modeloTabla.addColumn(titulos[7]);
+		modeloTabla.addColumn(titulos[8]);
+		modeloTabla.addColumn(titulos[9]);
 
 		/**
 		 * @author Nicolás Peña Mogollón
@@ -120,6 +120,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		panelRegistro.add(botonAgregar);
 		panelRegistro.add(botonCancelar);
 		this.add(panelRegistro);
+		this.add(scroll);
 
 	}
 
@@ -131,10 +132,14 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 * @param datos
 	 */
 	public void crearTabla(String[][] datos) {
-		String[] titulos = { titulosTabla[0], titulosTabla[1], titulosTabla[2] };
+		for (int i = 0; i < datos.length; i++) {
+			modeloTabla.addRow(datos[i]);
+		}
+	}
 
-		scroll = new JScrollPane(tablaCanciones);
-		this.add(scroll);
+	public void actualizarTabla(String cancion, String autor, String genero) {
+		String[] datos = { cancion, autor, genero };
+		modeloTabla.addRow(datos);
 	}
 
 	public void borrarCampos() {
@@ -377,14 +382,6 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.dropTarget = dropTarget;
 	}
 
-	public String[] getTitulosTabla() {
-		return titulosTabla;
-	}
-
-	public void setTitulosTabla(String[] titulosTabla) {
-		this.titulosTabla = titulosTabla;
-	}
-
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -395,6 +392,14 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 	public String getCANCELAR() {
 		return CANCELAR;
+	}
+
+	public DefaultTableModel getModeloTabla() {
+		return modeloTabla;
+	}
+
+	public void setModeloTabla(DefaultTableModel modeloTabla) {
+		this.modeloTabla = modeloTabla;
 	}
 
 }
