@@ -105,6 +105,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 */
 	public void agregarComponentes() {
 
+
+		this.add(tablaCanciones);
 		panelRegistro.add(etiquetaNombreCancion);
 		panelRegistro.add(campoTextoNombreCancion);
 		panelRegistro.add(etiquetaNombreAutor);
@@ -257,7 +259,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 		} catch (Exception e) {
 
-			JOptionPane.showMessageDialog(null, "Error al insetar imagen!!!", "Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "Error al insetar!!!", "Warning", JOptionPane.WARNING_MESSAGE);
 			dtde.rejectDrop();
 		}
 	}
