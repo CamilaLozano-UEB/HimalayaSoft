@@ -91,14 +91,17 @@ public class Controller implements ActionListener {
 			}
 			if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, rutaArchivo)
 					&& this.emisora.getArchivo().copiarCancion(rutaArchivo, nombreCancion)) {
+				this.vista.getPanelInformacion().getPanelAgregarCancion().crearTabla(this.emisora.asignarDatosTabla());
 				vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
 				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 			} else {
 				vista.mostrarMensajeError("Error al guardar canción");
+				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 			}
 
 		} else {
 			vista.mostrarMensajeError("Es necesario llenar los campos");
+			this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 		}
 
 	}

@@ -125,8 +125,6 @@ public class Emisora {
 			return false;
 
 	}
-	
-	
 
 	/**
 	 * @author Carlos Ballen
@@ -146,14 +144,19 @@ public class Emisora {
 	public void cargarAtributosArchivoPistas() {
 
 		String[] pistas = this.archivo.leer(this.archivo.getRUTA_CANCIONES()).split("\n");
+
 		for (int i = 0; i < pistas.length; i++) {
 			String[] atributo = pistas[i].split("~");
-			PistaMusical obj = new PistaMusical();
-			obj.setNombreCancion(atributo[0]);
-			obj.setNombreAutor(atributo[1]);
-			obj.setGeneroMusical(atributo[2]);
-			obj.setNombreArchivoMusica(atributo[3]);
-			this.pistasMusicales.add(obj);
+			if (atributo.length >= 4) {
+				PistaMusical obj = new PistaMusical();
+				obj.setNombreCancion(atributo[0]);
+				obj.setNombreAutor(atributo[1]);
+				obj.setGeneroMusical(atributo[2]);
+				obj.setNombreArchivoMusica(atributo[3]);
+				this.pistasMusicales.add(obj);
+			} else {
+				i = pistas.length;
+			}
 		}
 	}
 

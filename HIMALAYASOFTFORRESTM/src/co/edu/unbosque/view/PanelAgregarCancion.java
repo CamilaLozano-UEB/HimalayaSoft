@@ -105,8 +105,6 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 */
 	public void agregarComponentes() {
 
-
-		this.add(tablaCanciones);
 		panelRegistro.add(etiquetaNombreCancion);
 		panelRegistro.add(campoTextoNombreCancion);
 		panelRegistro.add(etiquetaNombreAutor);
@@ -129,9 +127,9 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 * @param datos
 	 */
 	public void crearTabla(String[][] datos) {
-
 		String[] titulos = { titulosTabla[0], titulosTabla[1], titulosTabla[2] };
 		tablaCanciones = new JTable(datos, titulos);
+		tablaCanciones.setAutoCreateColumnsFromModel(true);
 		scroll = new JScrollPane(tablaCanciones);
 		this.add(scroll);
 	}
