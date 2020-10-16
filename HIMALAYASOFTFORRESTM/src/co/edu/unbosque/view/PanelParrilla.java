@@ -3,14 +3,12 @@ package co.edu.unbosque.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.dnd.DropTarget;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,7 +23,6 @@ public class PanelParrilla extends JPanel {
 	private String[] titulosTabla;
 	private JPanel contenedor;
 	private DefaultTableModel modeloTablaParrilla;
-	private DropTarget dropTarget;
 
 	public PanelParrilla() {
 
