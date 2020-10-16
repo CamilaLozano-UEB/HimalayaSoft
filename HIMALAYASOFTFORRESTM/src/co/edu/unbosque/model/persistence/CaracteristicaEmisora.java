@@ -109,7 +109,7 @@ public class CaracteristicaEmisora extends Persistence {
 	}
 
 	public String getDirectortio() {
-		return directortio;
+		return directorio;
 	}
 
 	public String getGui_ES() {
