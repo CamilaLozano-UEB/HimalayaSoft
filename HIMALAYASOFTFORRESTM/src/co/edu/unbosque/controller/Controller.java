@@ -26,9 +26,8 @@ public class Controller implements ActionListener {
 		if (event.getActionCommand()
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getBotonGuardar())) {
 			if (!this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoNombreEmisora().getText()
-					.equals("")&&!this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision().getSelectedItem()
-					.equals("")) {
-
+					.equals("")&&!this.vista.getPanelInformacion().getPanelInformacionEmisora().getComboModoTransmision().getSelectedItem().equals("")) {
+				
 			}
 		}
 
