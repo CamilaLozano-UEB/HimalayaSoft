@@ -98,23 +98,4 @@ public class PanelDatosEmisora extends JPanel {
 		return serialVersionUID;
 	}
 
-	public static void main(String[] args) {
-
-		PanelDatosEmisora panel = new PanelDatosEmisora();
-
-		String[] titulos = new String[6];
-		titulos[0] = "Nombre de Emisora:";
-		titulos[1] = "Modo de Transmision:";
-		titulos[2] = "Tipo de Musica:";
-		titulos[3] = "ForrestFM";
-		titulos[4] = "Streaming";
-		titulos[5] = "POP";
-
-		panel.asignarValores(titulos);
-		panel.agregarComponentes();
-		JFrame frame = new JFrame();
-		frame.add(panel);
-		frame.setVisible(true);
-	}
-
 }

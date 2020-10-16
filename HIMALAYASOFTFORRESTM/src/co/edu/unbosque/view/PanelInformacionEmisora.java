@@ -71,7 +71,6 @@ public class PanelInformacionEmisora extends JPanel {
 
 		add(etiquetaTipoMusica);
 		add(campoTextoTipoMusica);
-		add(campoTextoNombreEmisora);
 
 		ButtonGroup bg = new ButtonGroup();
 		bg.add(radio_ES);
