@@ -43,6 +43,8 @@ public class Emisora {
 		this.modoTransmision = modoTransmision;
 		this.tipoDeMusica = tipoMusica;
 	}
+	
+	
 
 	/**
 	 * @author Carlos Ballen
@@ -64,6 +66,7 @@ public class Emisora {
 		this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
 
 	}
+	
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana

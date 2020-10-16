@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class CaracteristicaEmisora extends Persistence {
 
-	private final String directortio = "./Data/";
+	private final String directorio = "./Data/";
 	private final String gui_ES= "GUI_ES.properties";
 	private final String gui_EN= "GUI_EN.properties";
 	private final String archivoConfiguracion = "Configuraciones.properties";
@@ -35,7 +35,7 @@ public class CaracteristicaEmisora extends Persistence {
 			prop.setProperty("modoTransmision", listaDatos[1]);
 			prop.setProperty("tipoMusica", listaDatos[2]);
 			prop.setProperty("idioma",listaDatos[3]);
-			prop.store(new FileOutputStream(directortio+archivoConfiguracion), null);
+			prop.store(new FileOutputStream(directorio+archivoConfiguracion), null);
 		} catch (IOException ex) {
 			return false;
 		}
@@ -57,15 +57,15 @@ public class CaracteristicaEmisora extends Persistence {
 		String leng = "";
 		
 		try {
-			prop.load(new FileInputStream(directortio+archivoConfiguracion));
+			prop.load(new FileInputStream(directorio+archivoConfiguracion));
 			leng=prop.getProperty("idioma");
 			
 			if(leng.equals("EN")) {
-				prop.load(new FileInputStream(directortio+gui_EN));
+				prop.load(new FileInputStream(directorio+gui_EN));
 				linea = prop.getProperty(dato);
 			}
 			else {
-				prop.load(new FileInputStream(directortio+gui_ES));
+				prop.load(new FileInputStream(directorio+gui_ES));
 				linea = prop.getProperty(dato);
 			}
 			
@@ -82,7 +82,7 @@ public class CaracteristicaEmisora extends Persistence {
 		String linea = "";
 	
 		try {
-			prop.load(new FileInputStream(directortio+ruta));
+			prop.load(new FileInputStream(directorio+ruta));
 			linea=prop.getProperty(dato);
 		} 
 		catch (IOException e) {
