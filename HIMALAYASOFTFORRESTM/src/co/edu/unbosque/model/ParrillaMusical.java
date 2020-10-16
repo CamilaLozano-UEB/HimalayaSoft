@@ -11,6 +11,7 @@ public class ParrillaMusical {
 
 	public ParrillaMusical() {
 
+		pistasMusicales = new ArrayList<PistaMusical>();
 	}
 
 	public void cargarParrilla(ArrayList<PistaMusical> pistas) {

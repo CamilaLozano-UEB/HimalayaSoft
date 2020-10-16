@@ -55,7 +55,6 @@ public class Emisora {
 
 			if (pistaMusical.getNombreCancion().equals(nombreCancion)) {
 				this.parillaDelDia.agregarPistaMusical(pistaMusical);
-
 				datosPista[0] = pistaMusical.getNombreCancion();
 				datosPista[1] = pistaMusical.getNombreAutor();
 				datosPista[2] = pistaMusical.getGeneroMusical();
