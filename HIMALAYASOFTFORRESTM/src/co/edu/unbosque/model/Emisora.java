@@ -180,6 +180,14 @@ public class Emisora {
 		return tabla;
 	}
 
+	public String[] generarListaDeCancionesDisponibles() {
+		String[] salida = new String[this.pistasMusicales.size()];
+		for (int i = 0; i < this.pistasMusicales.size(); i++) {
+			salida[i] = this.pistasMusicales.get(i).getNombreCancion();
+		}
+		return salida;
+	}
+
 	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {
 		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf(".") + 1, rutaArchivo.length());
 		if (!mimeType.contains("mp3")) {

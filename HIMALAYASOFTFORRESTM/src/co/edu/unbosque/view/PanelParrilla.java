@@ -16,7 +16,7 @@ public class PanelParrilla extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JButton botonAgregar;
-	private String COMMAND_AGREGAR_PARRILLA= "AgregarParrilla";
+	private String COMMAND_AGREGAR_PARRILLA = "AgregarParrilla";
 	private JTable tablaParrilla;
 	private JComboBox<String> comboNombreCancion;
 	private JScrollPane sp;
@@ -50,11 +50,11 @@ public class PanelParrilla extends JPanel {
 
 	/**
 	 * 
-	 * @author Juana Valentina Torres Parrado 
+	 * @author Juana Valentina Torres Parrado
 	 * 
-	 * Se asigna los valores correspondientes
-	 *         a cada componente apartir de un arreglo.
-	 *  @param titulos
+	 *         Se asigna los valores correspondientes a cada componente apartir de
+	 *         un arreglo.
+	 * @param titulos
 	 */
 	public void asignarValores(String[] titulos) {
 		contenedor = new JPanel();
@@ -64,7 +64,7 @@ public class PanelParrilla extends JPanel {
 		botonAgregar.setActionCommand(COMMAND_AGREGAR_PARRILLA);
 		comboNombreCancion = new JComboBox<String>();
 		comboNombreCancion.addItem(titulos[2]);
-		
+
 		titulosTabla[0] = titulos[3];
 		titulosTabla[1] = titulos[4];
 		titulosTabla[2] = titulos[5];
@@ -72,9 +72,9 @@ public class PanelParrilla extends JPanel {
 
 	/**
 	 * 
-	 * @author Juana Valentina Torres Parrado 
+	 * @author Juana Valentina Torres Parrado
 	 * 
-	 * Se agrega cada componente del panel y lo ubica desde BorderLayout
+	 *         Se agrega cada componente del panel y lo ubica desde BorderLayout
 	 *
 	 */
 	public void agregarComponentes() {
@@ -83,7 +83,13 @@ public class PanelParrilla extends JPanel {
 
 		add(contenedor, BorderLayout.PAGE_START);
 	}
-	
+
+	public void agregarCancionesComboBox(String[] canciones) {
+		for (int i = 0; i < canciones.length; i++) {
+			this.comboNombreCancion.addItem(canciones[i]);
+		}
+
+	}
 
 	public String getCOMMAND_AGREGAR_PARRILLA() {
 		return COMMAND_AGREGAR_PARRILLA;

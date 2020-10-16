@@ -34,6 +34,18 @@ public class Controller implements ActionListener {
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
 			this.gestionarIngresoCancion();
+		} else if (event.getActionCommand()
+				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_AGREGAR_PARRILLA())) {
+
+			if (!vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
+					.equals("Seleccionar Canción")
+					&& !vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
+							.equals("Please Select")) {
+				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
+						.getSelectedItem();
+				
+
+			}
 		}
 	}
 
@@ -93,6 +105,7 @@ public class Controller implements ActionListener {
 					&& this.emisora.getArchivo().copiarCancion(rutaArchivo, nombreCancion)) {
 				this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(nombreCancion, nombreArtista,
 						genero);
+				this.vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().addItem(nombreCancion);
 				vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
 				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 			} else {
@@ -126,11 +139,13 @@ public class Controller implements ActionListener {
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().cargarCampos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica(), this.emisora.getIdioma());
 		this.vista.getPanelInformacion().getPanelAgregarCancion().crearTabla(this.emisora.asignarDatosTabla());
+		this.vista.getPanelEmisora().getPanelParrilla()
+				.agregarCancionesComboBox(this.emisora.generarListaDeCancionesDisponibles());
 	}
 
 	public void iniciarEmisora() {
 		this.emisora.gestionarCaracteristicas();
 		this.emisora.cargarAtributosArchivoPistas();
 	}
-	
+
 }
