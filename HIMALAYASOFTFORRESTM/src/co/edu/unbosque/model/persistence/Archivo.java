@@ -65,16 +65,16 @@ public class Archivo extends Persistence {
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
-	 * 
+	 * @param  ruta del archivo a leer
 	 *         Lee el archivo de las canciones y retorna un String con la
 	 *         información separada por caracteres específicos
 	 */
 	@Override
-	public String leer(String dato) {
+	public String leer(String ruta) {
 		// TODO Auto-generated method stub
 		String linea = "";
 		String data = "";
-		File f = new File(dato);
+		File f = new File(ruta);
 
 		try {
 			FileReader fr = new FileReader(f);
@@ -96,23 +96,23 @@ public class Archivo extends Persistence {
 	/**
 	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
-	 * 
+	 * @param  ruta del archivo a leer
 	 *         Lee el archivo de la parrilla de reproducción y retorna un arreglo de
-	 *         tipo String con los valores de cada pista musical que tiene
+	 * 		   tipo String con los valores de cada pista musical que tiene
 	 * @return
 	 */
-	public String[] leerArchivo(String dato) {
+	public String[] leerArchivo(String ruta) {
 
-		String[] data = new String[this.contarLineas(dato)];
+		String[] data = new String[this.contarLineas(ruta)];
 		String linea = "";
 		int i = 0;
-		File f = new File(dato);
+		File f = new File(ruta);
 		try {
 			FileReader fr = new FileReader(f);
 			BufferedReader br = new BufferedReader(fr);
 
 			linea = br.readLine();
-			while (linea != null && i < this.contarLineas(dato)) {
+			while (linea != null && i < this.contarLineas(ruta)) {
 				data[i] = linea;
 				linea = br.readLine();
 			}
