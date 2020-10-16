@@ -51,8 +51,8 @@ public class PanelInformacionEmisora extends JPanel {
 		campoTextoNombreEmisora = new JTextField();
 		campoTextoTipoMusica = new JTextField();
 
-		radio_ES = new JRadioButton("Español", true);
-		radio_EN = new JRadioButton("English", false);
+		radio_ES = new JRadioButton("Español");
+		radio_EN = new JRadioButton("English");
 
 		botonGuardar = new JButton(titulos[8]);
 		botonGuardar.setActionCommand(GUARDAR);

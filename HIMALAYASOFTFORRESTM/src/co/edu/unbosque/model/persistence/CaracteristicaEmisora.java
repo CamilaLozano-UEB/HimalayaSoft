@@ -10,7 +10,7 @@ public class CaracteristicaEmisora extends Persistence {
 	private final String directorio = "./Data/";
 	private final String gui_ES = "GUI_ES.properties";
 	private final String gui_EN = "GUI_EN.properties";
-	private final String archivoConfiguracion = "Configuraciones.properties";
+	private final String archivoConfiguracion = "Configuracion.properties";
 	private Properties prop;
 	private Properties propGUI;
 
@@ -60,15 +60,20 @@ public class CaracteristicaEmisora extends Persistence {
 
 		try {
 			prop.load(new FileInputStream(directorio+archivoConfiguracion));
-			leng=prop.getProperty("idioma");
-			
-			if(leng.equals("EN")) {
-				prop.load(new FileInputStream(directorio+gui_EN));
-				linea = prop.getProperty(dato);
+			if(prop.getProperty("idioma")==null) {
+				leng="ES";
 			}
 			else {
-				prop.load(new FileInputStream(directorio+gui_ES));
-				linea = prop.getProperty(dato);
+				leng=prop.getProperty("idioma");
+			}
+			
+			if(leng.equals("EN")) {
+				propGUI.load(new FileInputStream(directorio+gui_EN));
+				linea = propGUI.getProperty(dato);
+			}
+			else if(leng.equals("ES")){
+				propGUI.load(new FileInputStream(directorio+gui_ES));
+				linea = propGUI.getProperty(dato);
 			}
 			
 		} 
@@ -78,6 +83,16 @@ public class CaracteristicaEmisora extends Persistence {
 		return linea;
 	}
 
+	
+	
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 *         Lee el valor pedido de dato del archivo properties.
+	 * @param String dato a leer
+	 * @param String ruta del archivo a leer
+	 */
+	
 	public String leer(String dato, String ruta) {
 
 		String linea = "";
@@ -91,6 +106,8 @@ public class CaracteristicaEmisora extends Persistence {
 		}
 		return linea;
 	}
+	
+	
 
 	public Properties getProp() {
 		return prop;
