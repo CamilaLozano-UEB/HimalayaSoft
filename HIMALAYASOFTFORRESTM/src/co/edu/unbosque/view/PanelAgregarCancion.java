@@ -38,14 +38,14 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
 	private String[] titulosTabla;
-	
-	public final String AGREGAR = "Agregar";
-	public final String CANCELAR = "Cancelar";
+
+	private final String AGREGAR = "Agregar";
+	private final String CANCELAR = "Cancelar";
 
 	public PanelAgregarCancion() {
-		this.titulosTabla= new String[3];
+		this.titulosTabla = new String[3];
 		this.setLayout(new GridLayout(1, 2));
-		
+
 	}
 
 	/**
@@ -75,7 +75,6 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		botonAgregar = new JButton(titulos[5]);
 		botonAgregar.setActionCommand(AGREGAR);
 
-		
 		botonCancelar = new JButton(titulos[6]);
 		botonCancelar.setActionCommand(CANCELAR);
 
@@ -368,8 +367,24 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.dropTarget = dropTarget;
 	}
 
+	public String[] getTitulosTabla() {
+		return titulosTabla;
+	}
+
+	public void setTitulosTabla(String[] titulosTabla) {
+		this.titulosTabla = titulosTabla;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public String getAGREGAR() {
+		return AGREGAR;
+	}
+
+	public String getCANCELAR() {
+		return CANCELAR;
 	}
 
 }

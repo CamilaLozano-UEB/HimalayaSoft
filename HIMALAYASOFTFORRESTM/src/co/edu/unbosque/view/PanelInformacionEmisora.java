@@ -83,6 +83,13 @@ public class PanelInformacionEmisora extends JPanel {
 		add(botonCancelar);
 
 	}
+
+	public void cargarCampos(String nombre, String modo, String tipo) {
+		this.campoTextoNombreEmisora.setText(nombre);
+		this.comboModoTransmision.setSelectedItem(modo);
+		this.campoTextoTipoMusica.setText(tipo);
+	}
+
 	public void borrarCampos() {
 		this.campoTextoNombreEmisora.setText("");
 		this.campoTextoTipoMusica.setText("");

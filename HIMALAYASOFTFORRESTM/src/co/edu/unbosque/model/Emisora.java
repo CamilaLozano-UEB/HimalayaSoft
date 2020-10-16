@@ -120,6 +120,15 @@ public class Emisora {
 			return false;
 
 	}
+	
+	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {
+		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf("."),rutaArchivo.length());
+		
+		if(mimeType.equals("mp3")) {
+			throw new ExtensionIncorrectaException("");
+		}
+		
+	}
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana

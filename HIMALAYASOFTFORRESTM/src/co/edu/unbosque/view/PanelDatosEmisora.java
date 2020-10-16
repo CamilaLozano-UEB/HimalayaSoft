@@ -26,9 +26,9 @@ public class PanelDatosEmisora extends JPanel {
 		etiquetaTituloNombre = new JLabel(titulos[1]);
 		etiquetaTituloModo = new JLabel(titulos[2]);
 		etiquetaTituloTipoMusica = new JLabel(titulos[3]);
-		etiquetaNombreEmisora = new JLabel(titulos[4]);
-		etiquetaModoTransmision = new JLabel(titulos[5]);
-		etiquetaTipoMusica = new JLabel(titulos[6]);
+		etiquetaNombreEmisora = new JLabel();
+		etiquetaModoTransmision = new JLabel();
+		etiquetaTipoMusica = new JLabel();
 	}
 
 
