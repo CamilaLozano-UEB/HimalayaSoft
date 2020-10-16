@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 public class Archivo extends Persistence {
 
@@ -95,7 +97,7 @@ public class Archivo extends Persistence {
 	 * @author Nicolás Peña Mogollón - Mar�a Camila Lozano Gutierrez - Juana
 	 *         Valentina Torres Parrado
 	 * 
-	 *         Lee el archivo de la parrilla de reproducci�n y retorna un arreglo de
+	 *         Lee el archivo de la parrilla de reproducción y retorna un arreglo de
 	 *         tipo String con los valores de cada pista musical que tiene
 	 * @return
 	 */
@@ -150,6 +152,38 @@ public class Archivo extends Persistence {
 		}
 		return cont;
 
+	}
+
+	/**
+	 * @author NicolasP
+	 * 
+	 *         Recibe la ruta desde la vista, para poder copiar un archivo que
+	 *         tendrá como nombre el nombre de la canción y estará guardado en el
+	 *         proyecto
+	 * 
+	 * @param ruta
+	 * @param nombreCancion
+	 * @return
+	 */
+	public boolean copiarCancion(String ruta, String nombreCancion) {
+
+		boolean salida = true;
+		try {
+			// Se quitan los espacios en blanco o /n para evitar confictos con la ruta
+			File archivoEntrada = new File(ruta.trim());
+			// Se verifica que se pueda leer
+			if (archivoEntrada.canRead()) {
+				// Se crea el nuevo archivo
+				File archivoDestino = new File("./Canciones/" + nombreCancion.trim() + ".mp3");
+				// Se copia la información del archivo de la ruta a uno nuevo y se reemplaza si
+				// existe un archivo igual
+				Files.copy(archivoEntrada.toPath(), archivoDestino.toPath(), StandardCopyOption.REPLACE_EXISTING);
+				salida = true;
+			}
+		} catch (Exception e) {
+			salida = false;
+		}
+		return salida;
 	}
 
 	public String getRUTA_CANCIONES() {
