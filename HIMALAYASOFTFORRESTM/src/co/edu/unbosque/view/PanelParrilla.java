@@ -45,6 +45,7 @@ public class PanelParrilla extends JPanel {
 		}
 	}
 
+	
 	public void actualizarTabla(String cancion, String autor, String genero) {
 		String[] datos = { cancion, autor, genero };
 		modeloTablaParrilla.addRow(datos);
