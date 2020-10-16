@@ -30,7 +30,7 @@ public class Emisora {
 	}
 
 	/**
-	 * @authorNicolás Peña Mogollón - María Camila Lozano Gutierrez
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez
 	 * 
 	 *                Toma los valores de emisora, modoTransmision y tipoMusica
 	 * @param nombreEmisora
@@ -66,7 +66,7 @@ public class Emisora {
 	}
 
 	/**
-	 * @authorNicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *                Valentina Torres Parrado
 	 * 
 	 *                Crea un objeto de la clase pista musical para a�adirlo al
@@ -95,7 +95,7 @@ public class Emisora {
 	}
 
 	/**
-	 * @authorNicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *                Valentina Torres Parrado
 	 * 
 	 *                Toma los valores de los atributos actuales y los actualiza en
@@ -113,7 +113,7 @@ public class Emisora {
 	}
 
 	/**
-	 * @authorNicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
 	 *                Valentina Torres Parrado
 	 * 
 	 *                Toma los datos de la canción ingresada y los agrega al archivo
