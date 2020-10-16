@@ -49,6 +49,9 @@ public class Controller implements ActionListener {
 				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1],tabla[2]);;
 
 			}
+		} else if (event.getActionCommand()
+				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
+			
 		}
 	}
 
