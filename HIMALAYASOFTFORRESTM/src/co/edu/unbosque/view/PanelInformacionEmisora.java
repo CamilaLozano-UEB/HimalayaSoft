@@ -43,6 +43,7 @@ public class PanelInformacionEmisora extends JPanel {
 		comboModoTransmision.addItem(titulos[4]);
 		comboModoTransmision.addItem(titulos[5]);
 		comboModoTransmision.addItem(titulos[6]);
+		comboModoTransmision.addItem(titulos[7]);
 
 		campoTextoNombreEmisora = new JTextField();
 		campoTextoTipoMusica = new JTextField();
@@ -53,10 +54,10 @@ public class PanelInformacionEmisora extends JPanel {
 		radio_ES = new JRadioButton("Español", true);
 		radio_EN = new JRadioButton("English", false);
 
-		botonGuardar = new JButton(titulos[7]);
+		botonGuardar = new JButton(titulos[8]);
 		botonGuardar.setActionCommand(GUARDAR);
 
-		botonCancelar = new JButton(titulos[8]);
+		botonCancelar = new JButton(titulos[9]);
 		botonCancelar.setActionCommand(CANCELAR);
 
 	}
@@ -81,6 +82,11 @@ public class PanelInformacionEmisora extends JPanel {
 		add(botonGuardar);
 		add(botonCancelar);
 
+	}
+	public void borrarCampos() {
+		this.campoTextoNombreEmisora.setText("");
+		this.campoTextoTipoMusica.setText("");
+		this.comboModoTransmision.setSelectedIndex(0);
 	}
 
 	public JLabel getEtiquetaNombreEmisora() {

@@ -14,6 +14,7 @@ public class Emisora {
 	private String nombreEmisora;
 	private String modoTransmision;
 	private String tipoDeMusica;
+	private String idioma;
 	private String[] titulosPanelDatosEmisora;
 	private String[] titulosPanelParrilla;
 	private String[] titulosPanelCancion;
@@ -32,16 +33,18 @@ public class Emisora {
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez
 	 * 
-	 *                Toma los valores de emisora, modoTransmision y tipoMusica
+	 *         Toma los valores de emisora, modoTransmision y tipoMusica
 	 * @param nombreEmisora
 	 * @param modoTransmision
 	 * @param tipoMusica
 	 */
-	public void asignarInformacionEmisora(String nombreEmisora, String modoTransmision, String tipoMusica) {
+	public void asignarInformacionEmisora(String nombreEmisora, String modoTransmision, String tipoMusica,
+			String idioma) {
 
 		this.nombreEmisora = nombreEmisora;
 		this.modoTransmision = modoTransmision;
 		this.tipoDeMusica = tipoMusica;
+		this.idioma = idioma;
 	}
 
 	/**
@@ -52,9 +55,12 @@ public class Emisora {
 	 */
 	public void gestionarCaracteristicas() {
 
-		this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora","archivoConfiguracion");
-		this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision","archivoConfiguracion");
-		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica","archivoConfiguracion");
+		this.nombreEmisora = this.caracteristicasEmisora.leer("nombreEmisora",
+				this.caracteristicasEmisora.getArchivoConfiguracion());
+		this.modoTransmision = this.caracteristicasEmisora.leer("modoTransmision",
+				this.caracteristicasEmisora.getArchivoConfiguracion());
+		this.tipoDeMusica = this.caracteristicasEmisora.leer("tipoMusica",
+				this.caracteristicasEmisora.getArchivoConfiguracion());
 		this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
 		this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
 		this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
@@ -67,10 +73,10 @@ public class Emisora {
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
-	 *                Valentina Torres Parrado
+	 *         Valentina Torres Parrado
 	 * 
-	 *                Crea un objeto de la clase pista musical para a�adirlo al
-	 *                arreglo y lo escribe en el archivo.
+	 *         Crea un objeto de la clase pista musical para a�adirlo al arreglo y
+	 *         lo escribe en el archivo.
 	 * @param generoMusical
 	 * @param nombreCancion
 	 * @param nombreArtista
@@ -96,16 +102,16 @@ public class Emisora {
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
-	 *                Valentina Torres Parrado
+	 *         Valentina Torres Parrado
 	 * 
-	 *                Toma los valores de los atributos actuales y los actualiza en
-	 *                el archivo de propiedades.
+	 *         Toma los valores de los atributos actuales y los actualiza en el
+	 *         archivo de propiedades.
 	 * @return
 	 */
 	public boolean escribirArchivoEmisora() {
 
-		if (this.caracteristicasEmisora
-				.escribir(this.nombreEmisora + "~" + this.modoTransmision + "~" + this.tipoDeMusica))
+		if (this.caracteristicasEmisora.escribir(
+				this.nombreEmisora + "~" + this.modoTransmision + "~" + this.tipoDeMusica + "~" + this.idioma))
 			return true;
 		else
 			return false;
@@ -114,9 +120,9 @@ public class Emisora {
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
-	 *                Valentina Torres Parrado
+	 *         Valentina Torres Parrado
 	 * 
-	 *                Toma los datos de la canción ingresada y los agrega al archivo
+	 *         Toma los datos de la canción ingresada y los agrega al archivo
 	 * @param nombreEmisora
 	 * @param modoTransmision
 	 * @param tipoMusica
