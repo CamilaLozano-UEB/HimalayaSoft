@@ -3,6 +3,7 @@ package co.edu.unbosque.view;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.dnd.DropTarget;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -11,6 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import javax.swing.border.TitledBorder;
+import javax.swing.table.DefaultTableModel;
 
 public class PanelParrilla extends JPanel {
 
@@ -22,6 +24,8 @@ public class PanelParrilla extends JPanel {
 	private JScrollPane sp;
 	private String[] titulosTabla;
 	private JPanel contenedor;
+	private DefaultTableModel modeloTablaParrilla;
+	private DropTarget dropTarget;
 
 	public PanelParrilla() {
 
@@ -38,14 +42,16 @@ public class PanelParrilla extends JPanel {
 	 * @param datos
 	 * 
 	 */
-	public void crearTabla(String[][] datos) {
 
-		String[] titulos = { titulosTabla[0], titulosTabla[1], titulosTabla[2] };
-		tablaParrilla = new JTable(datos, titulos);
-		sp = new JScrollPane(tablaParrilla);
-		add(sp, BorderLayout.SOUTH);
-		repaint();
-		validate();
+	public void crearTabla(String[][] datos) {
+		for (int i = 0; i < datos.length; i++) {
+			modeloTablaParrilla.addRow(datos[i]);
+		}
+	}
+
+	public void actualizarTabla(String cancion, String autor, String genero) {
+		String[] datos = { cancion, autor, genero };
+		modeloTablaParrilla.addRow(datos);
 	}
 
 	/**
@@ -68,6 +74,13 @@ public class PanelParrilla extends JPanel {
 		titulosTabla[0] = titulos[3];
 		titulosTabla[1] = titulos[4];
 		titulosTabla[2] = titulos[5];
+		
+		modeloTablaParrilla = new DefaultTableModel();
+		tablaParrilla = new JTable(modeloTablaParrilla);
+		sp = new JScrollPane(tablaParrilla);
+		modeloTablaParrilla.addColumn(titulos[3]);
+		modeloTablaParrilla.addColumn(titulos[4]);
+		modeloTablaParrilla.addColumn(titulos[5]);
 	}
 
 	/**
@@ -80,7 +93,7 @@ public class PanelParrilla extends JPanel {
 	public void agregarComponentes() {
 		contenedor.add(comboNombreCancion);
 		contenedor.add(botonAgregar);
-
+		add(sp);
 		add(contenedor, BorderLayout.PAGE_START);
 	}
 
