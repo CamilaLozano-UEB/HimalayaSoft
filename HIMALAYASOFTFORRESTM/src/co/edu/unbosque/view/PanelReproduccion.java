@@ -33,7 +33,6 @@ public class PanelReproduccion extends JPanel {
 		this.agregarComponentes();
 	}
 
-	
 	/**
 	 * 
 	 * @author Juana Valentina Torres Parrado
@@ -54,19 +53,19 @@ public class PanelReproduccion extends JPanel {
 		botonPlay.setOpaque(true);
 		botonPlay.setBackground(new Color(162, 118, 234));
 		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
-		
+
 		botonStop = new JButton();
 		botonStop.setBorder(null);
 		botonStop.setOpaque(true);
 		botonStop.setBackground(new Color(162, 118, 234));
 		botonStop.setActionCommand(COMMAND_PARAR);
-		
+
 		botonRetrocede = new JButton();
 		botonRetrocede.setBorder(null);
 		botonRetrocede.setOpaque(true);
 		botonRetrocede.setBackground(new Color(162, 118, 234));
 		botonRetrocede.setActionCommand(COMMAND_RETROCEDER);
-		
+
 		botonAvanza = new JButton();
 		botonAvanza.setBorder(null);
 		botonAvanza.setOpaque(true);
@@ -84,37 +83,33 @@ public class PanelReproduccion extends JPanel {
 	 */
 
 	public void agregarComponentes() {
+		
 		img_sound = new ImageIcon("./Imagenes/Retrocede.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonRetrocede.setIcon(icon_sound);
 		add(botonRetrocede);
-		
+
 		img_sound = new ImageIcon("./Imagenes/SinSonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonStop.setIcon(icon_sound);
 		add(botonStop);
-		
+
 		img_sound = new ImageIcon("./Imagenes/Pause.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPausa.setIcon(icon_sound);
 		add(botonPausa);
-		
-		
 
 		img_sound = new ImageIcon("./Imagenes/Sonido.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPlay.setIcon(icon_sound);
 		add(botonPlay);
-		
-		
-		
+
 		img_sound = new ImageIcon("./Imagenes/Avanzar.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonAvanza.setIcon(icon_sound);
 		add(botonAvanza);
 	}
 
-	
 	public JButton getBotonStop() {
 		return botonStop;
 	}

@@ -76,15 +76,19 @@ public class Archivo extends Persistence {
 		File f = new File(ruta);
 
 		try {
-			FileReader fr = new FileReader(f);
-			BufferedReader br = new BufferedReader(fr);
-			linea = br.readLine();
-
-			while (linea != null) {
-				data += linea + "\n";
+			if (f.exists()) {
+				FileReader fr = new FileReader(f);
+				BufferedReader br = new BufferedReader(fr);
 				linea = br.readLine();
+
+				while (linea != null) {
+					data += linea + "\n";
+					linea = br.readLine();
+				}
+				br.close();
+			} else {
+				f.createNewFile();
 			}
-			br.close();
 
 		} catch (IOException e) {
 			return null;
@@ -152,6 +156,13 @@ public class Archivo extends Persistence {
 			salida = false;
 		}
 		return salida;
+	}
+
+	public void borrarArchivoParrilla() {
+		File file = new File(this.RUTA_PARRILLA);
+		if (file.exists()) {
+			file.delete();
+		}
 	}
 
 	public String getRUTA_CANCIONES() {

@@ -29,7 +29,7 @@ public class PanelParrilla extends JPanel {
 
 		setBackground(Color.white);
 		setLayout(new BorderLayout());
-		
+
 	}
 
 	/**
@@ -47,10 +47,15 @@ public class PanelParrilla extends JPanel {
 		}
 	}
 
-	
 	public void actualizarTabla(String cancion, String autor, String genero) {
 		String[] datos = { cancion, autor, genero };
 		modeloTablaParrilla.addRow(datos);
+	}
+
+	public void borrarContenidoTabla() {
+		for (int i = 0; i < modeloTablaParrilla.getRowCount(); i++) {
+			modeloTablaParrilla.removeRow(i);
+		}
 	}
 
 	/**
@@ -71,7 +76,7 @@ public class PanelParrilla extends JPanel {
 		botonBorrar.setActionCommand(COMMAND_BORRAR_PARRILLA);
 		comboNombreCancion = new JComboBox<String>();
 		comboNombreCancion.addItem(titulos[3]);
-		
+
 		modeloTablaParrilla = new DefaultTableModel();
 		tablaParrilla = new JTable(modeloTablaParrilla);
 		sp = new JScrollPane(tablaParrilla);
@@ -91,7 +96,7 @@ public class PanelParrilla extends JPanel {
 		contenedor.add(comboNombreCancion);
 		contenedor.add(botonAgregar);
 		add(sp);
-		add(botonBorrar,BorderLayout.PAGE_END);
+		add(botonBorrar, BorderLayout.PAGE_END);
 		add(contenedor, BorderLayout.PAGE_START);
 	}
 
@@ -109,7 +114,6 @@ public class PanelParrilla extends JPanel {
 	public void setCOMMAND_AGREGAR_PARRILLA(String cOMMAND_AGREGAR_PARRILLA) {
 		COMMAND_AGREGAR_PARRILLA = cOMMAND_AGREGAR_PARRILLA;
 	}
-
 
 	public JButton getBotonBorrar() {
 		return botonBorrar;

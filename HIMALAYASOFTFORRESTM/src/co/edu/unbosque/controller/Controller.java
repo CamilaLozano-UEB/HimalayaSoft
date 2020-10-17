@@ -24,19 +24,19 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 
-		if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelInformacionEmisora().getGUARDAR())) {	
+		if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelInformacionEmisora().getGUARDAR())) {
 			this.gestionarDatosEmisora();
 			this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
 					this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 			this.emisora.escribirArchivoEmisora();
-			
+
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
-		
+
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
 			this.gestionarIngresoCancion();
-		
+
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_AGREGAR_PARRILLA())) {
 
@@ -52,11 +52,32 @@ public class Controller implements ActionListener {
 				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1], tabla[2]);
 
 			}
-		}else if(event.getActionCommand().equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())){
-			
 		} else if (event.getActionCommand()
-				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
-			
+				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())) {
+			this.emisora.getParillaDelDia().reproducir();
+
+		} else if (event.getActionCommand()
+				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_PAUSAR())) {
+			this.emisora.getParillaDelDia().pausar();
+
+		} else if (event.getActionCommand()
+				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_PARAR())) {
+			this.emisora.getParillaDelDia().parar();
+
+		} else if (event.getActionCommand()
+				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_AVANZAR())) {
+			this.emisora.getParillaDelDia().reproducirSiguiente();
+
+		} else if (event.getActionCommand()
+				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_RETROCEDER())) {
+			this.emisora.getParillaDelDia().reproducirAnterior();
+
+		} else if (event.getActionCommand()
+				.equals(this.vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
+			this.emisora.getParillaDelDia().borrarParrilla();
+			this.emisora.getArchivo().borrarArchivoParrilla();
+			this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
+
 		}
 	}
 
@@ -160,6 +181,8 @@ public class Controller implements ActionListener {
 		this.emisora.gestionarCaracteristicas();
 		this.emisora.cargarAtributosArchivoPistas();
 		this.emisora.cargarInformacionArchivoParrilla();
+		this.emisora.getParillaDelDia().generarPlayList();
+
 	}
 
 }
