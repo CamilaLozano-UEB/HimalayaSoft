@@ -279,12 +279,10 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 					 *         Se da por terminado el drop
 					 */
 					dtde.dropComplete(true);
-<<<<<<< HEAD
-				} 
-=======
+
 					i = flavors.length;
 				}
->>>>>>> branch 'master' of https://github.com/CamilaLozano-UEB/HimalayaSoft
+
 			}
 			dtde.rejectDrop();
 
