@@ -89,6 +89,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		modeloTabla = new DefaultTableModel();
 		tablaCanciones = new JTable(modeloTabla);
 		tablaCanciones.setEnabled(false);
+		tablaCanciones.setDragEnabled(false);
 		scroll = new JScrollPane(tablaCanciones);
 		modeloTabla.addColumn(titulos[7]);
 		modeloTabla.addColumn(titulos[8]);
@@ -278,17 +279,13 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 					 *         Se da por terminado el drop
 					 */
 					dtde.dropComplete(true);
-				} else {
-					i = flavors.length;
-					JOptionPane.showMessageDialog(null, "Error al insetar imagen!!!", "Warning",
-							JOptionPane.WARNING_MESSAGE);
-				}
+				} 
 			}
 			dtde.rejectDrop();
 
 		} catch (Exception e) {
 
-			JOptionPane.showMessageDialog(null, "Error al insetar!!!", "Warning", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showMessageDialog(null, "¡Error al guardar arhcivo!", "Warning", JOptionPane.WARNING_MESSAGE);
 			dtde.rejectDrop();
 		}
 	}
