@@ -88,6 +88,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 		modeloTabla = new DefaultTableModel();
 		tablaCanciones = new JTable(modeloTabla);
+		tablaCanciones.setEnabled(false);
 		scroll = new JScrollPane(tablaCanciones);
 		modeloTabla.addColumn(titulos[7]);
 		modeloTabla.addColumn(titulos[8]);

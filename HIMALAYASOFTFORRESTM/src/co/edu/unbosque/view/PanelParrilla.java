@@ -76,6 +76,7 @@ public class PanelParrilla extends JPanel {
 
 		modeloTablaParrilla = new DefaultTableModel();
 		tablaParrilla = new JTable(modeloTablaParrilla);
+		tablaParrilla.setEnabled(false);
 		sp = new JScrollPane(tablaParrilla);
 		modeloTablaParrilla.addColumn(titulos[4]);
 		modeloTablaParrilla.addColumn(titulos[5]);

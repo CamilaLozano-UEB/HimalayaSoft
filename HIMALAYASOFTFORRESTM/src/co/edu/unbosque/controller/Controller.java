@@ -51,8 +51,7 @@ public class Controller implements ActionListener {
 				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
 						.getSelectedItem();
 				emisora.gestionarParrilla(cancion);
-				this.emisora.getParrillaMusical().borrarPlayList();
-				this.emisora.getParrillaMusical().generarPlayList();
+				this.emisora.getParrillaMusical().agregarCancionPlayList();
 				String[] tabla = emisora.llenarParrilla(cancion);
 				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1], tabla[2]);
 				this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
