@@ -227,7 +227,7 @@ public class Emisora {
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Con los objetos de el Arraylist PistMusical crea un arreglo String
+	 *         Con los objetos de el Arraylist PistaMusical crea un arreglo String
 	 *         pistasArchivo y carga la información del archivo.
 	 * 
 	 */

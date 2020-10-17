@@ -101,7 +101,7 @@ public class PanelInformacionEmisora extends JPanel {
 		}
 	}
 
-	public void actualizarPanelInformacionEmisora(String[] titulos) {
+	public void actualizarPanelInformacionEmisora(String[] titulos, String modoTransmision) {
 		setBorder(new TitledBorder(titulos[0]));
 		etiquetaNombreEmisora.setText(titulos[1]);
 		etiquetaModoTransmision.setText(titulos[2]);
@@ -113,12 +113,39 @@ public class PanelInformacionEmisora extends JPanel {
 		comboModoTransmision.addItem(titulos[7]);
 		botonGuardar.setText(titulos[8]);
 		botonCancelar.setText(titulos[9]);
+
+		if (modoTransmision.equals(this.comboModoTransmision.getItemAt(0))) {
+			this.comboModoTransmision.setSelectedIndex(0);
+		} else if (modoTransmision.equals(this.comboModoTransmision.getItemAt(1))) {
+			this.comboModoTransmision.setSelectedIndex(1);
+		} else if (modoTransmision.equals(this.comboModoTransmision.getItemAt(2))) {
+			this.comboModoTransmision.setSelectedIndex(2);
+		} else if (modoTransmision.equals(this.comboModoTransmision.getItemAt(3))) {
+			this.comboModoTransmision.setSelectedIndex(3);
+		}
 	}
 
-	public void restablecerCampos(String nombre,String tipoMusica) {
+	public void restablecerCampos(String nombre, String tipoMusica, String modoTransmision, String idioma) {
+
 		this.campoTextoNombreEmisora.setText(nombre);
 		this.campoTextoTipoMusica.setText(tipoMusica);
-		this.comboModoTransmision.setSelectedIndex(0);
+
+		if (modoTransmision.equals(this.comboModoTransmision.getItemAt(0))) {
+			this.comboModoTransmision.setSelectedIndex(0);
+		} else if (modoTransmision.equals(this.comboModoTransmision.getItemAt(1))) {
+			this.comboModoTransmision.setSelectedIndex(1);
+		} else if (modoTransmision.equals(this.comboModoTransmision.getItemAt(2))) {
+			this.comboModoTransmision.setSelectedIndex(2);
+		} else if (modoTransmision.equals(this.comboModoTransmision.getItemAt(3))) {
+			this.comboModoTransmision.setSelectedIndex(3);
+		}
+		if (idioma == null) {
+			this.radio_ES.setSelected(true);
+		} else if (idioma.equals("EN")) {
+			this.radio_EN.setSelected(true);
+		} else if (idioma.equals("ES")) {
+			this.radio_ES.setSelected(true);
+		}
 	}
 
 	public JLabel getEtiquetaNombreEmisora() {

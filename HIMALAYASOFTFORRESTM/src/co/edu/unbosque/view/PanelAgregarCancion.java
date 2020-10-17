@@ -41,7 +41,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private DefaultTableModel modeloTabla;
 
 	private final String AGREGAR = "Agregar";
-	private final String CANCELAR = "Cancelar";
+	private final String CANCELAR = "CANCELAR";
 
 	public PanelAgregarCancion() {
 		this.setLayout(new GridLayout(1, 2));

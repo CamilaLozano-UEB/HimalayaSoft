@@ -13,7 +13,7 @@ public class ParrillaMusical {
 		this.pistasMusicales = new ArrayList<PistaMusical>();
 		this.reproductorParrilla = new MP3Player();
 		this.reproductorParrilla.setRepeat(true);
-		
+
 	}
 
 	public void cargarParrilla(ArrayList<PistaMusical> pistas) {
@@ -25,10 +25,13 @@ public class ParrillaMusical {
 	}
 
 	public void generarPlayList() {
-		for (int i = 0; i < this.pistasMusicales.size(); i++) {
+		for (int i = 0; i < this.pistasMusicales.size(); i++)
 			reproductorParrilla.addToPlayList(
 					new File("./Canciones/" + this.pistasMusicales.get(i).getNombreArchivoMusica().trim()));
-		}
+	}
+
+	public void borrarPlayList() {
+		this.reproductorParrilla.getPlayList().clear();
 	}
 
 	public void reproducir() {
