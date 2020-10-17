@@ -13,7 +13,7 @@ public class View extends JFrame {
 	private PanelEmisora panelEmisora;
 	private JTabbedPane pestanas;
 
-	public View() {
+	public View(Controller control) {
 		panelInformacion = new PanelInformacion();
 		panelEmisora = new PanelEmisora();
 		pestanas = new JTabbedPane();
@@ -22,12 +22,14 @@ public class View extends JFrame {
 		this.setSize(1000, 700);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
+		this.agregarComponentes();
+		this.actionListener(control);
 
 	}
 
-	public void agregarComponentes(String[] titulos) {
-		pestanas.add(panelEmisora, titulos[0]);
-		pestanas.add(panelInformacion, titulos[1]);
+	public void agregarComponentes() {
+		pestanas.add(panelEmisora);
+		pestanas.add(panelInformacion);
 		getContentPane().add(pestanas);
 
 	}

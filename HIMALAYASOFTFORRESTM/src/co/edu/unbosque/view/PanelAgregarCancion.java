@@ -45,7 +45,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 	public PanelAgregarCancion() {
 		this.setLayout(new GridLayout(1, 2));
-
+		this.asignarValores();
+		this.agregarComponentes();
 	}
 
 	/**
@@ -55,20 +56,19 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 *         (lo que dice)
 	 * @param titulos
 	 */
-	public void asignarValores(String[] titulos) {
+	public void asignarValores() {
 
-		setBorder(new TitledBorder(titulos[0]));
 		panelRegistro = new JPanel();
 		panelRegistro.setLayout(new GridLayout(5, 2));
 		panelRegistro.setBackground(new Color(144, 215, 247));
 
-		etiquetaNombreCancion = new JLabel(titulos[1]);
+		etiquetaNombreCancion = new JLabel();
 		etiquetaNombreCancion.setForeground(Color.black);
-		etiquetaNombreAutor = new JLabel(titulos[2]);
+		etiquetaNombreAutor = new JLabel();
 		etiquetaNombreAutor.setForeground(Color.black);
-		etiquetaGeneroMusica = new JLabel(titulos[3]);
+		etiquetaGeneroMusica = new JLabel();
 		etiquetaGeneroMusica.setForeground(Color.black);
-		etiquetaArchivo = new JLabel(titulos[4]);
+		etiquetaArchivo = new JLabel();
 		etiquetaArchivo.setForeground(Color.black);
 
 		campoTextoNombreCancion = new JTextField();
@@ -77,10 +77,10 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		campoTextoArchivo = new JTextArea();
 		campoTextoArchivo.setForeground(Color.black);
 
-		botonAgregar = new JButton(titulos[5]);
+		botonAgregar = new JButton();
 		botonAgregar.setActionCommand(AGREGAR);
 
-		botonCancelar = new JButton(titulos[6]);
+		botonCancelar = new JButton();
 		botonCancelar.setActionCommand(CANCELAR);
 
 		campoTextoArchivo.setEditable(false);
@@ -91,9 +91,9 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		tablaCanciones.setEnabled(false);
 		tablaCanciones.setDragEnabled(false);
 		scroll = new JScrollPane(tablaCanciones);
-		modeloTabla.addColumn(titulos[7]);
-		modeloTabla.addColumn(titulos[8]);
-		modeloTabla.addColumn(titulos[9]);
+		modeloTabla.addColumn("");
+		modeloTabla.addColumn("");
+		modeloTabla.addColumn("");
 
 		/**
 		 * @author Nicolás Peña Mogollón
