@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import co.edu.unbosque.model.Emisora;
 import co.edu.unbosque.model.ExtensionIncorrectaException;
 import co.edu.unbosque.view.View;
-import javazoom.jlgui.basicplayer.BasicPlayerException;
 
 public class Controller implements ActionListener {
 
@@ -54,12 +53,7 @@ public class Controller implements ActionListener {
 
 			}
 		}else if(event.getActionCommand().equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())){
-			try {
-				this.emisora.getParillaDelDia().reproducirParrilla();
-			} catch (BasicPlayerException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
 			
