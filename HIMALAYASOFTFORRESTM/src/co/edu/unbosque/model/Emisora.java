@@ -33,7 +33,8 @@ public class Emisora {
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez
 	 * 
-	 *         Toma los valores de emisora, modoTransmision y tipoMusica
+	 *         Toma los valores de emisora, modoTransmision y tipoMusica y asigna la
+	 *         información a los atributos de la clase
 	 * @param nombreEmisora
 	 * @param modoTransmision
 	 * @param tipoMusica
@@ -46,6 +47,18 @@ public class Emisora {
 		this.tipoDeMusica = tipoMusica;
 		this.idioma = idioma;
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Recibe un string con el valor del nombre de la canción escogida, y lo
+	 *         compara con los que estan en el arreglo de canciones y cuando
+	 *         encuentra una igual, lo pasa al arreglo de canciones de
+	 *         ParrillaMusical, le da los valores al string datosPista y escribe en
+	 *         el archivo de Parrilla.txt esa información
+	 * 
+	 * @param nombreCancion
+	 */
 
 	public void gestionarParrilla(String nombreCancion) {
 
@@ -184,6 +197,14 @@ public class Emisora {
 
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Crea un objeto de pista musical y guarda sus atrbutos en un arraylist
+	 *         para añadirlo
+	 * 
+	 */
+
 	public void cargarAtributosArchivoPistas() {
 
 		String[] pistas = this.archivo.leer(this.archivo.getRUTA_CANCIONES()).split("\n");
@@ -202,6 +223,14 @@ public class Emisora {
 			}
 		}
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Con los objetos de el Arraylist PistMusical crea un arreglo String
+	 *         pistasArchivo y carga la información del archivo.
+	 * 
+	 */
 
 	public void cargarInformacionArchivoParrilla() {
 
@@ -230,7 +259,7 @@ public class Emisora {
 	 *         Toma los datos de los arreglos para cargar la información a un String
 	 *         bidimensional que tendrá los datos a mostrar en vista
 	 * 
-	 * @return
+	 * @return tabla
 	 */
 	public String[][] asignarDatosTablaAgregarCancion() {
 
@@ -244,6 +273,15 @@ public class Emisora {
 		return tabla;
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Se crea un arreglo de dos dimensiones que guardara los valores de
+	 *         Cancion, autor y genero musical
+	 * 
+	 * @return tabla
+	 */
+
 	public String[][] asignarDatosTablaParrilla() {
 
 		String[][] tabla = new String[this.parrillaMusical.getPistasMusicales().size()][3];
@@ -256,6 +294,15 @@ public class Emisora {
 		return tabla;
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Crea un arreglo unidimensional String que recorrer el arraylist de
+	 *         pistasMusicales y escoge una cancion a partir de su nombre
+	 * 
+	 * @return tabla
+	 */
+
 	public String[] generarListaDeCancionesDisponibles() {
 		String[] salida = new String[this.pistasMusicales.size()];
 		for (int i = 0; i < this.pistasMusicales.size(); i++) {
@@ -263,6 +310,13 @@ public class Emisora {
 		}
 		return salida;
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 * 
+	 * 
+	 */
 
 	public void verificarExtensionArchivo(String rutaArchivo, String nombreCancion)
 			throws ExtensionIncorrectaException, CancionIgualException {
