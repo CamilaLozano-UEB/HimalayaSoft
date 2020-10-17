@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class PanelInformacion extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private final String RUTA_ICONO = "./Imagenes/Himalaya.jpg";
+	private final String RUTA_LOGO = "./Imagenes/Himalaya.jpg";
 	private JPanel panelContEmisora;
 	private JLabel etiquetaImagen;
 	private PanelAgregarCancion panelAgregarCancion;
@@ -23,7 +23,7 @@ public class PanelInformacion extends JPanel {
 		panelAgregarCancion = new PanelAgregarCancion();
 		panelInformacionEmisora = new PanelInformacionEmisora();
 		etiquetaImagen = new JLabel();
-		etiquetaImagen.setIcon(new ImageIcon(RUTA_ICONO));
+		etiquetaImagen.setIcon(new ImageIcon(RUTA_LOGO));
 		panelContEmisora.add(etiquetaImagen, BorderLayout.WEST);
 		panelContEmisora.add(panelInformacionEmisora, BorderLayout.CENTER);
 		this.add(panelContEmisora);
@@ -68,7 +68,7 @@ public class PanelInformacion extends JPanel {
 	}
 
 	public String getRUTA_ICONO() {
-		return RUTA_ICONO;
+		return RUTA_LOGO;
 	}
 	
 }

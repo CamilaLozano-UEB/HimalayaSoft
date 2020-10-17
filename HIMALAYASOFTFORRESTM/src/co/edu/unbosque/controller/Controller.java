@@ -36,6 +36,7 @@ public class Controller implements ActionListener {
 					this.emisora.getIdioma());
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
 			this.gestionarIngresoCancion();
+			
 
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelInformacion().getPanelAgregarCancion().getCANCELAR())) {
@@ -164,7 +165,7 @@ public class Controller implements ActionListener {
 				}
 			} catch (ExtensionIncorrectaException | CancionIgualException e) {
 				// TODO Auto-generated catch block
-				vista.mostrarMensajeError(e.getMessage());
+				vista.mostrarMensajeError(this.emisora.getMensajesError()[4]);
 				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 			}
 

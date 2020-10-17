@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 public class PanelEmisora extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private final String RUTA_ICONO = "./Imagenes/HimalayaPanelEmi.png";
+	private final String RUTA_IMAGEN = "./Imagenes/HimalayaPanelEmi.png";
 	private PanelDatosEmisora panelDatosEmisora;
 	private PanelParrilla panelParrilla;
 	private PanelReproduccion panelReproduccion;
@@ -25,7 +25,7 @@ public class PanelEmisora extends JPanel {
 		panelReproduccion = new PanelReproduccion();
 
 		etiquetaImagen = new JLabel();
-		etiquetaImagen.setIcon(new ImageIcon(RUTA_ICONO));
+		etiquetaImagen.setIcon(new ImageIcon(RUTA_IMAGEN));
 
 		this.agregarComponentes();
 
@@ -63,7 +63,7 @@ public class PanelEmisora extends JPanel {
 	}
 
 	public String getRUTA_ICONO() {
-		return RUTA_ICONO;
+		return RUTA_IMAGEN;
 	}
 
 }

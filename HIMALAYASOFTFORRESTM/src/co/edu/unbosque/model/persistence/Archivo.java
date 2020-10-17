@@ -165,7 +165,7 @@ public class Archivo extends Persistence {
 		}
 	}
 
-	public String getRUTA_CANCIONES() {
+	public String getRUTA_PISTAS() {
 		return RUTA_PISTAS;
 	}
 

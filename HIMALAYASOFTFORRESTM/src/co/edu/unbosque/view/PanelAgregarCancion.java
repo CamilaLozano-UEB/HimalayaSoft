@@ -288,7 +288,6 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 		} catch (Exception e) {
 
-			JOptionPane.showMessageDialog(null, "¡Error al guardar arhcivo!", "Warning", JOptionPane.WARNING_MESSAGE);
 			dtde.rejectDrop();
 		}
 	}

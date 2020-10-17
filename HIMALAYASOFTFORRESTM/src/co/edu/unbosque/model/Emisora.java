@@ -207,7 +207,7 @@ public class Emisora {
 
 	public void cargarAtributosArchivoPistas() {
 
-		String[] pistas = this.archivo.leer(this.archivo.getRUTA_CANCIONES()).split("\n");
+		String[] pistas = this.archivo.leer(this.archivo.getRUTA_PISTAS()).split("\n");
 
 		for (int i = 0; i < pistas.length; i++) {
 			String[] atributo = pistas[i].split("~");
