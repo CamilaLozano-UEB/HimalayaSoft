@@ -28,22 +28,18 @@ public class PanelInformacionEmisora extends JPanel {
 
 	public PanelInformacionEmisora() {
 
-		setLayout(new GridLayout(7, 2));
+		this.setLayout(new GridLayout(7, 2));
+		this.asignarValores();
+		this.agregarComponentes();
 	}
 
-	public void asignarValores(String[] titulos) {
+	public void asignarValores() {
 
-		setBorder(new TitledBorder(titulos[0]));
-
-		etiquetaNombreEmisora = new JLabel(titulos[1]);
-		etiquetaModoTransmision = new JLabel(titulos[2]);
-		etiquetaTipoMusica = new JLabel(titulos[3]);
+		etiquetaNombreEmisora = new JLabel();
+		etiquetaModoTransmision = new JLabel();
+		etiquetaTipoMusica = new JLabel();
 
 		comboModoTransmision = new JComboBox<String>();
-		comboModoTransmision.addItem(titulos[4]);
-		comboModoTransmision.addItem(titulos[5]);
-		comboModoTransmision.addItem(titulos[6]);
-		comboModoTransmision.addItem(titulos[7]);
 
 		campoTextoNombreEmisora = new JTextField();
 		campoTextoTipoMusica = new JTextField();
@@ -54,10 +50,10 @@ public class PanelInformacionEmisora extends JPanel {
 		radio_ES = new JRadioButton("Español");
 		radio_EN = new JRadioButton("English");
 
-		botonGuardar = new JButton(titulos[8]);
+		botonGuardar = new JButton();
 		botonGuardar.setActionCommand(GUARDAR);
 
-		botonCancelar = new JButton(titulos[9]);
+		botonCancelar = new JButton();
 		botonCancelar.setActionCommand(CANCELAR);
 
 	}

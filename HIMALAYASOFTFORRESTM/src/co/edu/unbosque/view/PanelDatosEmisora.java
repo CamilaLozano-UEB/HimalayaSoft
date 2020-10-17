@@ -7,8 +7,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
-import java.awt.Color;
-
 
 public class PanelDatosEmisora extends JPanel {
 
@@ -20,19 +18,19 @@ public class PanelDatosEmisora extends JPanel {
 	private JLabel etiquetaTipoMusica;
 	private JLabel etiquetaGIFPlaying;
 	private JPanel panelEmisoraInfo;
-	private final String rutaGIFPlay="./Imagenes/MusicaPlay.gif";
-	private final String rutaGIFStop="./Imagenes/MusicaStop.gif";
+	private final String rutaGIFPlay = "./Imagenes/MusicaPlay.gif";
+	private final String rutaGIFStop = "./Imagenes/MusicaStop.gif";
 	private Icon GIFPlay;
 	private Icon GIFStop;
-	
-	
 
 	private static final long serialVersionUID = 1L;
 
 	public PanelDatosEmisora() {
-		setLayout(new GridLayout(2, 1));
-		GIFPlay = new ImageIcon(rutaGIFPlay);
-		GIFStop = new ImageIcon(rutaGIFStop);
+		this.setLayout(new GridLayout(2, 1));
+		this.GIFPlay = new ImageIcon(rutaGIFPlay);
+		this.GIFStop = new ImageIcon(rutaGIFStop);
+		this.asignarValores();
+		this.agregarComponentes();
 	}
 
 	/**
@@ -42,17 +40,15 @@ public class PanelDatosEmisora extends JPanel {
 	 * @param etiquetas
 	 */
 
-	public void asignarValores(String[] titulos) {
-
-		setBorder(new TitledBorder(titulos[0]));
+	public void asignarValores() {
 		panelEmisoraInfo = new JPanel();
 		panelEmisoraInfo.setLayout(new GridLayout(3, 2));
 		panelEmisoraInfo.setBackground(new Color(144, 215, 247));
-		etiquetaTituloNombre = new JLabel(titulos[1]);
+		etiquetaTituloNombre = new JLabel();
 		etiquetaTituloNombre.setForeground(Color.black);
-		etiquetaTituloModo = new JLabel(titulos[2]);
+		etiquetaTituloModo = new JLabel();
 		etiquetaTituloModo.setForeground(Color.black);
-		etiquetaTituloTipoMusica = new JLabel(titulos[3]);
+		etiquetaTituloTipoMusica = new JLabel();
 		etiquetaTituloTipoMusica.setForeground(Color.black);
 		etiquetaNombreEmisora = new JLabel();
 		etiquetaNombreEmisora.setForeground(Color.black);
@@ -84,19 +80,17 @@ public class PanelDatosEmisora extends JPanel {
 		etiquetaTituloModo.setText(titulos[2]);
 		etiquetaTituloTipoMusica.setText(titulos[3]);
 	}
-	
-	
+
 	/**
 	 * @author Carlos Ballen
 	 * 
 	 *         Asigna el icono correspondiente al estatus de reproduccion.
 	 * @param Icon, icono del estatus de reproduccion.
 	 */
-	
+
 	public void actualizarGIFStatus(Icon icon) {
-			etiquetaGIFPlaying.setIcon(icon);
+		etiquetaGIFPlaying.setIcon(icon);
 	}
-	
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano
@@ -182,7 +176,6 @@ public class PanelDatosEmisora extends JPanel {
 		this.panelEmisoraInfo = panelEmisoraInfo;
 	}
 
-	
 	public JLabel getEtiquetaGIFPlaying() {
 		return etiquetaGIFPlaying;
 	}
@@ -195,11 +188,9 @@ public class PanelDatosEmisora extends JPanel {
 		return rutaGIFPlay;
 	}
 
-
 	public String getRutaGIFStop() {
 		return rutaGIFStop;
 	}
-
 
 	public Icon getGIFPlay() {
 		return GIFPlay;

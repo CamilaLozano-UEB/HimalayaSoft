@@ -13,10 +13,9 @@ public class Controller implements ActionListener {
 	private Emisora emisora;
 
 	public Controller() {
-		this.vista = new View();
+		this.vista = new View(this);
 		this.emisora = new Emisora();
 		this.iniciarEmisora();
-		this.inicializarComponentesVista();
 	}
 
 	@Override
@@ -175,27 +174,14 @@ public class Controller implements ActionListener {
 
 	}
 
-	public void inicializarComponentesVista() {
-		this.vista.agregarComponentes(this.emisora.getTitulosView());
-		this.vista.getPanelEmisora().getPanelDatosEmisora().asignarValores(this.emisora.getTitulosPanelDatosEmisora());
-		this.vista.getPanelEmisora().getPanelDatosEmisora().agregarComponentes();
-		this.vista.getPanelEmisora().getPanelParrilla().asignarValores(this.emisora.getTitulosPanelParrilla());
-		this.vista.getPanelEmisora().getPanelParrilla().agregarComponentes();
-		this.vista.getPanelInformacion().getPanelAgregarCancion()
-				.asignarValores(this.emisora.getTitulosPanelAgregarCancion());
-		this.vista.getPanelInformacion().getPanelAgregarCancion().agregarComponentes();
-		this.vista.getPanelInformacion().getPanelInformacionEmisora()
-				.asignarValores(this.emisora.getTitulosPanelInformacionEmisora());
-		this.vista.getPanelInformacion().getPanelInformacionEmisora().agregarComponentes();
-		this.vista.actionListener(this);
+	public void llenarDatosEmisoraTablas() {
 		this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().cargarCampos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica(), this.emisora.getIdioma());
 		this.vista.getPanelInformacion().getPanelAgregarCancion()
 				.crearTabla(this.emisora.asignarDatosTablaAgregarCancion());
-		this.vista.getPanelEmisora().getPanelParrilla()
-				.agregarCancionesComboBox(this.emisora.generarListaDeCancionesDisponibles());
+
 		this.vista.getPanelEmisora().getPanelParrilla().crearTabla(this.emisora.asignarDatosTablaParrilla());
 		if (this.emisora.getParrillaMusical().getPistasMusicales().size() == 0) {
 			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
@@ -207,7 +193,8 @@ public class Controller implements ActionListener {
 		this.emisora.cargarAtributosArchivoPistas();
 		this.emisora.cargarInformacionArchivoParrilla();
 		this.emisora.getParrillaMusical().generarPlayList();
-
+		this.actualizarComponentesVista();
+		this.llenarDatosEmisoraTablas();
 	}
 
 	public void actualizarComponentesVista() {

@@ -1,9 +1,7 @@
 package co.edu.unbosque.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
-
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
@@ -27,8 +25,9 @@ public class PanelParrilla extends JPanel {
 
 	public PanelParrilla() {
 
-		setLayout(new BorderLayout());
-
+		this.setLayout(new BorderLayout());
+		this.asignarValores();
+		this.agregarComponentes();
 	}
 
 	/**
@@ -63,24 +62,22 @@ public class PanelParrilla extends JPanel {
 	 *         un arreglo.
 	 * @param titulos
 	 */
-	public void asignarValores(String[] titulos) {
+	public void asignarValores() {
 		contenedor = new JPanel();
 		contenedor.setLayout(new GridLayout(1, 2));
-		setBorder(new TitledBorder(titulos[0]));
-		botonAgregar = new JButton(titulos[1]);
+		botonAgregar = new JButton();
 		botonAgregar.setActionCommand(COMMAND_AGREGAR_PARRILLA);
-		botonBorrar = new JButton(titulos[2]);
+		botonBorrar = new JButton();
 		botonBorrar.setActionCommand(COMMAND_BORRAR_PARRILLA);
 		comboNombreCancion = new JComboBox<String>();
-		comboNombreCancion.addItem(titulos[3]);
 
 		modeloTablaParrilla = new DefaultTableModel();
 		tablaParrilla = new JTable(modeloTablaParrilla);
 		tablaParrilla.setEnabled(false);
 		sp = new JScrollPane(tablaParrilla);
-		modeloTablaParrilla.addColumn(titulos[4]);
-		modeloTablaParrilla.addColumn(titulos[5]);
-		modeloTablaParrilla.addColumn(titulos[6]);
+		modeloTablaParrilla.addColumn("");
+		modeloTablaParrilla.addColumn("");
+		modeloTablaParrilla.addColumn("");
 	}
 
 	public void actualizarPanelParrilla(String[] titulos) {
