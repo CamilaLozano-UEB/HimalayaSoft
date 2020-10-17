@@ -10,7 +10,7 @@ public class Emisora {
 	private Archivo archivo;
 	private CaracteristicaEmisora caracteristicasEmisora;
 	private ArrayList<PistaMusical> pistasMusicales;
-	private ParrillaMusical parillaDelDia;
+	private ParrillaMusical parrillaMusical;
 	private String nombreEmisora;
 	private String modoTransmision;
 	private String tipoDeMusica;
@@ -26,7 +26,7 @@ public class Emisora {
 		this.archivo = new Archivo();
 		this.caracteristicasEmisora = new CaracteristicaEmisora();
 		this.pistasMusicales = new ArrayList<PistaMusical>();
-		this.parillaDelDia = new ParrillaMusical();
+		this.parrillaMusical = new ParrillaMusical();
 
 	}
 
@@ -54,7 +54,7 @@ public class Emisora {
 		for (PistaMusical pistaMusical : pistasMusicales) {
 
 			if (pistaMusical.getNombreCancion().equals(nombreCancion)) {
-				this.parillaDelDia.agregarPistaMusical(pistaMusical);
+				this.parrillaMusical.agregarPistaMusical(pistaMusical);
 				datosPista[0] = pistaMusical.getNombreCancion();
 				datosPista[1] = pistaMusical.getNombreAutor();
 				datosPista[2] = pistaMusical.getGeneroMusical();
@@ -79,7 +79,7 @@ public class Emisora {
 		for (PistaMusical pistaMusical : pistasMusicales) {
 
 			if (pistaMusical.getNombreCancion().equals(nombreCancion)) {
-				this.parillaDelDia.agregarPistaMusical(pistaMusical);
+				this.parrillaMusical.agregarPistaMusical(pistaMusical);
 				datosPista[0] = pistaMusical.getNombreCancion();
 				datosPista[1] = pistaMusical.getNombreAutor();
 				datosPista[2] = pistaMusical.getGeneroMusical();
@@ -220,7 +220,7 @@ public class Emisora {
 				i = pistasArchivo.length;
 			}
 		}
-		this.parillaDelDia.cargarParrilla(pistas);
+		this.parrillaMusical.cargarParrilla(pistas);
 	}
 
 	/**
@@ -245,12 +245,12 @@ public class Emisora {
 
 	public String[][] asignarDatosTablaParrilla() {
 
-		String[][] tabla = new String[this.parillaDelDia.getPistasMusicales().size()][3];
+		String[][] tabla = new String[this.parrillaMusical.getPistasMusicales().size()][3];
 
-		for (int i = 0; i < this.parillaDelDia.getPistasMusicales().size(); i++) {
-			tabla[i][0] = this.parillaDelDia.getPistasMusicales().get(i).getNombreCancion();
-			tabla[i][1] = this.parillaDelDia.getPistasMusicales().get(i).getNombreAutor();
-			tabla[i][2] = this.parillaDelDia.getPistasMusicales().get(i).getGeneroMusical();
+		for (int i = 0; i < this.parrillaMusical.getPistasMusicales().size(); i++) {
+			tabla[i][0] = this.parrillaMusical.getPistasMusicales().get(i).getNombreCancion();
+			tabla[i][1] = this.parrillaMusical.getPistasMusicales().get(i).getNombreAutor();
+			tabla[i][2] = this.parrillaMusical.getPistasMusicales().get(i).getGeneroMusical();
 		}
 		return tabla;
 	}
@@ -316,11 +316,11 @@ public class Emisora {
 	}
 
 	public ParrillaMusical getParillaDelDia() {
-		return parillaDelDia;
+		return parrillaMusical;
 	}
 
-	public void setParillaDelDia(ParrillaMusical parillaDelDia) {
-		this.parillaDelDia = parillaDelDia;
+	public void setParrillaMusical(ParrillaMusical parillaDelDia) {
+		this.parrillaMusical = parillaDelDia;
 	}
 
 	public String getNombreEmisora() {
