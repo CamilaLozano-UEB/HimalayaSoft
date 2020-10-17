@@ -209,8 +209,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 			 * @author Nicolás Peña Mogollón
 			 *
 			 *         El método getTransferable de la clase DropTargetDropEvent retorna un
-			 *         objeto ransferable asociado con el Drop. Cuando el usuario interviene
-			 *         con el drop. Este se almacena en tr. Un objeto de la clase
+			 *         objeto Transferable asociado con el Drop. Cuando el usuario
+			 *         interviene con el drop. Este se almacena en tr. Un objeto de la clase
 			 *         Transferable para que se puedan proporcionar los datos en la
 			 *         operación de transferencia.
 			 */
@@ -278,10 +278,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 					 *         Se da por terminado el drop
 					 */
 					dtde.dropComplete(true);
-				} else {
 					i = flavors.length;
-					JOptionPane.showMessageDialog(null, "Error al insetar imagen!!!", "Warning",
-							JOptionPane.WARNING_MESSAGE);
 				}
 			}
 			dtde.rejectDrop();
