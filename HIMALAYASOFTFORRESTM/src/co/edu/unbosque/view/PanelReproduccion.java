@@ -83,7 +83,7 @@ public class PanelReproduccion extends JPanel {
 	 */
 
 	public void agregarComponentes() {
-		
+
 		img_sound = new ImageIcon("./Imagenes/Retrocede.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonRetrocede.setIcon(icon_sound);
@@ -108,6 +108,15 @@ public class PanelReproduccion extends JPanel {
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonAvanza.setIcon(icon_sound);
 		add(botonAvanza);
+	}
+
+	public void manejarBotones(boolean valor) {
+		
+		this.botonAvanza.setEnabled(valor);
+		this.botonPausa.setEnabled(valor);
+		this.botonPlay.setEnabled(valor);
+		this.botonRetrocede.setEnabled(valor);
+		this.botonStop.setEnabled(valor);
 	}
 
 	public JButton getBotonStop() {

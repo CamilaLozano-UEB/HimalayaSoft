@@ -149,6 +149,22 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.campoTextoArchivo.setText("");
 	}
 
+	public void actualizarPanelAgregarCancion(String[] titulos) {
+		setBorder(new TitledBorder(titulos[0]));
+
+		etiquetaNombreCancion.setText(titulos[1]);
+		etiquetaNombreAutor.setText(titulos[2]);
+		etiquetaGeneroMusica.setText(titulos[3]);
+		etiquetaArchivo.setText(titulos[4]);
+		botonAgregar.setText(titulos[5]);
+		botonCancelar.setText(titulos[6]);
+
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(0)).setHeaderValue(titulos[7]);
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(1)).setHeaderValue(titulos[8]);
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(2)).setHeaderValue(titulos[9]);
+
+	}
+
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 

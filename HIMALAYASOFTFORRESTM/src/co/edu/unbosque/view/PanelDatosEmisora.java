@@ -23,7 +23,6 @@ public class PanelDatosEmisora extends JPanel {
 
 	public PanelDatosEmisora() {
 		setLayout(new GridLayout(2, 1));
-		
 
 	}
 
@@ -64,6 +63,13 @@ public class PanelDatosEmisora extends JPanel {
 		this.etiquetaNombreEmisora.setText(nombreEmisora);
 		this.etiquetaModoTransmision.setText(modoTransmision);
 		this.etiquetaTipoMusica.setText(tipoMusica);
+	}
+
+	public void actualizarPanelDatosEmisora(String[] titulos) {
+		setBorder(new TitledBorder(titulos[0]));
+		etiquetaTituloNombre.setText(titulos[1]);
+		etiquetaTituloModo.setText(titulos[2]);
+		etiquetaTituloTipoMusica.setText(titulos[3]);
 	}
 
 	/**

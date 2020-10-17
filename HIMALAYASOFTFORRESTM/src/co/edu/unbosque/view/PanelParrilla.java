@@ -81,6 +81,17 @@ public class PanelParrilla extends JPanel {
 		modeloTablaParrilla.addColumn(titulos[5]);
 		modeloTablaParrilla.addColumn(titulos[6]);
 	}
+	
+	public void actualizarPanelParrilla(String[] titulos) {
+		setBorder(new TitledBorder(titulos[0]));
+		botonAgregar.setText(titulos[1]);
+		botonBorrar.setText(titulos[2]);
+		comboNombreCancion.removeAllItems();
+		comboNombreCancion.addItem(titulos[3]);
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(0)).setHeaderValue(titulos[4]);;
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(1)).setHeaderValue(titulos[5]);;
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(2)).setHeaderValue(titulos[6]);;
+	}
 
 	/**
 	 * 

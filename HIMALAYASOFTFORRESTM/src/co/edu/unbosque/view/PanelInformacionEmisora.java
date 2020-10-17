@@ -84,23 +84,40 @@ public class PanelInformacionEmisora extends JPanel {
 
 	}
 
+//	public void actualizarPanelInformacionEmisora() {
+//		
+//	}
+
 	public void cargarCampos(String nombre, String modo, String tipo, String idioma) {
 		this.campoTextoNombreEmisora.setText(nombre);
 		this.comboModoTransmision.setSelectedItem(modo);
 		this.campoTextoTipoMusica.setText(tipo);
-		if (idioma==null) {
+		if (idioma == null) {
 			this.radio_ES.setSelected(true);
 		} else if (idioma.equals("EN")) {
 			this.radio_EN.setSelected(true);
-		} else if (idioma.equals("ES")){
+		} else if (idioma.equals("ES")) {
 			this.radio_ES.setSelected(true);
 		}
-			
 	}
 
-	public void borrarCampos() {
-		this.campoTextoNombreEmisora.setText("");
-		this.campoTextoTipoMusica.setText("");
+	public void actualizarPanelInformacionEmisora(String[] titulos) {
+		setBorder(new TitledBorder(titulos[0]));
+		etiquetaNombreEmisora.setText(titulos[1]);
+		etiquetaModoTransmision.setText(titulos[2]);
+		etiquetaTipoMusica.setText(titulos[3]);
+		comboModoTransmision.removeAllItems();
+		comboModoTransmision.addItem(titulos[4]);
+		comboModoTransmision.addItem(titulos[5]);
+		comboModoTransmision.addItem(titulos[6]);
+		comboModoTransmision.addItem(titulos[7]);
+		botonGuardar.setText(titulos[8]);
+		botonCancelar.setText(titulos[9]);
+	}
+
+	public void restablecerCampos(String nombre,String tipoMusica) {
+		this.campoTextoNombreEmisora.setText(nombre);
+		this.campoTextoTipoMusica.setText(tipoMusica);
 		this.comboModoTransmision.setSelectedIndex(0);
 	}
 

@@ -47,16 +47,25 @@ public class View extends JFrame {
 
 	}
 
+	public void actualizarView(String[] titulos) {
+		this.pestanas.setTitleAt(0, titulos[0]);
+		this.pestanas.setTitleAt(1, titulos[1]);
+	}
+
 	public void mostrarMensajeError(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Warning", JOptionPane.WARNING_MESSAGE);
 	}
+
 	public void mostrarMensajeAviso(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Information", JOptionPane.INFORMATION_MESSAGE);
 	}
-	
-	public void mostrarMensajeReinicio(String mensaje) {
-		JOptionPane.showMessageDialog(null, mensaje, "Information", JOptionPane.INFORMATION_MESSAGE);
-		this.dispose();
+
+	public PanelInformacion getPanelInformacion() {
+		return panelInformacion;
+	}
+
+	public void setPanelInformacion(PanelInformacion panelInformacion) {
+		this.panelInformacion = panelInformacion;
 	}
 
 	public PanelEmisora getPanelEmisora() {
@@ -67,12 +76,16 @@ public class View extends JFrame {
 		this.panelEmisora = panelEmisora;
 	}
 
-	public PanelInformacion getPanelInformacion() {
-		return panelInformacion;
+	public JTabbedPane getPestanas() {
+		return pestanas;
 	}
 
-	public void setPanelInformacion(PanelInformacion panelInformacion) {
-		this.panelInformacion = panelInformacion;
+	public void setPestanas(JTabbedPane pestanas) {
+		this.pestanas = pestanas;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 }
