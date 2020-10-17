@@ -89,7 +89,7 @@ public class PanelReproduccion extends JPanel {
 		botonRetrocede.setIcon(icon_sound);
 		add(botonRetrocede);
 
-		img_sound = new ImageIcon("./Imagenes/SinSonido.png");
+		img_sound = new ImageIcon("./Imagenes/Stop.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonStop.setIcon(icon_sound);
 		add(botonStop);
@@ -99,7 +99,7 @@ public class PanelReproduccion extends JPanel {
 		botonPausa.setIcon(icon_sound);
 		add(botonPausa);
 
-		img_sound = new ImageIcon("./Imagenes/Sonido.png");
+		img_sound = new ImageIcon("./Imagenes/Play.png");
 		icon_sound = new ImageIcon(img_sound.getImage().getScaledInstance(32, 32, Image.SCALE_DEFAULT));
 		botonPlay.setIcon(icon_sound);
 		add(botonPlay);

@@ -41,7 +41,7 @@ public class Controller implements ActionListener {
 				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_AGREGAR_PARRILLA())) {
 
 			if (!vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
-					.equals("Seleccionar Canción")
+					.equals("Seleccionar canción")
 					&& !vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
 							.equals("Select Song")) {
 				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()

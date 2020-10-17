@@ -11,7 +11,7 @@ import java.nio.file.StandardCopyOption;
 
 public class Archivo extends Persistence {
 
-	private final String RUTA_CANCIONES = "./Data/Pistas.txt";
+	private final String RUTA_PISTAS = "./Data/Pistas.txt";
 	private final String RUTA_PARRILLA = "./Data/Parrilla.txt";
 
 	/**
@@ -24,7 +24,7 @@ public class Archivo extends Persistence {
 	public boolean escribir(String dato) {
 		// TODO Auto-generated method stub
 		String linea = dato + "\n";
-		File f = new File(this.RUTA_CANCIONES);
+		File f = new File(this.RUTA_PISTAS);
 		try {
 			FileWriter fw = new FileWriter(f, true);
 			PrintWriter pw = new PrintWriter(fw);
@@ -166,7 +166,7 @@ public class Archivo extends Persistence {
 	}
 
 	public String getRUTA_CANCIONES() {
-		return RUTA_CANCIONES;
+		return RUTA_PISTAS;
 	}
 
 	public String getRUTA_PARRILLA() {

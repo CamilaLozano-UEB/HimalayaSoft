@@ -18,8 +18,11 @@ public class PanelDatosEmisora extends JPanel {
 	private JLabel etiquetaModoTransmision;
 	private JLabel etiquetaTituloTipoMusica;
 	private JLabel etiquetaTipoMusica;
-	private JLabel etiquetaImagenPortada;
+	private JLabel etiquetaGIFPlaying;
 	private JPanel panelEmisoraInfo;
+	private String rutaGIFPlay="./Imagenes/MusicaPlay.gif";
+	private String rutaGIFStop="./Imagenes/MusicaStop.gif";
+	
 
 	private static final long serialVersionUID = 1L;
 
@@ -53,9 +56,8 @@ public class PanelDatosEmisora extends JPanel {
 		etiquetaModoTransmision.setForeground(Color.black);
 		etiquetaTipoMusica = new JLabel();
 		etiquetaTipoMusica.setForeground(Color.black);
-
-		Icon Gif_1 = new ImageIcon("./Imagenes/Musica.gif");
-		etiquetaImagenPortada = new JLabel(Gif_1);
+		Icon Gif_1 = new ImageIcon(rutaGIFStop);
+		etiquetaGIFPlaying = new JLabel(Gif_1);
 
 	}
 
@@ -96,7 +98,7 @@ public class PanelDatosEmisora extends JPanel {
 		panelEmisoraInfo.add(etiquetaTituloTipoMusica);
 		panelEmisoraInfo.add(etiquetaTipoMusica);
 		this.add(panelEmisoraInfo);
-		this.add(etiquetaImagenPortada);
+		this.add(etiquetaGIFPlaying);
 
 	}
 
@@ -149,11 +151,11 @@ public class PanelDatosEmisora extends JPanel {
 	}
 
 	public JLabel getEtiquetaImagenPortada() {
-		return etiquetaImagenPortada;
+		return etiquetaGIFPlaying;
 	}
 
 	public void setEtiquetaImagenPortada(JLabel etiquetaImagenPortada) {
-		this.etiquetaImagenPortada = etiquetaImagenPortada;
+		this.etiquetaGIFPlaying = etiquetaImagenPortada;
 	}
 
 	public JPanel getPanelEmisoraInfo() {
@@ -162,6 +164,31 @@ public class PanelDatosEmisora extends JPanel {
 
 	public void setPanelEmisoraInfo(JPanel panelEmisoraInfo) {
 		this.panelEmisoraInfo = panelEmisoraInfo;
+	}
+
+	
+	public JLabel getEtiquetaGIFPlaying() {
+		return etiquetaGIFPlaying;
+	}
+
+	public void setEtiquetaGIFPlaying(JLabel etiquetaGIFPlaying) {
+		this.etiquetaGIFPlaying = etiquetaGIFPlaying;
+	}
+
+	public String getRutaGIFPlay() {
+		return rutaGIFPlay;
+	}
+
+	public void setRutaGIFPlay(String rutaGIFPlay) {
+		this.rutaGIFPlay = rutaGIFPlay;
+	}
+
+	public String getRutaGIFStop() {
+		return rutaGIFStop;
+	}
+
+	public void setRutaGIFStop(String rutaGIFStop) {
+		this.rutaGIFStop = rutaGIFStop;
 	}
 
 	public static long getSerialversionuid() {
