@@ -45,31 +45,31 @@ public class PanelReproduccion extends JPanel {
 		botonPausa = new JButton();
 		botonPausa.setBorder(null);
 		botonPausa.setOpaque(true);
-		botonPausa.setBackground(new Color(162, 118, 234));
+		botonPausa.setBackground(new Color(144, 215, 247));
 		botonPausa.setActionCommand(COMMAND_PAUSAR);
 
 		botonPlay = new JButton();
 		botonPlay.setBorder(null);
 		botonPlay.setOpaque(true);
-		botonPlay.setBackground(new Color(162, 118, 234));
+		botonPlay.setBackground(new Color(144, 215, 247));
 		botonPlay.setActionCommand(COMMAND_REPRODUCIR);
 
 		botonStop = new JButton();
 		botonStop.setBorder(null);
 		botonStop.setOpaque(true);
-		botonStop.setBackground(new Color(162, 118, 234));
+		botonStop.setBackground(new Color(144, 215, 247));
 		botonStop.setActionCommand(COMMAND_PARAR);
 
 		botonRetrocede = new JButton();
 		botonRetrocede.setBorder(null);
 		botonRetrocede.setOpaque(true);
-		botonRetrocede.setBackground(new Color(162, 118, 234));
+		botonRetrocede.setBackground(new Color(144, 215, 247));
 		botonRetrocede.setActionCommand(COMMAND_RETROCEDER);
 
 		botonAvanza = new JButton();
 		botonAvanza.setBorder(null);
 		botonAvanza.setOpaque(true);
-		botonAvanza.setBackground(new Color(162, 118, 234));
+		botonAvanza.setBackground(new Color(144, 215, 247));
 		botonAvanza.setActionCommand(COMMAND_AVANZAR);
 	}
 
