@@ -17,7 +17,6 @@ public class Emisora {
 	private String idioma;
 	private String[] titulosPanelDatosEmisora;
 	private String[] titulosPanelParrilla;
-	private String[] titulosPanelCancion;
 	private String[] titulosPanelAgregarCancion;
 	private String[] titulosPanelInformacionEmisora;
 	private String[] titulosView;
@@ -108,7 +107,6 @@ public class Emisora {
 					this.caracteristicasEmisora.getArchivoConfiguracion());
 			this.titulosPanelDatosEmisora = this.caracteristicasEmisora.leer("titulosPanelDatosEmisora").split("~");
 			this.titulosPanelParrilla = this.caracteristicasEmisora.leer("titulosPanelParrilla").split("~");
-			this.titulosPanelCancion = this.caracteristicasEmisora.leer("titulosPanelCancion").split("~");
 			this.titulosPanelAgregarCancion = this.caracteristicasEmisora.leer("titulosPanelAgregarCancion").split("~");
 			this.titulosPanelInformacionEmisora = this.caracteristicasEmisora.leer("titulosPanelInformacionEmisora")
 					.split("~");
@@ -263,12 +261,16 @@ public class Emisora {
 		return salida;
 	}
 
-	public void verificarExtensionArchivo(String rutaArchivo) throws ExtensionIncorrectaException {
+	public void verificarExtensionArchivo(String rutaArchivo, String nombreCancion)
+			throws ExtensionIncorrectaException, ArchivosIgualesException {
+		
 		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf(".") + 1, rutaArchivo.length());
-		if (!mimeType.contains("mp3")) {
+		if (!mimeType.contains("mp3"))
 			throw new ExtensionIncorrectaException("");
-		}
-
+		
+		for (PistaMusical pistaMusical : pistasMusicales)
+			if (nombreCancion.equals(pistaMusical.getNombreCancion().trim()))
+				throw new ArchivosIgualesException("");
 	}
 
 	/**
@@ -361,14 +363,6 @@ public class Emisora {
 
 	public void setTitulosPanelParrilla(String[] titulosPanelParrilla) {
 		this.titulosPanelParrilla = titulosPanelParrilla;
-	}
-
-	public String[] getTitulosPanelCancion() {
-		return titulosPanelCancion;
-	}
-
-	public void setTitulosPanelCancion(String[] titulosPanelCancion) {
-		this.titulosPanelCancion = titulosPanelCancion;
 	}
 
 	public String[] getTitulosPanelAgregarCancion() {

@@ -53,9 +53,7 @@ public class PanelParrilla extends JPanel {
 	}
 
 	public void borrarContenidoTabla() {
-		for (int i = 0; i < modeloTablaParrilla.getRowCount(); i++) {
-			modeloTablaParrilla.removeRow(i);
-		}
+		modeloTablaParrilla.setRowCount(0);
 	}
 
 	/**

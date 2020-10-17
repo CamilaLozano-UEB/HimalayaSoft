@@ -11,7 +11,6 @@ public class PanelEmisora extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private final String RUTA_ICONO = "./Imagenes/HimalayaPanelEmi.png";
-	private PanelCancion panelCancion;
 	private PanelDatosEmisora panelDatosEmisora;
 	private PanelParrilla panelParrilla;
 	private PanelReproduccion panelReproduccion;
@@ -19,16 +18,15 @@ public class PanelEmisora extends JPanel {
 
 	public PanelEmisora() {
 		setLayout(new BorderLayout());
-        setBackground(Color.white);
-		
-        panelCancion = new PanelCancion();
+		setBackground(Color.white);
+
 		panelDatosEmisora = new PanelDatosEmisora();
 		panelParrilla = new PanelParrilla();
 		panelReproduccion = new PanelReproduccion();
 
 		etiquetaImagen = new JLabel();
 		etiquetaImagen.setIcon(new ImageIcon(RUTA_ICONO));
-		
+
 		this.agregarComponentes();
 
 	}
@@ -36,17 +34,8 @@ public class PanelEmisora extends JPanel {
 	public void agregarComponentes() {
 		add(etiquetaImagen, BorderLayout.PAGE_START);
 		add(panelParrilla, BorderLayout.CENTER);
-		add(panelDatosEmisora, BorderLayout.WEST);
+		add(panelDatosEmisora, BorderLayout.EAST);
 		add(panelReproduccion, BorderLayout.PAGE_END);
-		add(panelCancion, BorderLayout.EAST);
-	}
-
-	public PanelCancion getPanelCancion() {
-		return panelCancion;
-	}
-
-	public void setPanelCancion(PanelCancion panelCancion) {
-		this.panelCancion = panelCancion;
 	}
 
 	public PanelDatosEmisora getPanelDatosEmisora() {

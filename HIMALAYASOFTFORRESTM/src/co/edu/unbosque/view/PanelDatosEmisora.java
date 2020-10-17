@@ -1,13 +1,13 @@
 package co.edu.unbosque.view;
 
 import java.awt.GridLayout;
-
-import javax.swing.*;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 public class PanelDatosEmisora extends JPanel {
-
-	private static final long serialVersionUID = 1L;
 
 	private JLabel etiquetaTituloNombre;
 	private JLabel etiquetaNombreEmisora;
@@ -15,22 +15,47 @@ public class PanelDatosEmisora extends JPanel {
 	private JLabel etiquetaModoTransmision;
 	private JLabel etiquetaTituloTipoMusica;
 	private JLabel etiquetaTipoMusica;
+	private JLabel etiquetaImagenPortada;
+	private JPanel panelEmisoraInfo;
+
+	private static final long serialVersionUID = 1L;
 
 	public PanelDatosEmisora() {
-		GridLayout grid = new GridLayout(6, 0);
-		setLayout(grid);
+		setLayout(new GridLayout(2, 1));
+
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón - María Camila Lozano
+	 * 
+	 *         Recibe los valores de entrada de cada componente
+	 * @param etiquetas
+	 */
+
 	public void asignarValores(String[] titulos) {
+
 		setBorder(new TitledBorder(titulos[0]));
+		panelEmisoraInfo = new JPanel();
+		panelEmisoraInfo.setLayout(new GridLayout(3, 2));
 		etiquetaTituloNombre = new JLabel(titulos[1]);
 		etiquetaTituloModo = new JLabel(titulos[2]);
 		etiquetaTituloTipoMusica = new JLabel(titulos[3]);
 		etiquetaNombreEmisora = new JLabel();
 		etiquetaModoTransmision = new JLabel();
 		etiquetaTipoMusica = new JLabel();
+
+		Icon Gif_1 = new ImageIcon("./Imagenes/Musica.gif");
+		etiquetaImagenPortada = new JLabel(Gif_1);
+
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón - María Camila Lozano
+	 * 
+	 *         Asigna los valores para las etiquetas que mostraran los valores de
+	 *         resultados
+	 * @param etiquetas
+	 */
 
 	public void actualizarAtributos(String nombreEmisora, String modoTransmision, String tipoMusica) {
 		this.etiquetaNombreEmisora.setText(nombreEmisora);
@@ -38,13 +63,24 @@ public class PanelDatosEmisora extends JPanel {
 		this.etiquetaTipoMusica.setText(tipoMusica);
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón - María Camila Lozano
+	 * 
+	 *         Agrega cada componente al panel
+	 * @param etiquetas
+	 */
+
 	public void agregarComponentes() {
-		add(etiquetaTituloNombre);
-		add(etiquetaNombreEmisora);
-		add(getEtiquetaTituloModo());
-		add(etiquetaModoTransmision);
-		add(etiquetaTituloTipoMusica);
-		add(etiquetaTipoMusica);
+
+		panelEmisoraInfo.add(etiquetaTituloNombre);
+		panelEmisoraInfo.add(etiquetaNombreEmisora);
+		panelEmisoraInfo.add(etiquetaTituloModo);
+		panelEmisoraInfo.add(etiquetaModoTransmision);
+		panelEmisoraInfo.add(etiquetaTituloTipoMusica);
+		panelEmisoraInfo.add(etiquetaTipoMusica);
+		this.add(panelEmisoraInfo);
+		this.add(etiquetaImagenPortada);
+
 	}
 
 	public JLabel getEtiquetaTituloNombre() {
@@ -93,6 +129,22 @@ public class PanelDatosEmisora extends JPanel {
 
 	public void setEtiquetaTipoMusica(JLabel etiquetaTipoMusica) {
 		this.etiquetaTipoMusica = etiquetaTipoMusica;
+	}
+
+	public JLabel getEtiquetaImagenPortada() {
+		return etiquetaImagenPortada;
+	}
+
+	public void setEtiquetaImagenPortada(JLabel etiquetaImagenPortada) {
+		this.etiquetaImagenPortada = etiquetaImagenPortada;
+	}
+
+	public JPanel getPanelEmisoraInfo() {
+		return panelEmisoraInfo;
+	}
+
+	public void setPanelEmisoraInfo(JPanel panelEmisoraInfo) {
+		this.panelEmisoraInfo = panelEmisoraInfo;
 	}
 
 	public static long getSerialversionuid() {

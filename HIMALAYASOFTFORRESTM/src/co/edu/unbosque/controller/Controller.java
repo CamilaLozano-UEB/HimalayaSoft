@@ -3,6 +3,7 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import co.edu.unbosque.model.ArchivosIgualesException;
 import co.edu.unbosque.model.Emisora;
 import co.edu.unbosque.model.ExtensionIncorrectaException;
 import co.edu.unbosque.view.View;
@@ -74,9 +75,9 @@ public class Controller implements ActionListener {
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
+			this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
 			this.emisora.getParillaDelDia().borrarParrilla();
 			this.emisora.getArchivo().borrarArchivoParrilla();
-			this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
 
 		}
 	}
@@ -128,22 +129,25 @@ public class Controller implements ActionListener {
 			String rutaArchivo = this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoArchivo()
 					.getText();
 			try {
-				this.emisora.verificarExtensionArchivo(rutaArchivo);
-			} catch (ExtensionIncorrectaException e) {
+				this.emisora.verificarExtensionArchivo(rutaArchivo, nombreCancion);
+
+				if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, nombreCancion + ".mp3")
+						&& this.emisora.getArchivo().copiarCancion(rutaArchivo, nombreCancion)) {
+
+					this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(nombreCancion,
+							nombreArtista, genero);
+					this.vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().addItem(nombreCancion);
+					vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
+					this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
+				} else {
+					vista.mostrarMensajeError("Error al guardar canción");
+					this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
+				}
+			} catch (ExtensionIncorrectaException | ArchivosIgualesException e) {
 				// TODO Auto-generated catch block
 				vista.mostrarMensajeError(e.getMessage());
 			}
-			if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, nombreCancion + ".mp3")
-					&& this.emisora.getArchivo().copiarCancion(rutaArchivo, nombreCancion)) {
-				this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(nombreCancion, nombreArtista,
-						genero);
-				this.vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().addItem(nombreCancion);
-				vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
-				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
-			} else {
-				vista.mostrarMensajeError("Error al guardar canción");
-				this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
-			}
+
 		} else {
 			vista.mostrarMensajeError("Es necesario llenar los campos");
 			this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
@@ -153,8 +157,6 @@ public class Controller implements ActionListener {
 
 	public void inicializarComponentesVista() {
 		this.vista.agregarComponentes(this.emisora.getTitulosView());
-		this.vista.getPanelEmisora().getPanelCancion().asignarValores(this.emisora.getTitulosPanelCancion());
-		this.vista.getPanelEmisora().getPanelCancion().agregarComponentes();
 		this.vista.getPanelEmisora().getPanelDatosEmisora().asignarValores(this.emisora.getTitulosPanelDatosEmisora());
 		this.vista.getPanelEmisora().getPanelDatosEmisora().agregarComponentes();
 		this.vista.getPanelEmisora().getPanelParrilla().asignarValores(this.emisora.getTitulosPanelParrilla());
