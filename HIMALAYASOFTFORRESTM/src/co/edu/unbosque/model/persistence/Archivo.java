@@ -23,12 +23,12 @@ public class Archivo extends Persistence {
 	@Override
 	public boolean escribir(String dato) {
 		// TODO Auto-generated method stub
-
+		String linea = dato + "\n";
 		File f = new File(this.RUTA_CANCIONES);
 		try {
 			FileWriter fw = new FileWriter(f, true);
 			PrintWriter pw = new PrintWriter(fw);
-			pw.print(dato);
+			pw.print(linea);
 			fw.close();
 		} catch (IOException e) {
 			return false;
