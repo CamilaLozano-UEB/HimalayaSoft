@@ -1,10 +1,10 @@
 package co.edu.unbosque.model;
 
-public class ArchivosIgualesException extends Exception {
+public class CancionIgualException extends Exception {
 
 	private static final long serialVersionUID = 1L;
 
-	public ArchivosIgualesException(String mensaje) {
+	public CancionIgualException(String mensaje) {
 		super(mensaje);
 	}
 

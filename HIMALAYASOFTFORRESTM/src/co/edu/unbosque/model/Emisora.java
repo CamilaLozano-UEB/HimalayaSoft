@@ -20,13 +20,14 @@ public class Emisora {
 	private String[] titulosPanelAgregarCancion;
 	private String[] titulosPanelInformacionEmisora;
 	private String[] titulosView;
+	private String[] mensajesError;
+	private String mensajeAceptar;
 
 	public Emisora() {
 		this.archivo = new Archivo();
 		this.caracteristicasEmisora = new CaracteristicaEmisora();
 		this.pistasMusicales = new ArrayList<PistaMusical>();
 		this.parrillaMusical = new ParrillaMusical();
-
 	}
 
 	/**
@@ -111,6 +112,8 @@ public class Emisora {
 			this.titulosPanelInformacionEmisora = this.caracteristicasEmisora.leer("titulosPanelInformacionEmisora")
 					.split("~");
 			this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
+			this.mensajesError = this.caracteristicasEmisora.leer("mensajesError").split("~");
+			this.mensajeAceptar = this.caracteristicasEmisora.leer("mensajesAceptar");
 		} catch (Exception e) {
 			// TODO: handle exception
 			escribirArchivoEmisora("");
@@ -262,15 +265,15 @@ public class Emisora {
 	}
 
 	public void verificarExtensionArchivo(String rutaArchivo, String nombreCancion)
-			throws ExtensionIncorrectaException, ArchivosIgualesException {
-		
+			throws ExtensionIncorrectaException, CancionIgualException {
+
 		String mimeType = rutaArchivo.substring(rutaArchivo.lastIndexOf(".") + 1, rutaArchivo.length());
 		if (!mimeType.contains("mp3"))
-			throw new ExtensionIncorrectaException("");
-		
+			throw new ExtensionIncorrectaException(mensajesError[2]);
+
 		for (PistaMusical pistaMusical : pistasMusicales)
 			if (nombreCancion.equals(pistaMusical.getNombreCancion().trim()))
-				throw new ArchivosIgualesException("");
+				throw new CancionIgualException(mensajesError[3]);
 	}
 
 	/**
@@ -317,12 +320,12 @@ public class Emisora {
 		this.pistasMusicales = pistasMusicales;
 	}
 
-	public ParrillaMusical getParillaDelDia() {
+	public ParrillaMusical getParrillaMusical() {
 		return parrillaMusical;
 	}
 
-	public void setParrillaMusical(ParrillaMusical parillaDelDia) {
-		this.parrillaMusical = parillaDelDia;
+	public void setParrillaMusical(ParrillaMusical parrillaMusical) {
+		this.parrillaMusical = parrillaMusical;
 	}
 
 	public String getNombreEmisora() {
@@ -347,6 +350,14 @@ public class Emisora {
 
 	public void setTipoDeMusica(String tipoDeMusica) {
 		this.tipoDeMusica = tipoDeMusica;
+	}
+
+	public String getIdioma() {
+		return idioma;
+	}
+
+	public void setIdioma(String idioma) {
+		this.idioma = idioma;
 	}
 
 	public String[] getTitulosPanelDatosEmisora() {
@@ -389,12 +400,20 @@ public class Emisora {
 		this.titulosView = titulosView;
 	}
 
-	public String getIdioma() {
-		return idioma;
+	public String[] getMensajesError() {
+		return mensajesError;
 	}
 
-	public void setIdioma(String idioma) {
-		this.idioma = idioma;
+	public void setMensajesError(String[] mensajesError) {
+		this.mensajesError = mensajesError;
+	}
+
+	public String getMensajeAceptar() {
+		return mensajeAceptar;
+	}
+
+	public void setMensajeAceptar(String mensajeAceptar) {
+		this.mensajeAceptar = mensajeAceptar;
 	}
 
 }

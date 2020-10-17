@@ -3,7 +3,7 @@ package co.edu.unbosque.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import co.edu.unbosque.model.ArchivosIgualesException;
+import co.edu.unbosque.model.CancionIgualException;
 import co.edu.unbosque.model.Emisora;
 import co.edu.unbosque.model.ExtensionIncorrectaException;
 import co.edu.unbosque.view.View;
@@ -55,28 +55,28 @@ public class Controller implements ActionListener {
 			}
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())) {
-			this.emisora.getParillaDelDia().reproducir();
+			this.emisora.getParrillaMusical().reproducir();
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_PAUSAR())) {
-			this.emisora.getParillaDelDia().pausar();
+			this.emisora.getParrillaMusical().pausar();
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_PARAR())) {
-			this.emisora.getParillaDelDia().parar();
+			this.emisora.getParrillaMusical().parar();
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_AVANZAR())) {
-			this.emisora.getParillaDelDia().reproducirSiguiente();
+			this.emisora.getParrillaMusical().reproducirSiguiente();
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_RETROCEDER())) {
-			this.emisora.getParillaDelDia().reproducirAnterior();
+			this.emisora.getParrillaMusical().reproducirAnterior();
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
 			this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
-			this.emisora.getParillaDelDia().borrarParrilla();
+			this.emisora.getParrillaMusical().borrarParrilla();
 			this.emisora.getArchivo().borrarArchivoParrilla();
 
 		}
@@ -104,10 +104,10 @@ public class Controller implements ActionListener {
 				idioma = "ES";
 			}
 			this.emisora.asignarInformacionEmisora(nombreEmisora, modoTransmision, tipoMusica, idioma);
-			vista.mostrarMensajeReinicio("Información guardada correctamente.\nPor favor vuelva a abrir el programa.");
+			vista.mostrarMensajeReinicio(this.emisora.getMensajeAceptar());
 
 		} else {
-			vista.mostrarMensajeError("¡Es necesario llenar los campos!");
+			vista.mostrarMensajeError(this.emisora.getMensajesError()[0]);
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
 		}
 	}
@@ -137,19 +137,19 @@ public class Controller implements ActionListener {
 					this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(nombreCancion,
 							nombreArtista, genero);
 					this.vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().addItem(nombreCancion);
-					vista.mostrarMensajeAviso("Información ingresada correctamente!!!");
+					vista.mostrarMensajeAviso(this.emisora.getMensajeAceptar());
 					this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 				} else {
-					vista.mostrarMensajeError("Error al guardar canción");
+					vista.mostrarMensajeError(this.emisora.getMensajesError()[1]);
 					this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 				}
-			} catch (ExtensionIncorrectaException | ArchivosIgualesException e) {
+			} catch (ExtensionIncorrectaException | CancionIgualException e) {
 				// TODO Auto-generated catch block
 				vista.mostrarMensajeError(e.getMessage());
 			}
 
 		} else {
-			vista.mostrarMensajeError("Es necesario llenar los campos");
+			vista.mostrarMensajeError(this.emisora.getMensajesError()[0]);
 			this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 		}
 
@@ -183,7 +183,7 @@ public class Controller implements ActionListener {
 		this.emisora.gestionarCaracteristicas();
 		this.emisora.cargarAtributosArchivoPistas();
 		this.emisora.cargarInformacionArchivoParrilla();
-		this.emisora.getParillaDelDia().generarPlayList();
+		this.emisora.getParrillaMusical().generarPlayList();
 
 	}
 
