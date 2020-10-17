@@ -37,6 +37,8 @@ public class ParrillaMusical {
 
 	public void borrarPlayList() {
 		this.reproductorParrilla.getPlayList().clear();
+		if(this.reproductorParrilla.getPlayList().isEmpty()) {
+		}
 	}
 
 	public void reproducir() {
