@@ -63,14 +63,19 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		panelRegistro.setBackground(new Color(144, 215, 247));
 
 		etiquetaNombreCancion = new JLabel(titulos[1]);
+		etiquetaNombreCancion.setForeground(Color.black);
 		etiquetaNombreAutor = new JLabel(titulos[2]);
+		etiquetaNombreAutor.setForeground(Color.black);
 		etiquetaGeneroMusica = new JLabel(titulos[3]);
+		etiquetaGeneroMusica.setForeground(Color.black);
 		etiquetaArchivo = new JLabel(titulos[4]);
-
+		etiquetaArchivo.setForeground(Color.black);
+		
 		campoTextoNombreCancion = new JTextField();
 		campoTextoNombreAutor = new JTextField();
 		campoTextoGeneroMusica = new JTextField();
 		campoTextoArchivo = new JTextArea();
+		campoTextoArchivo.setForeground(Color.black);
 
 		botonAgregar = new JButton(titulos[5]);
 		botonAgregar.setActionCommand(AGREGAR);

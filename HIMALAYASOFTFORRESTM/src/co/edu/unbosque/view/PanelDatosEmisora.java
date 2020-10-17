@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
+import java.awt.Color;
+
 
 public class PanelDatosEmisora extends JPanel {
 
@@ -40,11 +42,17 @@ public class PanelDatosEmisora extends JPanel {
 		panelEmisoraInfo.setLayout(new GridLayout(3, 2));
 		panelEmisoraInfo.setBackground(new Color(144, 215, 247));
 		etiquetaTituloNombre = new JLabel(titulos[1]);
+		etiquetaTituloNombre.setForeground(Color.black);
 		etiquetaTituloModo = new JLabel(titulos[2]);
+		etiquetaTituloModo.setForeground(Color.black);
 		etiquetaTituloTipoMusica = new JLabel(titulos[3]);
+		etiquetaTituloTipoMusica.setForeground(Color.black);
 		etiquetaNombreEmisora = new JLabel();
+		etiquetaNombreEmisora.setForeground(Color.black);
 		etiquetaModoTransmision = new JLabel();
+		etiquetaModoTransmision.setForeground(Color.black);
 		etiquetaTipoMusica = new JLabel();
+		etiquetaTipoMusica.setForeground(Color.black);
 
 		Icon Gif_1 = new ImageIcon("./Imagenes/Musica.gif");
 		etiquetaImagenPortada = new JLabel(Gif_1);
