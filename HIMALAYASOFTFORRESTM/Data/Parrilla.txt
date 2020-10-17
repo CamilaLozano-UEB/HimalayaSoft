@@ -1,2 +1,7 @@
 MiReligion~NilMoliner~Pop~MiReligion.mp3
+<<<<<<< HEAD
+=======
+MiReligion~NilMoliner~Pop~MiReligion.mp3
+MiReligion~NilMoliner~Pop~MiReligion.mp3
+>>>>>>> branch 'master' of https://github.com/CamilaLozano-UEB/HimalayaSoft.git
 AllTheSmallThings~Blink182~Rock~AllTheSmallThings.mp3
