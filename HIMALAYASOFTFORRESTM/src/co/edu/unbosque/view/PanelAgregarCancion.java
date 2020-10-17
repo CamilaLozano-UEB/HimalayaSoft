@@ -70,7 +70,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		etiquetaGeneroMusica.setForeground(Color.black);
 		etiquetaArchivo = new JLabel(titulos[4]);
 		etiquetaArchivo.setForeground(Color.black);
-		
+
 		campoTextoNombreCancion = new JTextField();
 		campoTextoNombreAutor = new JTextField();
 		campoTextoGeneroMusica = new JTextField();
@@ -164,6 +164,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		botonAgregar.setText(titulos[5]);
 		botonCancelar.setText(titulos[6]);
 
+		modeloTabla.fireTableStructureChanged();
 		tablaCanciones.getColumn(tablaCanciones.getColumnName(0)).setHeaderValue(titulos[7]);
 		tablaCanciones.getColumn(tablaCanciones.getColumnName(1)).setHeaderValue(titulos[8]);
 		tablaCanciones.getColumn(tablaCanciones.getColumnName(2)).setHeaderValue(titulos[9]);

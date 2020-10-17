@@ -208,7 +208,7 @@ public class Controller implements ActionListener {
 				.actualizarPanelInformacionEmisora(this.emisora.getTitulosPanelInformacionEmisora());
 		this.vista.getPanelInformacion().getPanelAgregarCancion()
 				.actualizarPanelAgregarCancion(this.emisora.getTitulosPanelAgregarCancion());
-
+		this.vista.getPanelInformacion().getPanelAgregarCancion().getModeloTabla().fireTableDataChanged();
 	}
 
 }
