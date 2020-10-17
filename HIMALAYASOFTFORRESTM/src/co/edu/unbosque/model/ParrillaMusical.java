@@ -13,6 +13,7 @@ public class ParrillaMusical {
 		this.pistasMusicales = new ArrayList<PistaMusical>();
 		this.reproductorParrilla = new MP3Player();
 		this.reproductorParrilla.setRepeat(true);
+		
 	}
 
 	public void cargarParrilla(ArrayList<PistaMusical> pistas) {
