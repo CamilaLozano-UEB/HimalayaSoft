@@ -1,5 +1,6 @@
 package co.edu.unbosque.view;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -22,6 +23,7 @@ public class PanelDatosEmisora extends JPanel {
 
 	public PanelDatosEmisora() {
 		setLayout(new GridLayout(2, 1));
+		
 
 	}
 
@@ -37,6 +39,7 @@ public class PanelDatosEmisora extends JPanel {
 		setBorder(new TitledBorder(titulos[0]));
 		panelEmisoraInfo = new JPanel();
 		panelEmisoraInfo.setLayout(new GridLayout(3, 2));
+		panelEmisoraInfo.setBackground(new Color(144, 215, 247));
 		etiquetaTituloNombre = new JLabel(titulos[1]);
 		etiquetaTituloModo = new JLabel(titulos[2]);
 		etiquetaTituloTipoMusica = new JLabel(titulos[3]);

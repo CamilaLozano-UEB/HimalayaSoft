@@ -27,7 +27,6 @@ public class PanelParrilla extends JPanel {
 
 	public PanelParrilla() {
 
-		setBackground(Color.white);
 		setLayout(new BorderLayout());
 
 	}
