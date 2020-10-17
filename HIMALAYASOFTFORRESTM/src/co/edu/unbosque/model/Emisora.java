@@ -62,15 +62,17 @@ public class Emisora {
 				this.archivo.escribir(datosPista);
 			}
 		}
-	}/** 
-	
-	*@author Juana Valentina Torres Parrado
-	*
-	*
-	*@param nombreCancion 
-	*ingresa el nombre de la cancion y busca el autor y su genero para guardarlos en un arreglo 
-	*
-	*/
+	}
+
+	/**
+	 * 
+	 * @author Juana Valentina Torres Parrado
+	 *
+	 *
+	 * @param nombreCancion ingresa el nombre de la cancion y busca el autor y su
+	 *                      genero para guardarlos en un arreglo
+	 *
+	 */
 	public String[] llenarParrilla(String nombreCancion) {
 		String[] datosPista = new String[3];
 
@@ -81,7 +83,7 @@ public class Emisora {
 				datosPista[0] = pistaMusical.getNombreCancion();
 				datosPista[1] = pistaMusical.getNombreAutor();
 				datosPista[2] = pistaMusical.getGeneroMusical();
-				
+
 			}
 		}
 		return datosPista;
@@ -229,7 +231,7 @@ public class Emisora {
 	 * 
 	 * @return
 	 */
-	public String[][] asignarDatosTabla() {
+	public String[][] asignarDatosTablaAgregarCancion() {
 
 		String[][] tabla = new String[this.pistasMusicales.size()][3];
 
@@ -237,6 +239,18 @@ public class Emisora {
 			tabla[i][0] = this.pistasMusicales.get(i).getNombreCancion();
 			tabla[i][1] = this.pistasMusicales.get(i).getNombreAutor();
 			tabla[i][2] = this.pistasMusicales.get(i).getGeneroMusical();
+		}
+		return tabla;
+	}
+
+	public String[][] asignarDatosTablaParrilla() {
+
+		String[][] tabla = new String[this.parillaDelDia.getPistasMusicales().size()][3];
+
+		for (int i = 0; i < this.parillaDelDia.getPistasMusicales().size(); i++) {
+			tabla[i][0] = this.parillaDelDia.getPistasMusicales().get(i).getNombreCancion();
+			tabla[i][1] = this.parillaDelDia.getPistasMusicales().get(i).getNombreAutor();
+			tabla[i][2] = this.parillaDelDia.getPistasMusicales().get(i).getGeneroMusical();
 		}
 		return tabla;
 	}
@@ -275,11 +289,6 @@ public class Emisora {
 			return true;
 		else
 			return false;
-	}
-
-	public boolean escribirArchivoParillaDelDia() {
-		return false;
-
 	}
 
 	public Archivo getArchivo() {

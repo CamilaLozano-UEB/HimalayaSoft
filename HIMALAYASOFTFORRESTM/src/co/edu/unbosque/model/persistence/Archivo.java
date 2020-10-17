@@ -47,7 +47,7 @@ public class Archivo extends Persistence {
 	 */
 	public boolean escribir(String[] datos) {
 
-		String linea = datos[0] + "~" + datos[1] + "~" + datos[2] + "~" + datos[3];
+		String linea = datos[0] + "~" + datos[1] + "~" + datos[2] + "~" + datos[3] + "\n";
 		File f = new File(this.RUTA_PARRILLA);
 
 		try {
@@ -91,7 +91,6 @@ public class Archivo extends Persistence {
 		}
 		return data;
 	}
-
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana

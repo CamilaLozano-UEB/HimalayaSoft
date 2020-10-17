@@ -2,15 +2,11 @@ package co.edu.unbosque.model;
 
 import java.util.ArrayList;
 
-import javazoom.jlgui.basicplayer.BasicPlayer;
-
 public class ParrillaMusical {
 
 	private ArrayList<PistaMusical> pistasMusicales;
-	private BasicPlayer player;
 
 	public ParrillaMusical() {
-
 		pistasMusicales = new ArrayList<PistaMusical>();
 	}
 
@@ -19,16 +15,19 @@ public class ParrillaMusical {
 	}
 
 	public void agregarPistaMusical(PistaMusical pistaMusical) {
-
 		this.pistasMusicales.add(pistaMusical);
 	}
 
-	public void reproducirParrilla() {
-		// Pienso, luego existo
+	public String[] generarListaRutas() {
+		String[] rutas = new String[this.pistasMusicales.size()];
+		for (int i = 0; i < this.pistasMusicales.size(); i++) {
+			rutas[i] = this.pistasMusicales.get(i).getNombreArchivoMusica();
+		}
+		return rutas;
 	}
 
-	public void pausarParrilla() {
-		// Pienso, luego existo
+	public void borrarParrilla() {
+		this.pistasMusicales.clear();
 	}
 
 	public ArrayList<PistaMusical> getPistasMusicales() {
@@ -37,14 +36,6 @@ public class ParrillaMusical {
 
 	public void setPistasMusicales(ArrayList<PistaMusical> pistasMusicales) {
 		this.pistasMusicales = pistasMusicales;
-	}
-
-	public BasicPlayer getPlayer() {
-		return player;
-	}
-
-	public void setPlayer(BasicPlayer player) {
-		this.player = player;
 	}
 
 }

@@ -24,16 +24,19 @@ public class Controller implements ActionListener {
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
 
-		if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelInformacionEmisora().getGUARDAR())) {
+		if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelInformacionEmisora().getGUARDAR())) {	
 			this.gestionarDatosEmisora();
 			this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
 					this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 			this.emisora.escribirArchivoEmisora();
+			
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
 			this.vista.getPanelInformacion().getPanelInformacionEmisora().borrarCampos();
+		
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
 			this.gestionarIngresoCancion();
+		
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_AGREGAR_PARRILLA())) {
 
@@ -44,11 +47,13 @@ public class Controller implements ActionListener {
 				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
 						.getSelectedItem();
 				emisora.gestionarParrilla(cancion);
-				
-				String [] tabla= emisora.llenarParrilla(cancion);
-				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1],tabla[2]);;
+
+				String[] tabla = emisora.llenarParrilla(cancion);
+				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1], tabla[2]);
 
 			}
+		}else if(event.getActionCommand().equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())){
+			
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
 			
@@ -144,14 +149,17 @@ public class Controller implements ActionListener {
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 		this.vista.getPanelInformacion().getPanelInformacionEmisora().cargarCampos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica(), this.emisora.getIdioma());
-		this.vista.getPanelInformacion().getPanelAgregarCancion().crearTabla(this.emisora.asignarDatosTabla());
+		this.vista.getPanelInformacion().getPanelAgregarCancion()
+				.crearTabla(this.emisora.asignarDatosTablaAgregarCancion());
 		this.vista.getPanelEmisora().getPanelParrilla()
 				.agregarCancionesComboBox(this.emisora.generarListaDeCancionesDisponibles());
+		this.vista.getPanelEmisora().getPanelParrilla().crearTabla(this.emisora.asignarDatosTablaParrilla());
 	}
 
 	public void iniciarEmisora() {
 		this.emisora.gestionarCaracteristicas();
 		this.emisora.cargarAtributosArchivoPistas();
+		this.emisora.cargarInformacionArchivoParrilla();
 	}
 
 }
