@@ -20,15 +20,19 @@ public class PanelDatosEmisora extends JPanel {
 	private JLabel etiquetaTipoMusica;
 	private JLabel etiquetaGIFPlaying;
 	private JPanel panelEmisoraInfo;
-	private String rutaGIFPlay="./Imagenes/MusicaPlay.gif";
-	private String rutaGIFStop="./Imagenes/MusicaStop.gif";
+	private final String rutaGIFPlay="./Imagenes/MusicaPlay.gif";
+	private final String rutaGIFStop="./Imagenes/MusicaStop.gif";
+	private Icon GIFPlay;
+	private Icon GIFStop;
+	
 	
 
 	private static final long serialVersionUID = 1L;
 
 	public PanelDatosEmisora() {
 		setLayout(new GridLayout(2, 1));
-
+		GIFPlay = new ImageIcon(rutaGIFPlay);
+		GIFStop = new ImageIcon(rutaGIFStop);
 	}
 
 	/**
@@ -56,8 +60,7 @@ public class PanelDatosEmisora extends JPanel {
 		etiquetaModoTransmision.setForeground(Color.black);
 		etiquetaTipoMusica = new JLabel();
 		etiquetaTipoMusica.setForeground(Color.black);
-		Icon Gif_1 = new ImageIcon(rutaGIFStop);
-		etiquetaGIFPlaying = new JLabel(Gif_1);
+		etiquetaGIFPlaying = new JLabel(GIFStop);
 
 	}
 
@@ -81,6 +84,19 @@ public class PanelDatosEmisora extends JPanel {
 		etiquetaTituloModo.setText(titulos[2]);
 		etiquetaTituloTipoMusica.setText(titulos[3]);
 	}
+	
+	
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 *         Asigna el icono correspondiente al estatus de reproduccion.
+	 * @param Icon, icono del estatus de reproduccion.
+	 */
+	
+	public void actualizarGIFStatus(Icon icon) {
+			etiquetaGIFPlaying.setIcon(icon);
+	}
+	
 
 	/**
 	 * @author Nicolás Peña Mogollón - María Camila Lozano
@@ -179,16 +195,26 @@ public class PanelDatosEmisora extends JPanel {
 		return rutaGIFPlay;
 	}
 
-	public void setRutaGIFPlay(String rutaGIFPlay) {
-		this.rutaGIFPlay = rutaGIFPlay;
-	}
 
 	public String getRutaGIFStop() {
 		return rutaGIFStop;
 	}
 
-	public void setRutaGIFStop(String rutaGIFStop) {
-		this.rutaGIFStop = rutaGIFStop;
+
+	public Icon getGIFPlay() {
+		return GIFPlay;
+	}
+
+	public void setGIFPlay(Icon gIFPlay) {
+		GIFPlay = gIFPlay;
+	}
+
+	public Icon getGIFStop() {
+		return GIFStop;
+	}
+
+	public void setGIFStop(Icon gIFStop) {
+		GIFStop = gIFStop;
 	}
 
 	public static long getSerialversionuid() {

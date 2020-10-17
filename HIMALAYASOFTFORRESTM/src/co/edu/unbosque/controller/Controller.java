@@ -58,14 +58,17 @@ public class Controller implements ActionListener {
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())) {
 			this.emisora.getParrillaMusical().reproducir();
+			vista.getPanelEmisora().getPanelDatosEmisora().actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFPlay());
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_PAUSAR())) {
 			this.emisora.getParrillaMusical().pausar();
+			vista.getPanelEmisora().getPanelDatosEmisora().actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_PARAR())) {
 			this.emisora.getParrillaMusical().parar();
+			vista.getPanelEmisora().getPanelDatosEmisora().actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_AVANZAR())) {

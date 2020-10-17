@@ -92,7 +92,6 @@ public class PanelParrilla extends JPanel {
 		tablaParrilla.getColumn(tablaParrilla.getColumnName(0)).setHeaderValue(titulos[4]);
 		tablaParrilla.getColumn(tablaParrilla.getColumnName(1)).setHeaderValue(titulos[5]);
 		tablaParrilla.getColumn(tablaParrilla.getColumnName(2)).setHeaderValue(titulos[6]);
-		
 
 	}
 
