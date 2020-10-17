@@ -30,8 +30,15 @@ public class ParrillaMusical {
 					new File("./Canciones/" + this.pistasMusicales.get(i).getNombreArchivoMusica().trim()));
 	}
 
+	public void agregarCancionPlayList() {
+		this.reproductorParrilla.addToPlayList(new File("./Canciones/"
+				+ this.pistasMusicales.get(this.pistasMusicales.size() - 1).getNombreArchivoMusica().trim()));
+	}
+
 	public void borrarPlayList() {
 		this.reproductorParrilla.getPlayList().clear();
+		if(this.reproductorParrilla.getPlayList().isEmpty()) {
+		}
 	}
 
 	public void reproducir() {
