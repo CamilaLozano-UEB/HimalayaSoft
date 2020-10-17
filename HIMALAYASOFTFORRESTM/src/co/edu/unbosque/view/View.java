@@ -41,6 +41,9 @@ public class View extends JFrame {
 		this.panelEmisora.getPanelParrilla().getBotonBorrar().addActionListener(control);
 		this.panelEmisora.getPanelReproduccion().getBotonPlay().addActionListener(control);
 		this.panelEmisora.getPanelReproduccion().getBotonPausa().addActionListener(control);
+		this.panelEmisora.getPanelReproduccion().getBotonStop().addActionListener(control);
+		this.panelEmisora.getPanelReproduccion().getBotonRetrocede().addActionListener(control);
+		this.panelEmisora.getPanelReproduccion().getBotonAvanza().addActionListener(control);
 
 	}
 
