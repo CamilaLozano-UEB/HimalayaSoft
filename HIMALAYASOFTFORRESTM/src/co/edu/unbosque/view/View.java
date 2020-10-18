@@ -22,7 +22,7 @@ public class View extends JFrame {
 		pestanas = new JTabbedPane();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setSize(1000, 700);
-		this.setTitle("Emisora HimalyaSoft");
+		this.setTitle("Emisora HimalayaSoft");
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.agregarComponentes();

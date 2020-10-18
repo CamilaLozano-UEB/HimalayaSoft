@@ -10,6 +10,8 @@ import java.awt.dnd.DropTargetDragEvent;
 import java.awt.dnd.DropTargetDropEvent;
 import java.awt.dnd.DropTargetEvent;
 import java.awt.dnd.DropTargetListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,6 +40,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
 	private DefaultTableModel modeloTabla;
+	private final String icono = "./Imagenes/Icon.png";
+	private JLabel drag;
 
 	private final String AGREGAR = "Agregar";
 	private final String CANCELAR = "CANCELAR";
@@ -46,8 +50,11 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.setLayout(new GridLayout(1, 2));
 		this.asignarValores();
 		this.agregarComponentes();
+		drag = new JLabel(icono);
 	}
 
+
+	
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
@@ -92,6 +99,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		tablaCanciones.setEnabled(false);
 		tablaCanciones.setDragEnabled(false);
 		scroll = new JScrollPane(tablaCanciones);
+		modeloTabla.addColumn("");
 		modeloTabla.addColumn("");
 		modeloTabla.addColumn("");
 		modeloTabla.addColumn("");
@@ -154,8 +162,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	 * @param genero
 	 */
 
-	public void actualizarTabla(String cancion, String autor, String genero) {
-		String[] datos = { cancion, autor, genero };
+	public void actualizarTabla(int contador, String cancion, String autor, String genero) {
+		String[] datos = { Integer.toString(contador), cancion, autor, genero };
 		modeloTabla.addRow(datos);
 	}
 
@@ -192,9 +200,14 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		botonCancelar.setText(titulos[6]);
 
 		modeloTabla.fireTableStructureChanged();
-		tablaCanciones.getColumn(tablaCanciones.getColumnName(0)).setHeaderValue(titulos[7]);
-		tablaCanciones.getColumn(tablaCanciones.getColumnName(1)).setHeaderValue(titulos[8]);
-		tablaCanciones.getColumn(tablaCanciones.getColumnName(2)).setHeaderValue(titulos[9]);
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(0)).setHeaderValue(titulos[10]);
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(1)).setHeaderValue(titulos[7]);
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(2)).setHeaderValue(titulos[8]);
+		tablaCanciones.getColumn(tablaCanciones.getColumnName(3)).setHeaderValue(titulos[9]);
+		tablaCanciones.getColumnModel().getColumn(0).setPreferredWidth(10);
+		tablaCanciones.getColumnModel().getColumn(1).setPreferredWidth(200);
+		tablaCanciones.getColumnModel().getColumn(2).setPreferredWidth(150);
+		tablaCanciones.getColumnModel().getColumn(3).setPreferredWidth(100);
 
 	}
 
@@ -215,6 +228,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	}
 
 	public void dragOver(DropTargetDragEvent dtde) {
+		
 	}
 
 	public void dropActionChanged(DropTargetDragEvent dtde) {

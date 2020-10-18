@@ -56,8 +56,8 @@ public class PanelParrilla extends JPanel {
 	 * @param genero
 	 */
 
-	public void actualizarTabla(String cancion, String autor, String genero) {
-		String[] datos = { cancion, autor, genero };
+	public void actualizarTabla(int contador, String cancion, String autor, String genero) {
+		String[] datos = {Integer.toString(contador), cancion, autor, genero };
 		modeloTablaParrilla.addRow(datos);
 	}
 
@@ -99,6 +99,7 @@ public class PanelParrilla extends JPanel {
 		modeloTablaParrilla.addColumn("");
 		modeloTablaParrilla.addColumn("");
 		modeloTablaParrilla.addColumn("");
+		modeloTablaParrilla.addColumn("");
 	}
 
 	/**
@@ -116,9 +117,14 @@ public class PanelParrilla extends JPanel {
 		comboNombreCancion.removeAllItems();
 		comboNombreCancion.addItem(titulos[3]);
 		modeloTablaParrilla.fireTableStructureChanged();
-		tablaParrilla.getColumn(tablaParrilla.getColumnName(0)).setHeaderValue(titulos[4]);
-		tablaParrilla.getColumn(tablaParrilla.getColumnName(1)).setHeaderValue(titulos[5]);
-		tablaParrilla.getColumn(tablaParrilla.getColumnName(2)).setHeaderValue(titulos[6]);
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(0)).setHeaderValue(titulos[7]);
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(1)).setHeaderValue(titulos[4]);
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(2)).setHeaderValue(titulos[5]);
+		tablaParrilla.getColumn(tablaParrilla.getColumnName(3)).setHeaderValue(titulos[6]);
+		tablaParrilla.getColumnModel().getColumn(0).setPreferredWidth(10);
+		tablaParrilla.getColumnModel().getColumn(1).setPreferredWidth(200);
+		tablaParrilla.getColumnModel().getColumn(2).setPreferredWidth(150);
+		tablaParrilla.getColumnModel().getColumn(3).setPreferredWidth(100);
 
 	}
 
