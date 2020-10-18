@@ -12,7 +12,6 @@ import java.awt.dnd.DropTargetEvent;
 import java.awt.dnd.DropTargetListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -79,9 +78,11 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 
 		botonAgregar = new JButton();
 		botonAgregar.setActionCommand(AGREGAR);
+		botonAgregar.setEnabled(false);
 
 		botonCancelar = new JButton();
 		botonCancelar.setActionCommand(CANCELAR);
+		botonCancelar.setEnabled(false);
 
 		campoTextoArchivo.setEditable(false);
 		campoTextoArchivo.setBackground(new Color(194, 210, 214));
