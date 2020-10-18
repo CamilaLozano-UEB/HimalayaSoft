@@ -37,7 +37,6 @@ public class Controller implements ActionListener {
 					this.emisora.getIdioma());
 		} else if (event.getActionCommand().equals(vista.getPanelInformacion().getPanelAgregarCancion().getAGREGAR())) {
 			this.gestionarIngresoCancion();
-			
 
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelInformacion().getPanelAgregarCancion().getCANCELAR())) {
@@ -45,22 +44,8 @@ public class Controller implements ActionListener {
 
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelEmisora().getPanelParrilla().getCOMMAND_AGREGAR_PARRILLA())) {
+			this.gestionarAgregarCancionParrilla();
 
-			if (!vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
-					.equals("Seleccionar canción")
-					&& !vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
-							.equals("Select Song")) {
-				String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
-						.getSelectedItem();
-				emisora.gestionarParrilla(cancion);
-				this.emisora.getParrillaMusical().agregarCancionPlayList();
-				String[] tabla = emisora.llenarParrilla(cancion);
-				vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1], tabla[2]);
-				this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
-
-			} else {
-				this.vista.mostrarMensajeError(this.emisora.getMensajesError()[0]);
-			}
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelReproduccion().getCOMMAND_REPRODUCIR())) {
 			this.emisora.getParrillaMusical().reproducir();
@@ -89,13 +74,7 @@ public class Controller implements ActionListener {
 
 		} else if (event.getActionCommand()
 				.equals(this.vista.getPanelEmisora().getPanelParrilla().getCOMMAND_BORRAR_PARRILLA())) {
-			this.emisora.getParrillaMusical().parar();
-			this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
-			this.emisora.getParrillaMusical().borrarParrilla();
-			this.emisora.getParrillaMusical().borrarPlayList();
-			this.emisora.getArchivo().borrarArchivoParrilla();
-			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
-
+			this.gestionarBorradoParrilla();
 		}
 	}
 
@@ -177,6 +156,35 @@ public class Controller implements ActionListener {
 
 	}
 
+	public void gestionarAgregarCancionParrilla() {
+		if (!vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
+				.equals("Seleccionar canción")
+				&& !vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
+						.equals("Select Song")) {
+			String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
+					.getSelectedItem();
+			emisora.gestionarParrilla(cancion);
+			this.emisora.getParrillaMusical().agregarCancionPlayList();
+			String[] tabla = emisora.llenarParrilla(cancion);
+			vista.getPanelEmisora().getPanelParrilla().actualizarTabla(tabla[0], tabla[1], tabla[2]);
+			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
+
+		} else {
+			this.vista.mostrarMensajeError(this.emisora.getMensajesError()[0]);
+		}
+	}
+
+	public void gestionarBorradoParrilla() {
+
+		this.emisora.getParrillaMusical().parar();
+		this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
+		this.emisora.getParrillaMusical().borrarParrilla();
+		this.emisora.getParrillaMusical().borrarPlayList();
+		this.emisora.getArchivo().borrarArchivoParrilla();
+		this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
+
+	}
+
 	public void llenarDatosEmisoraTablas() {
 		this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
 				this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
@@ -214,16 +222,17 @@ public class Controller implements ActionListener {
 				.actualizarPanelAgregarCancion(this.emisora.getTitulosPanelAgregarCancion());
 		this.vista.getPanelInformacion().getPanelAgregarCancion().getModeloTabla().fireTableDataChanged();
 	}
-	
+
 	public void verificarDatosEmisora() {
-		
-		if(this.emisora.getNombreEmisora().equals("")) {
-			this.vista.mostrarMensajeAviso("Por favor llene los datos de la emisora\nPlease fill the information of the station");
+
+		if (this.emisora.getNombreEmisora().equals("")) {
+			this.vista.mostrarMensajeAviso(
+					"Por favor llene los datos de la emisora\nPlease fill the information of the station");
 			this.vista.getPestanas().setSelectedIndex(1);
-		}else {
+		} else {
 			this.vista.habilitarBotones();
 		}
-		
+
 	}
 
 }
