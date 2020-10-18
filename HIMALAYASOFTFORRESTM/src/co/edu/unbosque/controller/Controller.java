@@ -28,6 +28,7 @@ public class Controller implements ActionListener {
 			this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
 					this.emisora.getModoTransmision(), this.emisora.getTipoDeMusica());
 			this.emisora.escribirArchivoEmisora();
+			this.vista.habilitarBotones();
 
 		} else if (event.getActionCommand()
 				.equals(vista.getPanelInformacion().getPanelInformacionEmisora().getCANCELAR())) {
@@ -197,6 +198,7 @@ public class Controller implements ActionListener {
 		this.emisora.getParrillaMusical().generarPlayList();
 		this.actualizarComponentesVista();
 		this.llenarDatosEmisoraTablas();
+		this.verificarDatosEmisora();
 	}
 
 	public void actualizarComponentesVista() {
@@ -211,6 +213,17 @@ public class Controller implements ActionListener {
 		this.vista.getPanelInformacion().getPanelAgregarCancion()
 				.actualizarPanelAgregarCancion(this.emisora.getTitulosPanelAgregarCancion());
 		this.vista.getPanelInformacion().getPanelAgregarCancion().getModeloTabla().fireTableDataChanged();
+	}
+	
+	public void verificarDatosEmisora() {
+		
+		if(this.emisora.getNombreEmisora().equals("")) {
+			this.vista.mostrarMensajeAviso("Por favor llene los datos de la emisora\nPlease fill the information of the station");
+			this.vista.getPestanas().setSelectedIndex(1);
+		}else {
+			this.vista.habilitarBotones();
+		}
+		
 	}
 
 }

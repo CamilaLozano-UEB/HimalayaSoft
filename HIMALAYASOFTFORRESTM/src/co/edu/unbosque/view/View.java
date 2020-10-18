@@ -60,6 +60,14 @@ public class View extends JFrame {
 		this.pestanas.setTitleAt(0, titulos[0]);
 		this.pestanas.setTitleAt(1, titulos[1]);
 	}
+	
+	public void habilitarBotones() {
+		this.panelEmisora.getPanelParrilla().getBotonAgregar().setEnabled(true);
+		this.panelEmisora.getPanelParrilla().getBotonBorrar().setEnabled(true);
+		this.panelInformacion.getPanelAgregarCancion().getBotonAgregar().setEnabled(true);
+		this.panelInformacion.getPanelAgregarCancion().getBotonCancelar().setEnabled(true);
+
+	}
 
 	public void mostrarMensajeError(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Warning", JOptionPane.WARNING_MESSAGE);

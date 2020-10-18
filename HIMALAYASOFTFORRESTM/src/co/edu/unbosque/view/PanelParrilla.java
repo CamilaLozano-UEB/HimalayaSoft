@@ -58,7 +58,7 @@ public class PanelParrilla extends JPanel {
 	 * 
 	 * @author Juana Valentina Torres Parrado
 	 * 
-	 *         Se asigna los valores correspondientes a cada componente apartir de
+	 *         Se asigna los valores correspondientes a cada componente a partir de
 	 *         un arreglo.
 	 * @param titulos
 	 */
@@ -67,7 +67,9 @@ public class PanelParrilla extends JPanel {
 		contenedor.setLayout(new GridLayout(1, 2));
 		botonAgregar = new JButton();
 		botonAgregar.setActionCommand(COMMAND_AGREGAR_PARRILLA);
+		botonAgregar.setEnabled(false);
 		botonBorrar = new JButton();
+		botonBorrar.setEnabled(false);
 		botonBorrar.setActionCommand(COMMAND_BORRAR_PARRILLA);
 		comboNombreCancion = new JComboBox<String>();
 
