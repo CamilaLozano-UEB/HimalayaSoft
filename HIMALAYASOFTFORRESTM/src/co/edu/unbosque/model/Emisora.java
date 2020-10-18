@@ -22,7 +22,6 @@ public class Emisora {
 	private String[] titulosView;
 	private String[] mensajesError;
 	private String mensajeAceptar;
-	private int contadorParrila;
 	private int contadorCanciones;
 
 	public Emisora() {
@@ -266,7 +265,7 @@ public class Emisora {
 	public String[][] asignarDatosTablaAgregarCancion() {
 
 		String[][] tabla = new String[this.pistasMusicales.size()][4];
-		int count =1;
+		int count = 1;
 		for (int i = 0; i < this.pistasMusicales.size(); i++) {
 			tabla[i][0] = Integer.toString(count);
 			tabla[i][1] = this.pistasMusicales.get(i).getNombreCancion();
@@ -274,7 +273,7 @@ public class Emisora {
 			tabla[i][3] = this.pistasMusicales.get(i).getGeneroMusical();
 			count++;
 		}
-		contadorCanciones=count;
+		contadorCanciones = count;
 		return tabla;
 	}
 
@@ -291,7 +290,7 @@ public class Emisora {
 	public String[][] asignarDatosTablaParrilla() {
 
 		String[][] tabla = new String[this.parrillaMusical.getPistasMusicales().size()][4];
-		int count=1;
+		int count = 1;
 		for (int i = 0; i < this.parrillaMusical.getPistasMusicales().size(); i++) {
 			tabla[i][0] = Integer.toString(count);
 			tabla[i][1] = this.parrillaMusical.getPistasMusicales().get(i).getNombreCancion();
@@ -299,7 +298,7 @@ public class Emisora {
 			tabla[i][3] = this.parrillaMusical.getPistasMusicales().get(i).getGeneroMusical();
 			count++;
 		}
-		contadorParrila=count;
+		this.parrillaMusical.setContadorParrilla(count);
 		return tabla;
 	}
 
@@ -485,14 +484,6 @@ public class Emisora {
 		this.mensajeAceptar = mensajeAceptar;
 	}
 
-	public int getContadorParrila() {
-		return contadorParrila;
-	}
-
-	public void setContadorParrila(int contadorParrila) {
-		this.contadorParrila = contadorParrila;
-	}
-
 	public int getContadorCanciones() {
 		return contadorCanciones;
 	}
@@ -500,5 +491,5 @@ public class Emisora {
 	public void setContadorCanciones(int contadorCanciones) {
 		this.contadorCanciones = contadorCanciones;
 	}
-	
+
 }

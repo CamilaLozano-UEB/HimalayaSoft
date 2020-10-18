@@ -157,8 +157,8 @@ public class Controller implements ActionListener {
 				if (this.emisora.agregarPistaMusical(nombreCancion, nombreArtista, genero, nombreCancion + ".mp3")
 						&& this.emisora.getArchivo().copiarCancion(rutaArchivo, nombreCancion)) {
 					int contador = emisora.getContadorCanciones();
-					emisora.setContadorCanciones(contador+1);
-					this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(contador,nombreCancion,
+					emisora.setContadorCanciones(contador + 1);
+					this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(contador, nombreCancion,
 							nombreArtista, genero);
 					this.vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().addItem(nombreCancion);
 					vista.mostrarMensajeAviso(this.emisora.getMensajeAceptar());
@@ -197,9 +197,9 @@ public class Controller implements ActionListener {
 			emisora.gestionarParrilla(cancion);
 			this.emisora.getParrillaMusical().agregarCancionPlayList();
 			String[] tabla = emisora.llenarParrilla(cancion);
-			int contador = emisora.getContadorParrila();
-			emisora.setContadorParrila(contador+1);
-			vista.getPanelEmisora().getPanelParrilla().actualizarTabla(contador,tabla[0], tabla[1], tabla[2]);
+			int contador = emisora.getParrillaMusical().getContadorParrilla();
+			emisora.getParrillaMusical().setContadorParrilla(contador + 1);
+			vista.getPanelEmisora().getPanelParrilla().actualizarTabla(contador, tabla[0], tabla[1], tabla[2]);
 			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
 
 		} else {
@@ -218,12 +218,12 @@ public class Controller implements ActionListener {
 
 		this.emisora.getParrillaMusical().parar();
 		this.vista.getPanelEmisora().getPanelDatosEmisora()
-		.actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
+				.actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
 		this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
 		this.emisora.getParrillaMusical().borrarParrilla();
 		this.emisora.getParrillaMusical().borrarPlayList();
 		this.emisora.getArchivo().borrarArchivoParrilla();
-		this.emisora.setContadorParrila(1);
+		this.emisora.getParrillaMusical().setContadorParrilla(1);
 		this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
 
 	}
@@ -231,7 +231,7 @@ public class Controller implements ActionListener {
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Llena los datos (nomnbre de la canción, autor, género musical)bde las
+	 *         Llena los datos (nomnbre de la canción, autor, género musical) de las
 	 *         tablas de parrilla diaria para su reproduccion
 	 */
 

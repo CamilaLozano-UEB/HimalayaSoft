@@ -8,6 +8,7 @@ public class ParrillaMusical {
 
 	private ArrayList<PistaMusical> pistasMusicales;
 	private MP3Player reproductorParrilla;
+	private int contadorParrilla;
 
 	public ParrillaMusical() {
 		this.pistasMusicales = new ArrayList<PistaMusical>();
@@ -90,7 +91,10 @@ public class ParrillaMusical {
 	}
 
 	public void reproducir() {
-		this.reproductorParrilla.play();
+		try {
+			this.reproductorParrilla.play();
+		} catch (ArrayIndexOutOfBoundsException e) {
+		}
 	}
 
 	public void pausar() {
@@ -123,6 +127,14 @@ public class ParrillaMusical {
 
 	public void setReproductorParrilla(MP3Player reproductorParrilla) {
 		this.reproductorParrilla = reproductorParrilla;
+	}
+
+	public int getContadorParrilla() {
+		return contadorParrilla;
+	}
+
+	public void setContadorParrilla(int contadorParrilla) {
+		this.contadorParrilla = contadorParrilla;
 	}
 
 }
