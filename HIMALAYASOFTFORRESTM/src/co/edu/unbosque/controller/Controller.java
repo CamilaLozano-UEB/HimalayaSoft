@@ -19,6 +19,14 @@ public class Controller implements ActionListener {
 		this.iniciarEmisora();
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón - Maria Camila Lozano - Juana Valentina Torres
+	 *         - Carlos Eduardo Ballen
+	 * 
+	 *         Método que permite la ejecución de cada comando que le da acción a
+	 *         cada botón del programa
+	 */
+
 	@Override
 	public void actionPerformed(ActionEvent event) {
 		// TODO Auto-generated method stub
@@ -78,6 +86,14 @@ public class Controller implements ActionListener {
 		}
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Gestiona y permite el ingreso de los datos ingresados en la emisora,
+	 *         permite escoger el idioma, guarda y muestra la información que se
+	 *         ingreso en datosEmisora
+	 */
+
 	public void gestionarDatosEmisora() {
 		if (!this.vista.getPanelInformacion().getPanelInformacionEmisora().getCampoTextoNombreEmisora().getText()
 				.equals("")
@@ -111,6 +127,13 @@ public class Controller implements ActionListener {
 					this.emisora.getIdioma());
 		}
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Gestiona y permite el ingreso de datos para la canción y el ingreso
+	 *         del archivo de música
+	 */
 
 	public void gestionarIngresoCancion() {
 		if (!this.vista.getPanelInformacion().getPanelAgregarCancion().getCampoTextoNombreCancion().getText().equals("")
@@ -156,6 +179,13 @@ public class Controller implements ActionListener {
 
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Da la acción y permite que una canción de la lista de canciones
+	 *         guardadas, sea escogida y la agrege en la parrilla musical diaria
+	 */
+
 	public void gestionarAgregarCancionParrilla() {
 		if (!vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().getSelectedItem()
 				.equals("Seleccionar canción")
@@ -174,6 +204,13 @@ public class Controller implements ActionListener {
 		}
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Permite que se borre la parrila de canciones seleccionadas para el
+	 *         dia y su playlist
+	 */
+
 	public void gestionarBorradoParrilla() {
 
 		this.emisora.getParrillaMusical().parar();
@@ -184,6 +221,13 @@ public class Controller implements ActionListener {
 		this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
 
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Llena los datos (nomnbre de la canción, autor, género musical)bde las
+	 *         tablas de parrilla diaria para su reproduccion
+	 */
 
 	public void llenarDatosEmisoraTablas() {
 		this.vista.getPanelEmisora().getPanelDatosEmisora().actualizarAtributos(this.emisora.getNombreEmisora(),
@@ -199,6 +243,18 @@ public class Controller implements ActionListener {
 		}
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 * 
+	 * 
+	 *         Permite cargar la información de la configuración de la emisora,
+	 *         carga la información de las pistas musicales a emisora y a Parrilla,
+	 *         genera la playlist, le pasa los datos a los componenetes de la vista
+	 *         y verifica que la información de la emisora no este vacia
+	 * 
+	 */
+
 	public void iniciarEmisora() {
 		this.emisora.gestionarCaracteristicas();
 		this.emisora.cargarAtributosArchivoPistas();
@@ -208,6 +264,13 @@ public class Controller implements ActionListener {
 		this.llenarDatosEmisoraTablas();
 		this.verificarDatosEmisora();
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Pasar los datos de la configuración de idioma a los componentes de la
+	 *         vista
+	 */
 
 	public void actualizarComponentesVista() {
 		this.vista.actualizarView(this.emisora.getTitulosView());
@@ -222,6 +285,14 @@ public class Controller implements ActionListener {
 				.actualizarPanelAgregarCancion(this.emisora.getTitulosPanelAgregarCancion());
 		this.vista.getPanelInformacion().getPanelAgregarCancion().getModeloTabla().fireTableDataChanged();
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Verifica que los datos de Emisora (nombre de la Emisora, modo
+	 *         trasmisión, género musical) esten completos. (Que tengan valores). Si
+	 *         estan llenos, habilita los botones
+	 */
 
 	public void verificarDatosEmisora() {
 

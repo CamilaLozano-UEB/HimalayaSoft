@@ -145,10 +145,26 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		}
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Agrega una nueva fila con los datos de la canción ingresada
+	 * @param cancion
+	 * @param autor
+	 * @param genero
+	 */
+
 	public void actualizarTabla(String cancion, String autor, String genero) {
 		String[] datos = { cancion, autor, genero };
 		modeloTabla.addRow(datos);
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Borra los campos de texto de los datos ingresados en el panel de
+	 *         agregar canción
+	 */
 
 	public void borrarCampos() {
 		this.campoTextoNombreCancion.setText("");
@@ -156,6 +172,14 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.campoTextoGeneroMusica.setText("");
 		this.campoTextoArchivo.setText("");
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Toma la información del archivo properties y le da los valores a los
+	 *         componentes con el idioma elegido
+	 * @param titulos
+	 */
 
 	public void actualizarPanelAgregarCancion(String[] titulos) {
 		setBorder(new TitledBorder(titulos[0]));

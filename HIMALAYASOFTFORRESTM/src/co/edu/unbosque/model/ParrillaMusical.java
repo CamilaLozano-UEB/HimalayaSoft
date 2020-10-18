@@ -16,13 +16,46 @@ public class ParrillaMusical {
 
 	}
 
+	/**
+	 * @author Nicolas Peña Mogollón - Juana Valentina Torres
+	 * 
+	 *         Carga la información al arreglo de pistas musicales
+	 * 
+	 * @param pistas
+	 */
 	public void cargarParrilla(ArrayList<PistaMusical> pistas) {
 		this.pistasMusicales = pistas;
 	}
 
+	/**
+	 * @author Nicolas Peña Mogollón - Juana Valentina Torres
+	 * 
+	 *         agrega un objeto pistaMusical al arraylist pistasMusicales
+	 * 
+	 * @param pistaMusical
+	 * 
+	 */
+
 	public void agregarPistaMusical(PistaMusical pistaMusical) {
 		this.pistasMusicales.add(pistaMusical);
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Borra todos los elementos del arreglo
+	 */
+
+	public void borrarParrilla() {
+		this.pistasMusicales.clear();
+	}
+
+	/**
+	 * @author Nicolas Peña Mogollón
+	 * 
+	 *         Añade los archivos .mp3 del arreglo a una playlist
+	 * 
+	 */
 
 	public void generarPlayList() {
 		for (int i = 0; i < this.pistasMusicales.size(); i++)
@@ -30,10 +63,27 @@ public class ParrillaMusical {
 					new File("./Canciones/" + this.pistasMusicales.get(i).getNombreArchivoMusica().trim()));
 	}
 
+	/**
+	 * @author Nicolas Peña Mogollón
+	 * 
+	 *         Añade un nuevo archivo .mp3 a la playlist
+	 * 
+	 * 
+	 */
+
 	public void agregarCancionPlayList() {
 		this.reproductorParrilla.addToPlayList(new File("./Canciones/"
 				+ this.pistasMusicales.get(this.pistasMusicales.size() - 1).getNombreArchivoMusica().trim()));
 	}
+
+	/**
+	 * @author Nicolas Peña Mogollón
+	 * 
+	 *         Métodos de la libreria externa Jaco, sirven para limpiar la playlist,
+	 *         reproducir, pausar, detener, avanzar a la siguiente canción y
+	 *         retroceder a la canción anterior
+	 * 
+	 */
 
 	public void borrarPlayList() {
 		this.reproductorParrilla.getPlayList().clear();
@@ -57,10 +107,6 @@ public class ParrillaMusical {
 
 	public void reproducirAnterior() {
 		this.reproductorParrilla.skipBackward();
-	}
-
-	public void borrarParrilla() {
-		this.pistasMusicales.clear();
 	}
 
 	public ArrayList<PistaMusical> getPistasMusicales() {

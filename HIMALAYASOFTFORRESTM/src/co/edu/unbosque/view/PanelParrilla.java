@@ -32,8 +32,10 @@ public class PanelParrilla extends JPanel {
 
 	/**
 	 * 
-	 * @author Juana Valentina Torres Parrado Se obtiene un String bidimensional
-	 *         para generar la tabla de la parrilla
+	 * @author Juana Valentina Torres Parrado
+	 * 
+	 *         Se obtiene un String bidimensional para generar la tabla de la
+	 *         parrilla
 	 * 
 	 * @param datos
 	 * 
@@ -45,11 +47,28 @@ public class PanelParrilla extends JPanel {
 		}
 	}
 
+	/**
+	 * @author Juana Valentina Torres Parrado
+	 * 
+	 *         Actualiza el contenido de la tabla
+	 * @param cancion
+	 * @param autor
+	 * @param genero
+	 */
+
 	public void actualizarTabla(String cancion, String autor, String genero) {
 		String[] datos = { cancion, autor, genero };
 		modeloTablaParrilla.addRow(datos);
 	}
 
+	/**
+	 * @author Juana Valentina Torres Parrado
+	 * 
+	 *         Borra todo el contenido de la tabla
+	 * @param cancion
+	 * @param autor
+	 * @param genero
+	 */
 	public void borrarContenidoTabla() {
 		modeloTablaParrilla.setRowCount(0);
 	}
@@ -82,6 +101,14 @@ public class PanelParrilla extends JPanel {
 		modeloTablaParrilla.addColumn("");
 	}
 
+	/**
+	 * @author Juana Valentina Torres Parrado
+	 * 
+	 *         Toma la información del archivo properties y le da los valores a los
+	 *         componentes con el idioma elegido
+	 * @param titulos
+	 */
+
 	public void actualizarPanelParrilla(String[] titulos) {
 		setBorder(new TitledBorder(titulos[0]));
 		botonAgregar.setText(titulos[1]);
@@ -109,6 +136,14 @@ public class PanelParrilla extends JPanel {
 		add(botonBorrar, BorderLayout.PAGE_END);
 		add(contenedor, BorderLayout.PAGE_START);
 	}
+
+	/**
+	 * @author Juana Valentina Torres Parrado
+	 * 
+	 *         Agrega las nuevas canciones en el combobox para que luego se escojan
+	 *         en la parrilla
+	 * @param canciones
+	 */
 
 	public void agregarCancionesComboBox(String[] canciones) {
 		for (int i = 0; i < canciones.length; i++) {

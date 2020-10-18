@@ -74,6 +74,14 @@ public class PanelDatosEmisora extends JPanel {
 		this.etiquetaTipoMusica.setText(tipoMusica);
 	}
 
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 *         Toma la información del archivo properties y le da los valores a los
+	 *         componentes con el idioma elegido
+	 * @param titulos
+	 */
+
 	public void actualizarPanelDatosEmisora(String[] titulos) {
 		setBorder(new TitledBorder(titulos[0]));
 		etiquetaTituloNombre.setText(titulos[1]);

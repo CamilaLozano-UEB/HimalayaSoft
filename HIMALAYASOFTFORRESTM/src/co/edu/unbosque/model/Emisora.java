@@ -277,7 +277,8 @@ public class Emisora {
 	 * @author Nicolás Peña Mogollón
 	 * 
 	 *         Se crea un arreglo de dos dimensiones que guardara los valores de
-	 *         Cancion, autor y genero musical
+	 *         Canción, autor y género musical del arreglo pistasMusicales de la
+	 *         parrilla del dia para retornarlo
 	 * 
 	 * @return tabla
 	 */
@@ -297,8 +298,8 @@ public class Emisora {
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Crea un arreglo unidimensional String que recorrer el arraylist de
-	 *         pistasMusicales y escoge una cancion a partir de su nombre
+	 *         Crea un arreglo unidimensional de tipo String que toma el valor de
+	 *         los nombres del arreglo de pistasMusicales
 	 * 
 	 * @return tabla
 	 */
@@ -312,12 +313,18 @@ public class Emisora {
 	}
 
 	/**
+	 * 
 	 * @author Nicolás Peña Mogollón
 	 * 
+	 *         Toma la ruta del archivo y verifica que tenga la extensión .mp3.
+	 *         Verifica también que no se suba una canción con el mismo nombre a
+	 *         otra existente
 	 * 
-	 * 
+	 * @param rutaArchivo
+	 * @param nombreCancion
+	 * @throws ExtensionIncorrectaException
+	 * @throws CancionIgualException
 	 */
-
 	public void verificarExtensionArchivo(String rutaArchivo, String nombreCancion)
 			throws ExtensionIncorrectaException, CancionIgualException {
 

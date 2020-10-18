@@ -97,37 +97,7 @@ public class Archivo extends Persistence {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
-	 *         Valentina Torres Parrado
-	 * 
-	 *         Cuenta el número de líneas que tiene el archivo retornando ese valor.
-	 * @return
-	 */
-	public int contarLineas(String dato) {
-		String linea = "";
-		int cont = 0;
-
-		File f = new File(dato);
-		try {
-			FileReader fr = new FileReader(f);
-			BufferedReader br = new BufferedReader(fr);
-
-			linea = br.readLine();
-			while (linea != null) {
-				linea = br.readLine();
-				cont++;
-			}
-			br.close();
-
-		} catch (IOException e) {
-			return 0;
-		}
-		return cont;
-
-	}
-
-	/**
-	 * @author NicolasP
+	 * @author Nicolas Peña Mogollón
 	 * 
 	 *         Recibe la ruta desde la vista, para poder copiar un archivo que
 	 *         tendrá como nombre el nombre de la canción y estará guardado en el
@@ -157,6 +127,13 @@ public class Archivo extends Persistence {
 		}
 		return salida;
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Toma la ruta del archivo y lo borra
+	 * 
+	 */
 
 	public void borrarArchivoParrilla() {
 		File file = new File(this.RUTA_PARRILLA);

@@ -33,6 +33,13 @@ public class PanelInformacionEmisora extends JPanel {
 		this.agregarComponentes();
 	}
 
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 *         Recibe los valores de entrada de cada componente
+	 * @param etiquetas
+	 */
+
 	public void asignarValores() {
 
 		etiquetaNombreEmisora = new JLabel();
@@ -58,6 +65,13 @@ public class PanelInformacionEmisora extends JPanel {
 
 	}
 
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 *         Agrega cada componente al panel
+	 * @param etiquetas
+	 */
+
 	public void agregarComponentes() {
 
 		add(etiquetaNombreEmisora);
@@ -80,9 +94,15 @@ public class PanelInformacionEmisora extends JPanel {
 
 	}
 
-//	public void actualizarPanelInformacionEmisora() {
-//		
-//	}
+	/**
+	 * @author Carlos Ballen - Nicolás Peña Mogollón
+	 * 
+	 *         Cargar los valores de los botones dependiendo del idioma escogido
+	 * @param nombre
+	 * @param modo
+	 * @param tipo
+	 * @param idioma
+	 */
 
 	public void cargarCampos(String nombre, String modo, String tipo, String idioma) {
 		this.campoTextoNombreEmisora.setText(nombre);
@@ -96,6 +116,15 @@ public class PanelInformacionEmisora extends JPanel {
 			this.radio_ES.setSelected(true);
 		}
 	}
+
+	/**
+	 * @author Carlos Ballen - Nicolás Peña Mogollón
+	 * 
+	 *         Actualiza la informacion de los componentes del panel según el idioma
+	 *         que se haya escogido
+	 * @param titulos
+	 * @param modoTransmision
+	 */
 
 	public void actualizarPanelInformacionEmisora(String[] titulos, String modoTransmision) {
 		setBorder(new TitledBorder(titulos[0]));
@@ -120,6 +149,16 @@ public class PanelInformacionEmisora extends JPanel {
 			this.comboModoTransmision.setSelectedIndex(3);
 		}
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Vuelve a cargar los parametros según los parametros cargados
+	 * @param nombre
+	 * @param tipoMusica
+	 * @param modoTransmision
+	 * @param idioma
+	 */
 
 	public void restablecerCampos(String nombre, String tipoMusica, String modoTransmision, String idioma) {
 

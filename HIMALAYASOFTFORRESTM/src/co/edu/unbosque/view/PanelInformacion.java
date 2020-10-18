@@ -16,6 +16,12 @@ public class PanelInformacion extends JPanel {
 	private PanelAgregarCancion panelAgregarCancion;
 	private PanelInformacionEmisora panelInformacionEmisora;
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Inicializa los componentes
+	 */
+
 	public PanelInformacion() {
 		this.setLayout(new GridLayout(2, 1));
 		panelContEmisora = new JPanel();
@@ -70,5 +76,5 @@ public class PanelInformacion extends JPanel {
 	public String getRUTA_ICONO() {
 		return RUTA_LOGO;
 	}
-	
+
 }

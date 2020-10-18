@@ -29,11 +29,26 @@ public class View extends JFrame {
 		this.setIconImage(crearIcono(icono).getImage());
 		this.actionListener(control);
 	}
-	
+
+	/**
+	 * @author Carlos Ballen
+	 * 
+	 *         Asigna el icono de "play" al frame de la vista
+	 * @param ruta
+	 * @return
+	 */
+
 	public ImageIcon crearIcono(String ruta) {
 		ImageIcon imagen = new ImageIcon(ruta);
 		return imagen;
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Añade los componentes al panel que corresponde, para luego añadirlos
+	 *         al principal
+	 */
 
 	public void agregarComponentes() {
 		pestanas.add(panelEmisora);
@@ -41,6 +56,13 @@ public class View extends JFrame {
 		getContentPane().add(pestanas);
 
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón - Juana Valentina Torres Parrado
+	 * 
+	 *         Asigna un evento a cada boton
+	 * @param control
+	 */
 
 	public void actionListener(Controller control) {
 		this.panelInformacion.getPanelAgregarCancion().getBotonAgregar().addActionListener(control);
@@ -57,11 +79,26 @@ public class View extends JFrame {
 
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Toma la información del archivo properties y le da los valores a los
+	 *         componentes con el idioma elegido
+	 * @param titulos
+	 */
+
 	public void actualizarView(String[] titulos) {
 		this.pestanas.setTitleAt(0, titulos[0]);
 		this.pestanas.setTitleAt(1, titulos[1]);
 	}
-	
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Habilita los botones cuando ya se ha agregado la información
+	 *         necesario
+	 */
+
 	public void habilitarBotones() {
 		this.panelEmisora.getPanelParrilla().getBotonAgregar().setEnabled(true);
 		this.panelEmisora.getPanelParrilla().getBotonBorrar().setEnabled(true);
@@ -70,9 +107,23 @@ public class View extends JFrame {
 
 	}
 
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Muestra un mensaje de error en JOptionPane
+	 * @param mensaje
+	 */
+
 	public void mostrarMensajeError(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Warning", JOptionPane.WARNING_MESSAGE);
 	}
+
+	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Muestra un mensaje de aviso en JOptionPane
+	 * @param mensaje
+	 */
 
 	public void mostrarMensajeAviso(String mensaje) {
 		JOptionPane.showMessageDialog(null, mensaje, "Information", JOptionPane.INFORMATION_MESSAGE);

@@ -110,8 +110,16 @@ public class PanelReproduccion extends JPanel {
 		add(botonAvanza);
 	}
 
+	/**
+	 * @author Juana Valentina Torres Parrado - Nicolás Peña Mogollón
+	 * 
+	 *         Se bloquea o se activan los botones dependiendo del comando
+	 * 
+	 * @param valor
+	 */
+
 	public void manejarBotones(boolean valor) {
-		
+
 		this.botonAvanza.setEnabled(valor);
 		this.botonPausa.setEnabled(valor);
 		this.botonPlay.setEnabled(valor);
