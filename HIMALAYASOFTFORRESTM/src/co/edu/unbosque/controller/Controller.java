@@ -217,6 +217,8 @@ public class Controller implements ActionListener {
 	public void gestionarBorradoParrilla() {
 
 		this.emisora.getParrillaMusical().parar();
+		this.vista.getPanelEmisora().getPanelDatosEmisora()
+		.actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
 		this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
 		this.emisora.getParrillaMusical().borrarParrilla();
 		this.emisora.getParrillaMusical().borrarPlayList();
@@ -302,7 +304,7 @@ public class Controller implements ActionListener {
 
 		if (this.emisora.getNombreEmisora().equals("")) {
 			this.vista.mostrarMensajeAviso(
-					"Por favor llene los datos de la emisora\nPlease fill the information of the station");
+					"Por favor ingresar los datos de la emisora.\nPlease fill the station information.");
 			this.vista.getPestanas().setSelectedIndex(1);
 		} else {
 			this.vista.habilitarBotones();

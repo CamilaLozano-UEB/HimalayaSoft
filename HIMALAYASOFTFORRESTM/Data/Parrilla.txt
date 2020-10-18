@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-Falling For Your~Ali Stone~Electronica~Falling For Your.mp3
-Mi Religion~Nil Moliner~POP~Mi Religion.mp3
-Nomadic~Slipknot~Metal~Nomadic.mp3
-=======
-You´re somebody else~Flora cash~Alternative pop~You´re somebody else.mp3
->>>>>>> branch 'master' of https://github.com/CamilaLozano-UEB/HimalayaSoft.git
