@@ -13,7 +13,7 @@ public class View extends JFrame {
 	private PanelInformacion panelInformacion;
 	private PanelEmisora panelEmisora;
 	private JTabbedPane pestanas;
-	private final String icono = "./Imagenes/Play.png";
+	private final String icono = "./Imagenes/Icon.png";
 
 	public View(Controller control) {
 		panelInformacion = new PanelInformacion();
