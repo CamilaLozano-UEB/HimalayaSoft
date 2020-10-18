@@ -1,5 +1,6 @@
 package co.edu.unbosque.view;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
@@ -12,6 +13,7 @@ public class View extends JFrame {
 	private PanelInformacion panelInformacion;
 	private PanelEmisora panelEmisora;
 	private JTabbedPane pestanas;
+	private final String icono = "./Imagenes/Play.png";
 
 	public View(Controller control) {
 		panelInformacion = new PanelInformacion();
@@ -23,8 +25,13 @@ public class View extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
 		this.agregarComponentes();
+		this.setIconImage(crearIcono(icono).getImage());
 		this.actionListener(control);
-
+	}
+	
+	public ImageIcon crearIcono(String ruta) {
+		ImageIcon imagen = new ImageIcon(ruta);
+		return imagen;
 	}
 
 	public void agregarComponentes() {
