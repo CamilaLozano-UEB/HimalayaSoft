@@ -8,12 +8,12 @@ public class ParrillaMusical {
 
 	private ArrayList<PistaMusical> pistasMusicales;
 	private MP3Player reproductorParrilla;
-	private int contadorParrilla;
 
 	public ParrillaMusical() {
 		this.pistasMusicales = new ArrayList<PistaMusical>();
 		this.reproductorParrilla = new MP3Player();
 		this.reproductorParrilla.setRepeat(true);
+
 	}
 
 	/**
@@ -41,6 +41,16 @@ public class ParrillaMusical {
 	}
 
 	/**
+	 * @author Nicolás Peña Mogollón
+	 * 
+	 *         Borra todos los elementos del arreglo
+	 */
+
+	public void borrarParrilla() {
+		this.pistasMusicales.clear();
+	}
+
+	/**
 	 * @author Nicolas Peña Mogollón
 	 * 
 	 *         Añade los archivos .mp3 del arreglo a una playlist
@@ -64,6 +74,17 @@ public class ParrillaMusical {
 	public void agregarCancionPlayList() {
 		this.reproductorParrilla.addToPlayList(new File("./Canciones/"
 				+ this.pistasMusicales.get(this.pistasMusicales.size() - 1).getNombreArchivoMusica().trim()));
+	}
+
+	/**
+	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
+	 *         Valentina Torres Parrado - Carlos Ballen
+	 * 
+	 *         Inicializa el reproductor nuevamente si este no tiene un valor
+	 */
+	public void inicializarReproductor() {
+		if (this.reproductorParrilla == null)
+			this.reproductorParrilla = new MP3Player();
 	}
 
 	/**
@@ -109,14 +130,6 @@ public class ParrillaMusical {
 
 	public void setReproductorParrilla(MP3Player reproductorParrilla) {
 		this.reproductorParrilla = reproductorParrilla;
-	}
-
-	public int getContadorParrilla() {
-		return contadorParrilla;
-	}
-
-	public void setContadorParrilla(int contadorParrilla) {
-		this.contadorParrilla = contadorParrilla;
 	}
 
 }
