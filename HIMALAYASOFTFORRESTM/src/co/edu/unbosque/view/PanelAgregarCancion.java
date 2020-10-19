@@ -10,8 +10,6 @@ import java.awt.dnd.DropTargetDragEvent;
 import java.awt.dnd.DropTargetDropEvent;
 import java.awt.dnd.DropTargetEvent;
 import java.awt.dnd.DropTargetListener;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -40,9 +38,6 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	private JPanel panelRegistro;
 	private DropTarget dropTarget;
 	private DefaultTableModel modeloTabla;
-	private final String icono = "./Imagenes/Icon.png";
-	private JLabel drag;
-
 	private final String AGREGAR = "Agregar";
 	private final String CANCELAR = "CANCELAR";
 
@@ -50,11 +45,8 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 		this.setLayout(new GridLayout(1, 2));
 		this.asignarValores();
 		this.agregarComponentes();
-		drag = new JLabel(icono);
 	}
 
-
-	
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
@@ -228,7 +220,7 @@ public class PanelAgregarCancion extends JPanel implements DropTargetListener {
 	}
 
 	public void dragOver(DropTargetDragEvent dtde) {
-		
+
 	}
 
 	public void dropActionChanged(DropTargetDragEvent dtde) {
