@@ -215,7 +215,7 @@ public class Controller implements ActionListener {
 	 * @author Nicolás Peña Mogollón
 	 * 
 	 *         Permite que se borre la parrila de canciones seleccionadas para el
-	 *         dia y le da un valor null a la playList
+	 *         día y le da un valor null a la playList
 	 */
 
 	public void gestionarBorradoParrilla() {
@@ -234,7 +234,7 @@ public class Controller implements ActionListener {
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Llena los datos (nomnbre de la canción, autor, género musical)bde las
+	 *         Llena los datos (nomnbre de la canción, autor, género musical) de las
 	 *         tablas de parrilla diaria para su reproduccion
 	 */
 
