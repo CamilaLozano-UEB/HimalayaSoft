@@ -201,6 +201,7 @@ public class Controller implements ActionListener {
 			emisora.getParrillaMusical().setContadorParrilla(contador + 1);
 			vista.getPanelEmisora().getPanelParrilla().actualizarTabla(contador, tabla[0], tabla[1], tabla[2]);
 			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
+			this.vista.getPanelEmisora().getPanelParrilla().getBotonBorrar().setEnabled(true);
 
 		} else {
 			this.vista.mostrarMensajeError(this.emisora.getMensajesError()[0]);
@@ -300,6 +301,9 @@ public class Controller implements ActionListener {
 			this.vista.mostrarMensajeAviso(
 					"Por favor ingresar los datos de la emisora.\nPlease fill the station information.");
 			this.vista.getPestanas().setSelectedIndex(1);
+		} else if (this.emisora.getParrillaMusical().getPistasMusicales().isEmpty()) {
+			this.vista.habilitarBotones();
+			this.vista.getPanelEmisora().getPanelParrilla().getBotonBorrar().setEnabled(false);
 		} else {
 			this.vista.habilitarBotones();
 		}
