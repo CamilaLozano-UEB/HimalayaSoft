@@ -198,8 +198,8 @@ public class Controller implements ActionListener {
 			emisora.gestionarParrilla(cancion);
 			this.emisora.getParrillaMusical().agregarCancionPlayList();
 			String[] tabla = emisora.llenarParrilla(cancion);
-			int contador = emisora.getContadorParrila();
-			emisora.setContadorParrila(contador + 1);
+			int contador = emisora.getParrillaMusical().getContadorParrilla();
+			emisora.getParrillaMusical().setContadorParrilla(contador + 1);
 			vista.getPanelEmisora().getPanelParrilla().actualizarTabla(contador, tabla[0], tabla[1], tabla[2]);
 			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
 
@@ -224,7 +224,7 @@ public class Controller implements ActionListener {
 		this.emisora.getParrillaMusical().borrarParrilla();
 		this.emisora.getParrillaMusical().setReproductorParrilla(null);
 		this.emisora.getArchivo().borrarArchivoParrilla();
-		this.emisora.setContadorParrila(1);
+		this.emisora.getParrillaMusical().setContadorParrilla(1);
 		this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
 
 	}
