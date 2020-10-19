@@ -21,7 +21,7 @@ public class Emisora {
 	private String[] titulosPanelInformacionEmisora;
 	private String[] titulosView;
 	private String[] mensajesError;
-	private String mensajeAceptar;
+	private String[] mensajeAceptar;
 	private int contadorCanciones;
 
 	public Emisora() {
@@ -127,7 +127,7 @@ public class Emisora {
 					.split("~");
 			this.titulosView = this.caracteristicasEmisora.leer("titulosView").split("~");
 			this.mensajesError = this.caracteristicasEmisora.leer("mensajesError").split("~");
-			this.mensajeAceptar = this.caracteristicasEmisora.leer("mensajesAceptar");
+			this.mensajeAceptar = this.caracteristicasEmisora.leer("mensajesAceptar").split("~");
 		} catch (Exception e) {
 			// TODO: handle exception
 			escribirArchivoEmisora("");
@@ -476,11 +476,11 @@ public class Emisora {
 		this.mensajesError = mensajesError;
 	}
 
-	public String getMensajeAceptar() {
+	public String[] getMensajeAceptar() {
 		return mensajeAceptar;
 	}
 
-	public void setMensajeAceptar(String mensajeAceptar) {
+	public void setMensajeAceptar(String[] mensajeAceptar) {
 		this.mensajeAceptar = mensajeAceptar;
 	}
 

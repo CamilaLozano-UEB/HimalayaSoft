@@ -161,7 +161,7 @@ public class Controller implements ActionListener {
 					this.vista.getPanelInformacion().getPanelAgregarCancion().actualizarTabla(contador, nombreCancion,
 							nombreArtista, genero);
 					this.vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion().addItem(nombreCancion);
-					vista.mostrarMensajeAviso(this.emisora.getMensajeAceptar());
+					vista.mostrarMensajeAviso(this.emisora.getMensajeAceptar()[0]);
 					this.vista.getPanelInformacion().getPanelAgregarCancion().borrarCampos();
 				} else {
 					vista.mostrarMensajeError(this.emisora.getMensajesError()[1]);
@@ -210,21 +210,15 @@ public class Controller implements ActionListener {
 	/**
 	 * @author Nicolás Peña Mogollón
 	 * 
-	 *         Permite que se borre la parrila de canciones seleccionadas para el
-	 *         dia y su playlist
+	 *         Permite que se borre la parrilla del día y cierra el programa
 	 */
 
 	public void gestionarBorradoParrilla() {
 
 		this.emisora.getParrillaMusical().parar();
-		this.vista.getPanelEmisora().getPanelDatosEmisora()
-				.actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
-		this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
-		this.emisora.getParrillaMusical().borrarParrilla();
-		this.emisora.getParrillaMusical().borrarPlayList();
 		this.emisora.getArchivo().borrarArchivoParrilla();
-		this.emisora.getParrillaMusical().setContadorParrilla(1);
-		this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);
+		this.vista.mostrarMensajeAviso(this.emisora.getMensajeAceptar()[1]);
+		this.vista.dispose();
 
 	}
 

@@ -57,20 +57,8 @@ public class PanelParrilla extends JPanel {
 	 */
 
 	public void actualizarTabla(int contador, String cancion, String autor, String genero) {
-		String[] datos = {Integer.toString(contador), cancion, autor, genero };
+		String[] datos = { Integer.toString(contador), cancion, autor, genero };
 		modeloTablaParrilla.addRow(datos);
-	}
-
-	/**
-	 * @author Juana Valentina Torres Parrado
-	 * 
-	 *         Borra todo el contenido de la tabla
-	 * @param cancion
-	 * @param autor
-	 * @param genero
-	 */
-	public void borrarContenidoTabla() {
-		modeloTablaParrilla.setRowCount(0);
 	}
 
 	/**

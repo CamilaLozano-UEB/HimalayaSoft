@@ -14,7 +14,6 @@ public class ParrillaMusical {
 		this.pistasMusicales = new ArrayList<PistaMusical>();
 		this.reproductorParrilla = new MP3Player();
 		this.reproductorParrilla.setRepeat(true);
-
 	}
 
 	/**
@@ -39,16 +38,6 @@ public class ParrillaMusical {
 
 	public void agregarPistaMusical(PistaMusical pistaMusical) {
 		this.pistasMusicales.add(pistaMusical);
-	}
-
-	/**
-	 * @author Nicolás Peña Mogollón
-	 * 
-	 *         Borra todos los elementos del arreglo
-	 */
-
-	public void borrarParrilla() {
-		this.pistasMusicales.clear();
 	}
 
 	/**
@@ -80,21 +69,14 @@ public class ParrillaMusical {
 	/**
 	 * @author Nicolas Peña Mogollón
 	 * 
-	 *         Métodos de la libreria externa Jaco, sirven para limpiar la playlist,
-	 *         reproducir, pausar, detener, avanzar a la siguiente canción y
-	 *         retroceder a la canción anterior
+	 *         Métodos de la libreria externa Jaco, sirven para reproducir, pausar,
+	 *         detener, avanzar a la siguiente canción y retroceder a la canción
+	 *         anterior
 	 * 
 	 */
 
-	public void borrarPlayList() {
-		this.reproductorParrilla.getPlayList().clear();
-	}
-
 	public void reproducir() {
-		try {
-			this.reproductorParrilla.play();
-		} catch (ArrayIndexOutOfBoundsException e) {
-		}
+		this.reproductorParrilla.play();
 	}
 
 	public void pausar() {
