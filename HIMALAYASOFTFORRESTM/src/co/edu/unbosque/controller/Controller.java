@@ -194,11 +194,14 @@ public class Controller implements ActionListener {
 						.equals("Select Song")) {
 			String cancion = (String) vista.getPanelEmisora().getPanelParrilla().getComboNombreCancion()
 					.getSelectedItem();
-			this.emisora.getParrillaMusical().inicializarReproductor();
 			emisora.gestionarParrilla(cancion);
 			this.emisora.getParrillaMusical().agregarCancionPlayList();
 			String[] tabla = emisora.llenarParrilla(cancion);
 			int contador = emisora.getParrillaMusical().getContadorParrilla();
+			if (contador <= 1) {
+				this.emisora.getParrillaMusical().reproducirSiguiente();
+				this.emisora.getParrillaMusical().parar();
+			}
 			emisora.getParrillaMusical().setContadorParrilla(contador + 1);
 			vista.getPanelEmisora().getPanelParrilla().actualizarTabla(contador, tabla[0], tabla[1], tabla[2]);
 			this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(true);
@@ -222,7 +225,6 @@ public class Controller implements ActionListener {
 				.actualizarGIFStatus(vista.getPanelEmisora().getPanelDatosEmisora().getGIFStop());
 		this.vista.getPanelEmisora().getPanelParrilla().borrarContenidoTabla();
 		this.emisora.getParrillaMusical().borrarParrilla();
-		this.emisora.getParrillaMusical().setReproductorParrilla(null);
 		this.emisora.getArchivo().borrarArchivoParrilla();
 		this.emisora.getParrillaMusical().setContadorParrilla(1);
 		this.vista.getPanelEmisora().getPanelReproduccion().manejarBotones(false);

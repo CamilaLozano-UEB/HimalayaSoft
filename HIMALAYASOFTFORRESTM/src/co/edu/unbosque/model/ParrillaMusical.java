@@ -78,17 +78,6 @@ public class ParrillaMusical {
 	}
 
 	/**
-	 * @author Nicolás Peña Mogollón - María Camila Lozano Gutierrez - Juana
-	 *         Valentina Torres Parrado - Carlos Ballen
-	 * 
-	 *         Inicializa el reproductor nuevamente si este no tiene un valor
-	 */
-	public void inicializarReproductor() {
-		if (this.reproductorParrilla == null)
-			this.reproductorParrilla = new MP3Player();
-	}
-
-	/**
 	 * @author Nicolas Peña Mogollón
 	 * 
 	 *         Métodos de la libreria externa Jaco, sirven para reproducir, pausar,
